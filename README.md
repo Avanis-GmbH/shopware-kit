@@ -1,2 +1,5 @@
-# sw-api-client
-Shopware API Client implementation
+# Shopware Universal API Client
+
+🚧 Currently under construction...
+
+🚀 Will be update soon!
