@@ -33,13 +33,13 @@ func (r InfoResponse) IsCloudShop() bool {
 func (c *Client) Info(ctx ApiContext) (*InfoResponse, *http.Response, error) {
 	r, err := c.NewRequest(ctx, http.MethodGet, "/api/_info/config", nil)
 	if err != nil {
-		return nil, nil, errors.Wrap(err, "could not create request")
+		return nil, nil, errors.Wrap(err, "failed to create request for info")
 	}
 
 	var info *InfoResponse
 	resp, err := c.Do(ctx.Context, r, &info)
 	if err != nil {
-		return nil, nil, err
+		return nil, nil, errors.Wrap(err, "failed to execute request for info")
 	}
 
 	return info, resp, err
