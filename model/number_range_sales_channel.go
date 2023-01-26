@@ -13,9 +13,3 @@ type NumberRangeSalesChannel struct {
 	SalesChannelId    string           `json:"salesChannelId,omitempty"`
 	UpdatedAt         time.Time        `json:"updatedAt,omitempty"`
 }
-
-type NumberRangeSalesChannelCollection struct {
-	EntityCollection
-
-	Data []NumberRangeSalesChannel `json:"data"`
-}

@@ -102,9 +102,3 @@ type Product struct {
 	Width                         float64                               `json:"width,omitempty"`
 	Wishlists                     []CustomerWishlistProduct             `json:"wishlists,omitempty"`
 }
-
-type ProductCollection struct {
-	EntityCollection
-
-	Data []Product `json:"data"`
-}

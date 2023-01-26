@@ -18,9 +18,3 @@ type ProductStream struct {
 	Translations         []ProductStreamTranslation `json:"translations,omitempty"`
 	UpdatedAt            time.Time                  `json:"updatedAt,omitempty"`
 }
-
-type ProductStreamCollection struct {
-	EntityCollection
-
-	Data []ProductStream `json:"data"`
-}

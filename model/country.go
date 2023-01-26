@@ -32,9 +32,3 @@ type Country struct {
 	VatIdPattern                   string                    `json:"vatIdPattern,omitempty"`
 	VatIdRequired                  bool                      `json:"vatIdRequired,omitempty"`
 }
-
-type CountryCollection struct {
-	EntityCollection
-
-	Data []Country `json:"data"`
-}

@@ -16,9 +16,3 @@ type DeliveryTime struct {
 	Unit            string                    `json:"unit,omitempty"`
 	UpdatedAt       time.Time                 `json:"updatedAt,omitempty"`
 }
-
-type DeliveryTimeCollection struct {
-	EntityCollection
-
-	Data []DeliveryTime `json:"data"`
-}

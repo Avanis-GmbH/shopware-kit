@@ -12,9 +12,3 @@ type SalesChannelAnalytics struct {
 	TrackOrders  bool          `json:"trackOrders,omitempty"`
 	UpdatedAt    time.Time     `json:"updatedAt,omitempty"`
 }
-
-type SalesChannelAnalyticsCollection struct {
-	EntityCollection
-
-	Data []SalesChannelAnalytics `json:"data"`
-}

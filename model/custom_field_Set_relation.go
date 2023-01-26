@@ -10,9 +10,3 @@ type CustomFieldSetRelation struct {
 	Id               string          `json:"id,omitempty"`
 	UpdatedAt        time.Time       `json:"updatedAt,omitempty"`
 }
-
-type CustomFieldSetRelationCollection struct {
-	EntityCollection
-
-	Data []CustomFieldSetRelation `json:"data"`
-}

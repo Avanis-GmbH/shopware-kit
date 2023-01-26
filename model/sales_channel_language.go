@@ -6,9 +6,3 @@ type SalesChannelLanguage struct {
 	SalesChannel   *SalesChannel `json:"salesChannel,omitempty"`
 	SalesChannelId string        `json:"salesChannelId,omitempty"`
 }
-
-type SalesChannelLanguageCollection struct {
-	EntityCollection
-
-	Data []SalesChannelLanguage `json:"data"`
-}

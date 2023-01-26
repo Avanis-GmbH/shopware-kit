@@ -15,9 +15,3 @@ type MainCategory struct {
 	ProductId         string        `json:"productId,omitempty"`
 	Id                string        `json:"id,omitempty"`
 }
-
-type MainCategoryCollection struct {
-	EntityCollection
-
-	Data []MainCategory `json:"data"`
-}

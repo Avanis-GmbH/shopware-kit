@@ -12,9 +12,3 @@ type DocumentTypeTranslation struct {
 	Name           string        `json:"name,omitempty"`
 	UpdatedAt      time.Time     `json:"updatedAt,omitempty"`
 }
-
-type DocumentTypeTranslationCollection struct {
-	EntityCollection
-
-	Data []DocumentTypeTranslation `json:"data"`
-}

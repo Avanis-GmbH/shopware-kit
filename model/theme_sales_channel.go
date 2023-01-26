@@ -6,9 +6,3 @@ type ThemeSalesChannel struct {
 	Theme          *Theme        `json:"theme,omitempty"`
 	ThemeId        string        `json:"themeId,omitempty"`
 }
-
-type ThemeSalesChannelCollection struct {
-	EntityCollection
-
-	Data []ThemeSalesChannel `json:"data"`
-}

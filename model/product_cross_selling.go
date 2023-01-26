@@ -22,9 +22,3 @@ type ProductCrossSelling struct {
 	Type             string                                `json:"type,omitempty"`
 	UpdatedAt        time.Time                             `json:"updatedAt,omitempty"`
 }
-
-type ProductCrossSellingCollection struct {
-	EntityCollection
-
-	Data []ProductCrossSelling `json:"data"`
-}

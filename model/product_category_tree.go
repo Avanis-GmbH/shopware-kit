@@ -8,9 +8,3 @@ type ProductCategoryTree struct {
 	ProductId         string    `json:"productId,omitempty"`
 	ProductVersionId  string    `json:"productVersionId,omitempty"`
 }
-
-type ProductCategoryTreeCollection struct {
-	EntityCollection
-
-	Data []ProductCategoryTree `json:"data"`
-}

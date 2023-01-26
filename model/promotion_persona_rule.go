@@ -9,9 +9,3 @@ type PromotionPersonaRule struct {
 
 	Rule *Rule `json:"rule,omitempty"`
 }
-
-type PromotionPersonaRuleCollection struct {
-	EntityCollection
-
-	Data []PromotionPersonaRule `json:"data"`
-}

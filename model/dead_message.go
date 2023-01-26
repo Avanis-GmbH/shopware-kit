@@ -19,9 +19,3 @@ type DeadMessage struct {
 	SerializedOriginalMessage interface{}    `json:"serializedOriginalMessage,omitempty"`
 	UpdatedAt                 time.Time      `json:"updatedAt,omitempty"`
 }
-
-type DeadMessageCollection struct {
-	EntityCollection
-
-	Data []DeadMessage `json:"data"`
-}

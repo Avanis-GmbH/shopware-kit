@@ -13,9 +13,3 @@ type MediaThumbnail struct {
 	Url          string      `json:"url,omitempty"`
 	Width        float64     `json:"width,omitempty"`
 }
-
-type MediaThumbnailCollection struct {
-	EntityCollection
-
-	Data []MediaThumbnail `json:"data"`
-}

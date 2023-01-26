@@ -13,9 +13,3 @@ type SnippetSet struct {
 	Snippets            []Snippet            `json:"snippets,omitempty"`
 	UpdatedAt           time.Time            `json:"updatedAt,omitempty"`
 }
-
-type SnippetSetCollection struct {
-	EntityCollection
-
-	Data []SnippetSet `json:"data"`
-}

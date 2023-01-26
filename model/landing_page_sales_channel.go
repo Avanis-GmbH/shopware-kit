@@ -7,9 +7,3 @@ type LandingPageSalesChannel struct {
 	SalesChannel         *SalesChannel `json:"salesChannel,omitempty"`
 	SalesChannelId       string        `json:"salesChannelId,omitempty"`
 }
-
-type LandingPageSalesChannelCollection struct {
-	EntityCollection
-
-	Data []LandingPageSalesChannel `json:"data"`
-}

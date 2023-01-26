@@ -24,9 +24,3 @@ type OrderDelivery struct {
 	UpdatedAt                     time.Time               `json:"updatedAt,omitempty"`
 	VersionId                     string                  `json:"versionId,omitempty"`
 }
-
-type OrderDeliveryCollection struct {
-	EntityCollection
-
-	Data []OrderDelivery `json:"data"`
-}

@@ -21,9 +21,3 @@ type WebhookEventLog struct {
 	Url                      string      `json:"url,omitempty"`
 	WebhookName              string      `json:"webhookName,omitempty"`
 }
-
-type WebhookEventLogCollection struct {
-	EntityCollection
-
-	Data []WebhookEventLog `json:"data"`
-}

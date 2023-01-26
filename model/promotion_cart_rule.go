@@ -6,9 +6,3 @@ type PromotionCartRule struct {
 	Rule        *Rule      `json:"rule,omitempty"`
 	RuleId      string     `json:"ruleId,omitempty"`
 }
-
-type PromotionCartRuleCollection struct {
-	EntityCollection
-
-	Data []PromotionCartRule `json:"data"`
-}

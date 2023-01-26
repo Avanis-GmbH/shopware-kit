@@ -6,9 +6,3 @@ type PromotionPersonaCustomer struct {
 	Promotion   *Promotion `json:"promotion,omitempty"`
 	PromotionId string     `json:"promotionId,omitempty"`
 }
-
-type PromotionPersonaCustomerCollection struct {
-	EntityCollection
-
-	Data []PromotionPersonaCustomer `json:"data"`
-}

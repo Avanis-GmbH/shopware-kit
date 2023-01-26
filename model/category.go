@@ -13,10 +13,10 @@ type Category struct {
 	CmsPage                 *CmsPage              `json:"cmsPage,omitempty"`
 	CmsPageId               string                `json:"cmsPageId,omitempty"`
 	CmsPageVersionId        string                `json:"cmsPageVersionId,omitempty"`
-	CreatedAt               time.Time             `json:"createdAt"` // required
+	CreatedAt               time.Time             `json:"createdAt,omitempty"` // required
 	CustomFields            interface{}           `json:"customFields,omitempty"`
 	Description             string                `json:"description,omitempty"`
-	DisplayNestedProducts   bool                  `json:"displayNestedProducts"` // required
+	DisplayNestedProducts   bool                  `json:"displayNestedProducts,omitempty"` // required
 	ExternalLink            string                `json:"externalLink,omitempty"`
 	FooterSalesChannels     []SalesChannel        `json:"footerSalesChannels,omitempty"`
 	Id                      string                `json:"id,omitempty"`
@@ -30,14 +30,14 @@ type Category struct {
 	MediaId                 string                `json:"mediaId,omitempty"`
 	MetaDescription         string                `json:"metaDescription,omitempty"`
 	MetaTitle               string                `json:"metaTitle,omitempty"`
-	Name                    string                `json:"name"` // required
+	Name                    string                `json:"name,omitempty"` // required
 	NavigationSalesChannels []SalesChannel        `json:"navigationSalesChannels,omitempty"`
 	NestedProducts          []Product             `json:"nestedProducts,omitempty"`
 	Parent                  *Category             `json:"parent,omitempty"`
 	ParentId                string                `json:"parentId,omitempty"`
 	ParentVersionId         string                `json:"parentVersionId,omitempty"`
 	Path                    string                `json:"path,omitempty"`
-	ProductAssignmentType   string                `json:"productAssignmentType"` // required
+	ProductAssignmentType   string                `json:"productAssignmentType,omitempty"` // required
 	Products                []Product             `json:"products,omitempty"`
 	ProductStream           *ProductStream        `json:"productStream,omitempty"`
 	ProductStreamId         string                `json:"productStreamId,omitempty"`
@@ -47,14 +47,8 @@ type Category struct {
 	Tags                    []Tag                 `json:"tags,omitempty"`
 	Translated              interface{}           `json:"translated,omitempty"`
 	Translations            []CategoryTranslation `json:"translations,omitempty"`
-	Type                    string                `json:"type"` // required
+	Type                    string                `json:"type,omitempty"` // required
 	UpdatedAt               time.Time             `json:"updatedAt,omitempty"`
 	VersionId               string                `json:"versionId,omitempty"`
 	Visible                 bool                  `json:"visible,omitempty"`
-}
-
-type CategoryCollection struct {
-	EntityCollection
-
-	Data []Category `json:"data"`
 }

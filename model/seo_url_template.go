@@ -14,9 +14,3 @@ type SeoUrlTemplate struct {
 	Template       string        `json:"template,omitempty"`
 	UpdatedAt      time.Time     `json:"updatedAt,omitempty"`
 }
-
-type SeoUrlTemplateCollection struct {
-	EntityCollection
-
-	Data []SeoUrlTemplate `json:"data"`
-}

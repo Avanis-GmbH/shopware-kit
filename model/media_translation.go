@@ -13,9 +13,3 @@ type MediaTranslation struct {
 	Title        string      `json:"title,omitempty"`
 	UpdatedAt    time.Time   `json:"updatedAt,omitempty"`
 }
-
-type MediaTranslationCollection struct {
-	EntityCollection
-
-	Data []MediaTranslation `json:"data"`
-}

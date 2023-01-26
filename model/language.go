@@ -68,9 +68,3 @@ type Language struct {
 	UnitTranslations                []UnitTranslation                `json:"unitTranslations,omitempty"`
 	UpdatedAt                       time.Time                        `json:"updatedAt,omitempty"`
 }
-
-type LanguageCollection struct {
-	EntityCollection
-
-	Data []Language `json:"data"`
-}

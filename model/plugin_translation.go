@@ -16,9 +16,3 @@ type PluginTranslation struct {
 	SupportLink      string      `json:"supportLink,omitempty"`
 	UpdatedAt        time.Time   `json:"updatedAt,omitempty"`
 }
-
-type PluginTranslationCollection struct {
-	EntityCollection
-
-	Data []PluginTranslation `json:"data"`
-}

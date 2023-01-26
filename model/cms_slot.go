@@ -19,9 +19,3 @@ type CmsSlot struct {
 	Block             *CmsBlock            `json:"block,omitempty"`
 	Translations      []CmsSlotTranslation `json:"translations,omitempty"`
 }
-
-type CmsSlotCollection struct {
-	EntityCollection
-
-	Data []CmsSlot `json:"data"`
-}

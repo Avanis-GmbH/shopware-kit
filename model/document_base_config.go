@@ -19,9 +19,3 @@ type DocumentBaseConfig struct {
 	SalesChannels  []DocumentBaseConfigSalesChannel `json:"salesChannels,omitempty"`
 	UpdatedAt      time.Time                        `json:"updatedAt,omitempty"`
 }
-
-type DocumentBaseConfigCollection struct {
-	EntityCollection
-
-	Data []DocumentBaseConfig `json:"data"`
-}

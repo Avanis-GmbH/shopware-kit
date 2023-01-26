@@ -12,9 +12,3 @@ type StateMachineStateTranslation struct {
 	StateMachineStateId string             `json:"stateMachineStateId,omitempty"`
 	UpdatedAt           time.Time          `json:"updatedAt,omitempty"`
 }
-
-type StateMachineStateTranslationCollection struct {
-	EntityCollection
-
-	Data []StateMachineStateTranslation `json:"data"`
-}

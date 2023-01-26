@@ -11,9 +11,3 @@ type UserConfig struct {
 	UserId    string      `json:"userId,omitempty"`
 	Value     interface{} `json:"value,omitempty"`
 }
-
-type UserConfigCollection struct {
-	EntityCollection
-
-	Data []UserConfig `json:"data"`
-}

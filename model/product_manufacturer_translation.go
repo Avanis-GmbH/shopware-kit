@@ -14,9 +14,3 @@ type ProductManufacturerTranslation struct {
 	ProductManufacturerVersionId string               `json:"productManufacturerVersionId,omitempty"`
 	UpdatedAt                    time.Time            `json:"updatedAt,omitempty"`
 }
-
-type ProductManufacturerTranslationCollection struct {
-	EntityCollection
-
-	Data []ProductManufacturerTranslation `json:"data"`
-}

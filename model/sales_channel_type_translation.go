@@ -15,9 +15,3 @@ type SalesChannelTypeTranslation struct {
 	SalesChannelTypeId string            `json:"salesChannelTypeId,omitempty"`
 	UpdatedAt          time.Time         `json:"updatedAt,omitempty"`
 }
-
-type SalesChannelTypeTranslationCollection struct {
-	EntityCollection
-
-	Data []SalesChannelTypeTranslation `json:"data"`
-}

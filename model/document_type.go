@@ -15,9 +15,3 @@ type DocumentType struct {
 	Translations                    []DocumentTypeTranslation        `json:"translations,omitempty"`
 	UpdatedAt                       time.Time                        `json:"updatedAt,omitempty"`
 }
-
-type DocumentTypeCollection struct {
-	EntityCollection
-
-	Data []DocumentType `json:"data"`
-}

@@ -10,9 +10,3 @@ type CustomerRecovery struct {
 	Id         string    `json:"id,omitempty"`
 	UpdatedAt  time.Time `json:"updatedAt,omitempty"`
 }
-
-type CustomerRecoveryCollection struct {
-	EntityCollection
-
-	Data []CustomerRecovery `json:"data"`
-}

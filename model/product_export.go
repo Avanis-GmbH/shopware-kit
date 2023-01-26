@@ -29,9 +29,3 @@ type ProductExport struct {
 	StorefrontSalesChannelId string              `json:"storefrontSalesChannelId,omitempty"`
 	UpdatedAt                time.Time           `json:"updatedAt,omitempty"`
 }
-
-type ProductExportCollection struct {
-	EntityCollection
-
-	Data []ProductExport `json:"data"`
-}

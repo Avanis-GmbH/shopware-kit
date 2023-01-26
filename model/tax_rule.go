@@ -15,9 +15,3 @@ type TaxRule struct {
 	Type          *TaxRuleType `json:"type,omitempty"`
 	UpdatedAt     time.Time    `json:"updatedAt,omitempty"`
 }
-
-type TaxRuleCollection struct {
-	EntityCollection
-
-	Data []TaxRule `json:"data"`
-}

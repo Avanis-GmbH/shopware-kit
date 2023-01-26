@@ -15,9 +15,3 @@ type StateMachineTransition struct {
 	ToStateMachineState   *StateMachineState `json:"toStateMachineState,omitempty"`
 	UpdatedAt             time.Time          `json:"updatedAt,omitempty"`
 }
-
-type StateMachineTransitionCollection struct {
-	EntityCollection
-
-	Data []StateMachineTransition `json:"data"`
-}

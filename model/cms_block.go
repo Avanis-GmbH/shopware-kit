@@ -27,9 +27,3 @@ type CmsBlock struct {
 	UpdatedAt           time.Time   `json:"updatedAt,omitempty"`
 	VersionId           string      `json:"versionId,omitempty"`
 }
-
-type CmsBlockCollection struct {
-	EntityCollection
-
-	Data []CmsBlock `json:"data"`
-}

@@ -14,9 +14,3 @@ type AppTranslation struct {
 	PrivacyPolicyExtensions string      `json:"privacyPolicyExtensions,omitempty"`
 	UpdatedAt               time.Time   `json:"updatedAt,omitempty"`
 }
-
-type AppTranslationCollection struct {
-	EntityCollection
-
-	Data []AppTranslation `json:"data"`
-}

@@ -7,9 +7,3 @@ type ProductOption struct {
 	ProductId        string               `json:"productId,omitempty"`
 	ProductVersionId string               `json:"productVersionId,omitempty"`
 }
-
-type ProductOptionCollection struct {
-	EntityCollection
-
-	Data []ProductOption `json:"data"`
-}

@@ -6,9 +6,3 @@ type IntegrationRole struct {
 	IntegrationId string       `json:"integrationId,omitempty"`
 	Role          *AclRole     `json:"role,omitempty"`
 }
-
-type IntegrationRoleCollection struct {
-	EntityCollection
-
-	Data []IntegrationRole `json:"data"`
-}

@@ -13,9 +13,3 @@ type CmsPageTranslation struct {
 	Name             string      `json:"name,omitempty"`
 	UpdatedAt        time.Time   `json:"updatedAt,omitempty"`
 }
-
-type CmsPageTranslationCollection struct {
-	EntityCollection
-
-	Data []CmsPageTranslation `json:"data"`
-}

@@ -32,9 +32,3 @@ type Plugin struct {
 	UpgradeVersion    string              `json:"upgradeVersion,omitempty"`
 	Version           string              `json:"version,omitempty"`
 }
-
-type PluginCollection struct {
-	EntityCollection
-
-	Data []Plugin `json:"data"`
-}
