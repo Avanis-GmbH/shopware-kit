@@ -13,9 +13,3 @@ type PromotionSetgroup struct {
 	UpdatedAt     time.Time  `json:"updatedAt,omitempty"`
 	Value         float64    `json:"value,omitempty"`
 }
-
-type PromotionSetgroupCollection struct {
-	EntityCollection
-
-	Data []PromotionSetgroup `json:"data"`
-}

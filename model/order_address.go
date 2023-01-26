@@ -31,9 +31,3 @@ type OrderAddress struct {
 	VersionId              string          `json:"versionId,omitempty"`
 	Zipcode                string          `json:"zipcode,omitempty"`
 }
-
-type OrderAddressCollection struct {
-	EntityCollection
-
-	Data []OrderAddress `json:"data"`
-}

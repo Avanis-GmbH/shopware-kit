@@ -16,9 +16,3 @@ type CustomerGroupTranslation struct {
 	RegistrationTitle                   string         `json:"registrationTitle,omitempty"`
 	UpdatedAt                           time.Time      `json:"updatedAt,omitempty"`
 }
-
-type CustomerGroupTranslationCollection struct {
-	EntityCollection
-
-	Data []CustomerGroupTranslation `json:"data"`
-}

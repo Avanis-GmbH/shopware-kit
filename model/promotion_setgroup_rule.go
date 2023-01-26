@@ -6,9 +6,3 @@ type PromotionSetgroupRule struct {
 	Setgroup   *PromotionSetgroup `json:"setgroup,omitempty"`
 	SetgroupId string             `json:"setgroupId,omitempty"`
 }
-
-type PromotionSetgroupRuleCollection struct {
-	EntityCollection
-
-	Data []PromotionSetgroupRule `json:"data"`
-}

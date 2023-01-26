@@ -19,9 +19,3 @@ type MailTemplate struct {
 	Translations       []MailTemplateTranslation `json:"translations,omitempty"`
 	UpdatedAt          time.Time                 `json:"updatedAt,omitempty"`
 }
-
-type MailTemplateCollection struct {
-	EntityCollection
-
-	Data []MailTemplate `json:"data"`
-}

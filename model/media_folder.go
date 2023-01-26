@@ -19,9 +19,3 @@ type MediaFolder struct {
 	UpdatedAt              time.Time                 `json:"updatedAt,omitempty"`
 	UseParentConfiguration bool                      `json:"useParentConfiguration,omitempty"`
 }
-
-type MediaFolderCollection struct {
-	EntityCollection
-
-	Data []MediaFolder `json:"data"`
-}

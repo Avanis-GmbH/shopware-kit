@@ -50,9 +50,3 @@ type Order struct {
 	UpdatedById             string             `json:"updatedById,omitempty"`
 	VersionId               string             `json:"versionId,omitempty"`
 }
-
-type OrderCollection struct {
-	EntityCollection
-
-	Data []Order `json:"data"`
-}

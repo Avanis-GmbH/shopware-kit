@@ -20,9 +20,3 @@ type PropertyGroupOption struct {
 	Translations                []PropertyGroupOptionTranslation `json:"translations,omitempty"`
 	UpdatedAt                   time.Time                        `json:"updatedAt,omitempty"`
 }
-
-type PropertyGroupOptionCollection struct {
-	EntityCollection
-
-	Data []PropertyGroupOption `json:"data"`
-}

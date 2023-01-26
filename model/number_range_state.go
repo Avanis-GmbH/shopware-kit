@@ -10,9 +10,3 @@ type NumberRangeState struct {
 	NumberRangeId string       `json:"numberRangeId,omitempty"`
 	UpdatedAt     time.Time    `json:"updatedAt,omitempty"`
 }
-
-type NumberRangeStateCollection struct {
-	EntityCollection
-
-	Data []NumberRangeState `json:"data"`
-}

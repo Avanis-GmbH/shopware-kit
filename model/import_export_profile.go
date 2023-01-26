@@ -21,9 +21,3 @@ type ImportExportProfile struct {
 	UpdateBy         interface{}                      `json:"updateBy,omitempty"`
 	UpdatedAt        time.Time                        `json:"updatedAt,omitempty"`
 }
-
-type ImportExportProfileCollection struct {
-	EntityCollection
-
-	Data []ImportExportProfile `json:"data"`
-}

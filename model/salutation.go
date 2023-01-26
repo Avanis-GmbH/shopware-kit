@@ -18,9 +18,3 @@ type Salutation struct {
 	Translations         []SalutationTranslation `json:"translations,omitempty"`
 	UpdatedAt            time.Time               `json:"updatedAt,omitempty"`
 }
-
-type SalutationCollection struct {
-	EntityCollection
-
-	Data []Salutation `json:"data"`
-}

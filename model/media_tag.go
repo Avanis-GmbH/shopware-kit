@@ -6,9 +6,3 @@ type MediaTag struct {
 	Tag     *Tag   `json:"tag,omitempty"`
 	TagId   string `json:"tagId,omitempty"`
 }
-
-type MediaTagCollection struct {
-	EntityCollection
-
-	Data []MediaTag `json:"data"`
-}

@@ -14,9 +14,3 @@ type PropertyGroupTranslation struct {
 	PropertyGroupId string         `json:"propertyGroupId,omitempty"`
 	UpdatedAt       time.Time      `json:"updatedAt,omitempty"`
 }
-
-type PropertyGroupTranslationCollection struct {
-	EntityCollection
-
-	Data []PropertyGroupTranslation `json:"data"`
-}

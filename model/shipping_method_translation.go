@@ -14,9 +14,3 @@ type ShippingMethodTranslation struct {
 	TrackingUrl      string          `json:"trackingUrl,omitempty"`
 	UpdatedAt        time.Time       `json:"updatedAt,omitempty"`
 }
-
-type ShippingMethodTranslationCollection struct {
-	EntityCollection
-
-	Data []ShippingMethodTranslation `json:"data"`
-}

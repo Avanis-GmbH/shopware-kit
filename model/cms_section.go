@@ -24,9 +24,3 @@ type CmsSection struct {
 	UpdatedAt           time.Time   `json:"updatedAt,omitempty"`
 	Position            float64     `json:"position,omitempty"`
 }
-
-type CmsSectionCollection struct {
-	EntityCollection
-
-	Data []CmsSection `json:"data"`
-}

@@ -17,9 +17,3 @@ type MailHeaderFooter struct {
 	Translations  []MailHeaderFooterTranslation `json:"translations,omitempty"`
 	UpdatedAt     time.Time                     `json:"updatedAt,omitempty"`
 }
-
-type MailHeaderFooterCollection struct {
-	EntityCollection
-
-	Data []MailHeaderFooter `json:"data"`
-}

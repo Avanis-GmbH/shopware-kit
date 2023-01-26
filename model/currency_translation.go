@@ -13,9 +13,3 @@ type CurrencyTranslation struct {
 	ShortName    string      `json:"shortName,omitempty"`
 	UpdatedAt    time.Time   `json:"updatedAt,omitempty"`
 }
-
-type CurrencyTranslationCollection struct {
-	EntityCollection
-
-	Data []CurrencyTranslation `json:"data"`
-}

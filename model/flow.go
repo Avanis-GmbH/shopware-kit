@@ -16,9 +16,3 @@ type Flow struct {
 	Sequences    []FlowSequence `json:"sequences,omitempty"`
 	UpdatedAt    time.Time      `json:"updatedAt,omitempty"`
 }
-
-type FlowCollection struct {
-	EntityCollection
-
-	Data []Flow `json:"data"`
-}

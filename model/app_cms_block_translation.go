@@ -11,9 +11,3 @@ type AppCmsBlockTranslation struct {
 	LanguageId    string       `json:"languageId,omitempty"`
 	UpdatedAt     time.Time    `json:"updatedAt,omitempty"`
 }
-
-type AppCmsBlockTranslationCollection struct {
-	EntityCollection
-
-	Data []AppCmsBlockTranslation `json:"data"`
-}

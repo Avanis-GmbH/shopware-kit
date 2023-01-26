@@ -11,9 +11,3 @@ type SystemConfig struct {
 	SalesChannelId     string        `json:"salesChannelId,omitempty"`
 	UpdatedAt          time.Time     `json:"updatedAt,omitempty"`
 }
-
-type SystemConfigCollection struct {
-	EntityCollection
-
-	Data []SystemConfig `json:"data"`
-}

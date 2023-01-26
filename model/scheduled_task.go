@@ -14,9 +14,3 @@ type ScheduledTask struct {
 	Status             string        `json:"status,omitempty"`
 	UpdatedAt          time.Time     `json:"updatedAt,omitempty"`
 }
-
-type ScheduledTaskCollection struct {
-	EntityCollection
-
-	Data []ScheduledTask `json:"data"`
-}

@@ -13,9 +13,3 @@ type NumberRangeTranslation struct {
 	NumberRangeId string       `json:"numberRangeId,omitempty"`
 	UpdatedAt     time.Time    `json:"updatedAt,omitempty"`
 }
-
-type NumberRangeTranslationCollection struct {
-	EntityCollection
-
-	Data []NumberRangeTranslation `json:"data"`
-}

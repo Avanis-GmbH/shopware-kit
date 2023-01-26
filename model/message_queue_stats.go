@@ -9,9 +9,3 @@ type MessageQueueStats struct {
 	Size      float64   `json:"size,omitempty"`
 	UpdatedAt time.Time `json:"updatedAt,omitempty"`
 }
-
-type MessageQueueStatsCollection struct {
-	EntityCollection
-
-	Data []MessageQueueStats `json:"data"`
-}

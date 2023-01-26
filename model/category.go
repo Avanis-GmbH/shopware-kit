@@ -52,9 +52,3 @@ type Category struct {
 	VersionId               string                `json:"versionId,omitempty"`
 	Visible                 bool                  `json:"visible,omitempty"`
 }
-
-type CategoryCollection struct {
-	EntityCollection
-
-	Data []Category `json:"data"`
-}

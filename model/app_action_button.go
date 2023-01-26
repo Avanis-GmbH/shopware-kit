@@ -17,9 +17,3 @@ type AppActionButton struct {
 	Url          string                       `json:"url,omitempty"`
 	View         string                       `json:"view,omitempty"`
 }
-
-type AppActionButtonCollection struct {
-	EntityCollection
-
-	Data []AppActionButton `json:"data"`
-}

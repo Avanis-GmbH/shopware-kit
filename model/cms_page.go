@@ -23,9 +23,3 @@ type CmsPage struct {
 	UpdatedAt         time.Time            `json:"updatedAt,omitempty"`
 	VersionId         string               `json:"versionId,omitempty"`
 }
-
-type CmsPageCollection struct {
-	EntityCollection
-
-	Data []CmsPage `json:"data"`
-}

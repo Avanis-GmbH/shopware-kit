@@ -6,9 +6,3 @@ type SalesChannelCurrency struct {
 	SalesChannel   *SalesChannel `json:"salesChannel,omitempty"`
 	SalesChannelId string        `json:"salesChannelId,omitempty"`
 }
-
-type SalesChannelCurrencyCollection struct {
-	EntityCollection
-
-	Data []SalesChannelCurrency `json:"data"`
-}

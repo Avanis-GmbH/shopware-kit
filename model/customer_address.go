@@ -27,9 +27,3 @@ type CustomerAddress struct {
 	UpdatedAt              time.Time     `json:"updatedAt,omitempty"`
 	Zipcode                string        `json:"zipcode,omitempty"`
 }
-
-type CustomerAddressCollection struct {
-	EntityCollection
-
-	Data []CustomerAddress `json:"data"`
-}

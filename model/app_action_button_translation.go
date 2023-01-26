@@ -11,9 +11,3 @@ type AppActionButtonTranslation struct {
 	LanguageId        string           `json:"languageId,omitempty"`
 	UpdatedAt         time.Time        `json:"updatedAt,omitempty"`
 }
-
-type AppActionButtonTranslationCollection struct {
-	EntityCollection
-
-	Data []AppActionButtonTranslation `json:"data"`
-}

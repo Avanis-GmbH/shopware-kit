@@ -13,9 +13,3 @@ type ImportExportFile struct {
 	Size         float64          `json:"size,omitempty"`
 	UpdatedAt    time.Time        `json:"updatedAt,omitempty"`
 }
-
-type ImportExportFileCollection struct {
-	EntityCollection
-
-	Data []ImportExportFile `json:"data"`
-}

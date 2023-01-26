@@ -11,9 +11,3 @@ type ProductCrossSellingTranslation struct {
 	ProductCrossSellingId string               `json:"productCrossSellingId,omitempty"`
 	UpdatedAt             time.Time            `json:"updatedAt,omitempty"`
 }
-
-type ProductCrossSellingTranslationCollection struct {
-	EntityCollection
-
-	Data []ProductCrossSellingTranslation `json:"data"`
-}

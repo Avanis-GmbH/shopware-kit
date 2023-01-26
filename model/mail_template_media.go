@@ -9,9 +9,3 @@ type MailTemplateMedia struct {
 	MediaId        string        `json:"mediaId,omitempty"`
 	Position       float64       `json:"position,omitempty"`
 }
-
-type MailTemplateMediaCollection struct {
-	EntityCollection
-
-	Data []MailTemplateMedia `json:"data"`
-}

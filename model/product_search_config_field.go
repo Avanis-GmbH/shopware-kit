@@ -15,9 +15,3 @@ type ProductSearchConfigField struct {
 	Tokenize       bool                 `json:"tokenize,omitempty"`
 	UpdatedAt      time.Time            `json:"updatedAt,omitempty"`
 }
-
-type ProductSearchConfigFieldCollection struct {
-	EntityCollection
-
-	Data []ProductSearchConfigField `json:"data"`
-}

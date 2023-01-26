@@ -11,9 +11,3 @@ type PromotionIndividualCode struct {
 	PromotionId string      `json:"promotionId,omitempty"`
 	Code        string      `json:"code,omitempty"`
 }
-
-type PromotionIndividualCodeCollection struct {
-	EntityCollection
-
-	Data []PromotionIndividualCode `json:"data"`
-}

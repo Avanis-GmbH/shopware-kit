@@ -16,9 +16,3 @@ type RuleCondition struct {
 	UpdatedAt    time.Time       `json:"updatedAt,omitempty"`
 	Value        interface{}     `json:"value,omitempty"`
 }
-
-type RuleConditionCollection struct {
-	EntityCollection
-
-	Data []RuleCondition `json:"data"`
-}

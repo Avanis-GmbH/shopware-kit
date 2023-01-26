@@ -13,9 +13,3 @@ type CustomerWishlist struct {
 	SalesChannelId string                    `json:"salesChannelId,omitempty"`
 	UpdatedAt      time.Time                 `json:"updatedAt,omitempty"`
 }
-
-type CustomerWishlistCollection struct {
-	EntityCollection
-
-	Data []CustomerWishlist `json:"data"`
-}

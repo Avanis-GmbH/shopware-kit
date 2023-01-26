@@ -32,9 +32,3 @@ type PaymentMethod struct {
 	Translations                   []PaymentMethodTranslation `json:"translations,omitempty"`
 	UpdatedAt                      time.Time                  `json:"updatedAt,omitempty"`
 }
-
-type PaymentMethodCollection struct {
-	EntityCollection
-
-	Data []PaymentMethod `json:"data"`
-}

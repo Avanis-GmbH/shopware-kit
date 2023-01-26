@@ -36,9 +36,3 @@ type Promotion struct {
 	ValidFrom                 time.Time                 `json:"validFrom,omitempty"`
 	ValidUntil                time.Time                 `json:"validUntil,omitempty"`
 }
-
-type PromotionCollection struct {
-	EntityCollection
-
-	Data []Promotion `json:"data"`
-}

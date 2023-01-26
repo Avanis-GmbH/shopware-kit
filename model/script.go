@@ -13,9 +13,3 @@ type Script struct {
 	Script    string    `json:"script,omitempty"`
 	UpdatedAt time.Time `json:"updatedAt,omitempty"`
 }
-
-type ScriptCollection struct {
-	EntityCollection
-
-	Data []Script `json:"data"`
-}

@@ -13,9 +13,3 @@ type ProductFeatureSet struct {
 	Translations []ProductFeatureSetTranslation `json:"translations,omitempty"`
 	UpdatedAt    time.Time                      `json:"updatedAt,omitempty"`
 }
-
-type ProductFeatureSetCollection struct {
-	EntityCollection
-
-	Data []ProductFeatureSet `json:"data"`
-}

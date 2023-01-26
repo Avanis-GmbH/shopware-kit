@@ -39,9 +39,3 @@ type App struct {
 	Version                 string             `json:"version,omitempty"`
 	Webhooks                []Webhook          `json:"webhooks,omitempty"`
 }
-
-type AppCollection struct {
-	EntityCollection
-
-	Data []App `json:"data"`
-}

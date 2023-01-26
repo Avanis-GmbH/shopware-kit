@@ -13,9 +13,3 @@ type Unit struct {
 	Translations []UnitTranslation `json:"translations,omitempty"`
 	UpdatedAt    time.Time         `json:"updatedAt,omitempty"`
 }
-
-type UnitCollection struct {
-	EntityCollection
-
-	Data []Unit `json:"data"`
-}

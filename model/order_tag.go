@@ -7,9 +7,3 @@ type OrderTag struct {
 	Tag            *Tag   `json:"tag,omitempty"`
 	TagId          string `json:"tagId,omitempty"`
 }
-
-type OrderTagCollection struct {
-	EntityCollection
-
-	Data []OrderTag `json:"data"`
-}

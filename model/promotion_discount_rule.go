@@ -6,9 +6,3 @@ type PromotionDiscountRule struct {
 	Rule       *Rule              `json:"rule,omitempty"`
 	RuleId     string             `json:"ruleId,omitempty"`
 }
-
-type PromotionDiscountRuleCollection struct {
-	EntityCollection
-
-	Data []PromotionDiscountRule `json:"data"`
-}

@@ -12,9 +12,3 @@ type PromotionTranslation struct {
 	PromotionId  string      `json:"promotionId,omitempty"`
 	UpdatedAt    time.Time   `json:"updatedAt,omitempty"`
 }
-
-type PromotionTranslationCollection struct {
-	EntityCollection
-
-	Data []PromotionTranslation `json:"data"`
-}

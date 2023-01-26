@@ -15,9 +15,3 @@ type ProductSorting struct {
 	Translations []ProductSortingTranslation `json:"translations,omitempty"`
 	UpdatedAt    time.Time                   `json:"updatedAt,omitempty"`
 }
-
-type ProductSortingCollection struct {
-	EntityCollection
-
-	Data []ProductSorting `json:"data"`
-}

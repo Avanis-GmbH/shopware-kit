@@ -15,9 +15,3 @@ type Locale struct {
 	UpdatedAt    time.Time           `json:"updatedAt,omitempty"`
 	Users        []User              `json:"users,omitempty"`
 }
-
-type LocaleCollection struct {
-	EntityCollection
-
-	Data []Locale `json:"data"`
-}
