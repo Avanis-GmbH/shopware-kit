@@ -1,0 +1,27 @@
+package model
+
+import "time"
+
+type DocumentBaseConfig struct {
+	Config         interface{}                      `json:"config,omitempty"`
+	CreatedAt      time.Time                        `json:"createdAt,omitempty"`
+	CustomFields   interface{}                      `json:"customFields,omitempty"`
+	DocumentNumber string                           `json:"documentNumber,omitempty"`
+	DocumentType   *DocumentType                    `json:"documentType,omitempty"`
+	DocumentTypeId string                           `json:"documentTypeId,omitempty"`
+	FilenamePrefix string                           `json:"filenamePrefix,omitempty"`
+	FilenameSuffix string                           `json:"filenameSuffix,omitempty"`
+	Global         bool                             `json:"global,omitempty"`
+	Id             string                           `json:"id,omitempty"`
+	Logo           *Media                           `json:"logo,omitempty"`
+	LogoId         string                           `json:"logoId,omitempty"`
+	Name           string                           `json:"name,omitempty"`
+	SalesChannels  []DocumentBaseConfigSalesChannel `json:"salesChannels,omitempty"`
+	UpdatedAt      time.Time                        `json:"updatedAt,omitempty"`
+}
+
+type DocumentBaseConfigCollection struct {
+	EntityCollection
+
+	Data []DocumentBaseConfig `json:"data"`
+}

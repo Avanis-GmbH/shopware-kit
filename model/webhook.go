@@ -1,0 +1,22 @@
+package model
+
+import "time"
+
+type Webhook struct {
+	Active     bool      `json:"active,omitempty"`
+	App        *App      `json:"app,omitempty"`
+	AppId      string    `json:"appId,omitempty"`
+	CreatedAt  time.Time `json:"createdAt,omitempty"`
+	ErrorCount float64   `json:"errorCount,omitempty"`
+	EventName  string    `json:"eventName,omitempty"`
+	Id         string    `json:"id,omitempty"`
+	Name       string    `json:"name,omitempty"`
+	UpdatedAt  time.Time `json:"updatedAt,omitempty"`
+	Url        string    `json:"url,omitempty"`
+}
+
+type WebhookCollection struct {
+	EntityCollection
+
+	Data []Webhook `json:"data"`
+}
