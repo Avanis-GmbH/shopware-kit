@@ -1,37 +1,31 @@
 package com
 
 import (
-	"fmt"
 	"net/url"
-	"reflect"
+
+	"github.com/Avanis-GmbH/SUC/model"
 )
 
-func (c *Client) Search(ctx ApiContext, criteria Criteria, v interface{}) ([]*interface{}, error) {
+func (c *Client) Search(ctx ApiContext, criteria Criteria, v model.Collection) error {
 	url, err := url.JoinPath("/api/search", c.getSegment(v))
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	req, err := c.NewRequest(ctx, "POST", url, criteria)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
-	s := reflect.MakeSlice(reflect.SliceOf(reflect.PtrTo(reflect.TypeOf(v))), 0, 0).Interface()
-	data, ok := s.([]*interface{})
-	if !ok {
-		return nil, fmt.Errorf("failed to convert interface to []*interface{}")
-	}
-
-	_, err = c.Do(ctx.Context, req, data)
+	_, err = c.Do(ctx.Context, req, v)
 	if err != nil {
-		return data, err
+		return err
 	}
 
-	return data, nil
+	return nil
 }
 
-func (c *Client) SearchAll(ctx ApiContext, criteria Criteria, v interface{}) ([]*interface{}, error) {
+func (c *Client) SearchAll(ctx ApiContext, criteria Criteria, v model.Collection) error {
 	if criteria.Limit == 0 {
 		criteria.Limit = 50
 	}
@@ -40,23 +34,25 @@ func (c *Client) SearchAll(ctx ApiContext, criteria Criteria, v interface{}) ([]
 		criteria.Page = 1
 	}
 
-	result := make([]*interface{}, 0)
+	result := make([]interface{}, 0)
 	for {
 		criteria.Page++
 
-		data, err := c.Search(ctx, criteria, v)
+		err := c.Search(ctx, criteria, v)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
-		if len(data) == 0 {
+		if len(v.GetData()) == 0 {
 			break
 		}
 
-		result = append(result, data...)
+		result = append(result, v.GetData()...)
 	}
 
-	return result, nil
+	v.SetTotal(int64(len(result)))
+	v.SetData(result)
+	return nil
 }
 
 func (c *Client) SearchIds(ctx ApiContext, criteria Criteria, v interface{}) (*SearchIdsResponse, error) {

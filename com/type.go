@@ -13,6 +13,11 @@ func (c *Client) getSegment(v interface{}) string {
 		v = reflect.ValueOf(v).Elem().Interface()
 	}
 
+	// When v is a type that extends a EntityCollection get the data type
+	if ec, ok := v.(model.EntityCollection); ok {
+		v = ec.Data
+	}
+
 	switch v.(type) {
 	case model.AclRole:
 		return "acl-role"
