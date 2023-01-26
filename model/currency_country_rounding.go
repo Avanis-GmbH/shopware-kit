@@ -13,3 +13,9 @@ type CurrencyCountryRounding struct {
 	TotalRounding interface{} `json:"totalRounding,omitempty"`
 	UpdatedAt     time.Time   `json:"updatedAt,omitempty"`
 }
+
+type CurrencyCountryRoundingCollection struct {
+	EntityCollection
+
+	Data []CurrencyCountryRounding `json:"data"`
+}

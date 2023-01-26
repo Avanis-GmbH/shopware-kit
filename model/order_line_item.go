@@ -37,3 +37,9 @@ type OrderLineItem struct {
 	UpdatedAt              time.Time               `json:"updatedAt,omitempty"`
 	VersionId              string                  `json:"versionId,omitempty"`
 }
+
+type OrderLineItemCollection struct {
+	EntityCollection
+
+	Data []OrderLineItem `json:"data"`
+}

@@ -10,3 +10,9 @@ type UserRecovery struct {
 	User      *User     `json:"user,omitempty"`
 	UserId    string    `json:"userId,omitempty"`
 }
+
+type UserRecoveryCollection struct {
+	EntityCollection
+
+	Data []UserRecovery `json:"data"`
+}

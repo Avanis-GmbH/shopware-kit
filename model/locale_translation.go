@@ -13,3 +13,9 @@ type LocaleTranslation struct {
 	CustomFields interface{} `json:"customFields,omitempty"`
 	CreatedAt    time.Time   `json:"createdAt,omitempty"`
 }
+
+type LocaleTranslationCollection struct {
+	EntityCollection
+
+	Data []LocaleTranslation `json:"data"`
+}

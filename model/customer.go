@@ -64,3 +64,9 @@ type Customer struct {
 	VatIds                    interface{}        `json:"vatIds,omitempty"`
 	Wishlists                 []CustomerWishlist `json:"wishlists,omitempty"`
 }
+
+type CustomerCollection struct {
+	EntityCollection
+
+	Data []Customer `json:"data"`
+}

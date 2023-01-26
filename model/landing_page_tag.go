@@ -7,3 +7,9 @@ type LandingPageTag struct {
 	Tag                  *Tag         `json:"tag,omitempty"`
 	TagId                string       `json:"tagId,omitempty"`
 }
+
+type LandingPageTagCollection struct {
+	EntityCollection
+
+	Data []LandingPageTag `json:"data"`
+}

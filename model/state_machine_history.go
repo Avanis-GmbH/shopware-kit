@@ -18,3 +18,9 @@ type StateMachineHistory struct {
 	User                  *User              `json:"user,omitempty"`
 	UserId                string             `json:"userId,omitempty"`
 }
+
+type StateMachineHistoryCollection struct {
+	EntityCollection
+
+	Data []StateMachineHistory `json:"data"`
+}

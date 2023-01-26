@@ -13,3 +13,9 @@ type CmsSlotTranslation struct {
 	LanguageId       string      `json:"languageId,omitempty"`
 	UpdatedAt        time.Time   `json:"updatedAt,omitempty"`
 }
+
+type CmsSlotTranslationCollection struct {
+	EntityCollection
+
+	Data []CmsSlotTranslation `json:"data"`
+}

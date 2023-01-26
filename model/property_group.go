@@ -18,3 +18,9 @@ type PropertyGroup struct {
 	UpdatedAt                  time.Time                  `json:"updatedAt,omitempty"`
 	VisibleOnProductDetailPage bool                       `json:"visibleOnProductDetailPage,omitempty"`
 }
+
+type PropertyGroupCollection struct {
+	EntityCollection
+
+	Data []PropertyGroup `json:"data"`
+}

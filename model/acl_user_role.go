@@ -10,3 +10,9 @@ type AclUserRole struct {
 	User      *User     `json:"user,omitempty"`
 	UserId    string    `json:"userId,omitempty"`
 }
+
+type AclUserRoleCollection struct {
+	EntityCollection
+
+	Data []AclUserRole `json:"data"`
+}

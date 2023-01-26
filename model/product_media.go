@@ -15,3 +15,9 @@ type ProductMedia struct {
 	UpdatedAt        time.Time   `json:"updatedAt,omitempty"`
 	VersionId        string      `json:"versionId,omitempty"`
 }
+
+type ProductMediaCollection struct {
+	EntityCollection
+
+	Data []ProductMedia `json:"data"`
+}

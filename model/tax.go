@@ -14,3 +14,9 @@ type Tax struct {
 	TaxRate         float64          `json:"taxRate,omitempty"`
 	UpdatedAt       time.Time        `json:"updatedAt,omitempty"`
 }
+
+type TaxCollection struct {
+	EntityCollection
+
+	Data []Tax `json:"data"`
+}

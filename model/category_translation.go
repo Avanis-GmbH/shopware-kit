@@ -23,3 +23,9 @@ type CategoryTranslation struct {
 	SlotConfig        interface{} `json:"slotConfig,omitempty"`
 	UpdatedAt         time.Time   `json:"updatedAt,omitempty"`
 }
+
+type CategoryTranslationCollection struct {
+	EntityCollection
+
+	Data []CategoryTranslation `json:"data"`
+}

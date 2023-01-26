@@ -23,3 +23,9 @@ type Document struct {
 	Static               bool          `json:"static,omitempty"`
 	UpdatedAt            time.Time     `json:"updatedAt,omitempty"`
 }
+
+type DocumentCollection struct {
+	EntityCollection
+
+	Data []Document `json:"data"`
+}

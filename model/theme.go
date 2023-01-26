@@ -25,3 +25,9 @@ type Theme struct {
 	Translations   []ThemeTranslation `json:"translations,omitempty"`
 	UpdatedAt      time.Time          `json:"updatedAt,omitempty"`
 }
+
+type ThemeCollection struct {
+	EntityCollection
+
+	Data []Theme `json:"data"`
+}

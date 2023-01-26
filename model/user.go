@@ -33,3 +33,9 @@ type User struct {
 	UpdatedOrders              []Order               `json:"updatedOrders,omitempty"`
 	Username                   string                `json:"username,omitempty"`
 }
+
+type UserCollection struct {
+	EntityCollection
+
+	Data []User `json:"data"`
+}

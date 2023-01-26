@@ -6,3 +6,9 @@ type MediaFolderConfigurationMediaThumbnailSize struct {
 	MediaThumbnailSize         *MediaThumbnailSize       `json:"mediaThumbnailSize,omitempty"`
 	MediaThumbnailSizeId       string                    `json:"mediaThumbnailSizeId,omitempty"`
 }
+
+type MediaFolderConfigurationMediaThumbnailSizeCollection struct {
+	EntityCollection
+
+	Data []MediaFolderConfigurationMediaThumbnailSize `json:"data"`
+}

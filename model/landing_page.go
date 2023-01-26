@@ -24,3 +24,9 @@ type LandingPage struct {
 	Url              string                   `json:"url,omitempty"`
 	VersionId        string                   `json:"versionId,omitempty"`
 }
+
+type LandingPageCollection struct {
+	EntityCollection
+
+	Data []LandingPage `json:"data"`
+}

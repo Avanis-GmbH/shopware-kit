@@ -84,3 +84,9 @@ type SalesChannel struct {
 	UpdatedAt                       time.Time                        `json:"updatedAt,omitempty"`
 	Wishlists                       []CustomerWishlist               `json:"wishlists,omitempty"`
 }
+
+type SalesChannelCollection struct {
+	EntityCollection
+
+	Data []SalesChannel `json:"data"`
+}

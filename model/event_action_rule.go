@@ -6,3 +6,9 @@ type EventActionRule struct {
 	Rule          *Rule        `json:"rule,omitempty"`
 	RuleId        string       `json:"ruleId,omitempty"`
 }
+
+type EventActionRuleCollection struct {
+	EntityCollection
+
+	Data []EventActionRule `json:"data"`
+}

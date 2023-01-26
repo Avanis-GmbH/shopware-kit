@@ -13,3 +13,9 @@ type ProductVisibility struct {
 	UpdatedAt        time.Time     `json:"updatedAt,omitempty"`
 	Visibility       float64       `json:"visibility,omitempty"`
 }
+
+type ProductVisibilityCollection struct {
+	EntityCollection
+
+	Data []ProductVisibility `json:"data"`
+}

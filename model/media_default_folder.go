@@ -11,3 +11,9 @@ type MediaDefaultFolder struct {
 	Id                string       `json:"id,omitempty"`
 	UpdatedAt         time.Time    `json:"updatedAt,omitempty"`
 }
+
+type MediaDefaultFolderCollection struct {
+	EntityCollection
+
+	Data []MediaDefaultFolder `json:"data"`
+}

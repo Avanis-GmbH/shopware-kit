@@ -24,3 +24,9 @@ type OrderCustomer struct {
 	VatIds         interface{} `json:"vatIds,omitempty"`
 	VersionId      string      `json:"versionId,omitempty"`
 }
+
+type OrderCustomerCollection struct {
+	EntityCollection
+
+	Data []OrderCustomer `json:"data"`
+}

@@ -9,3 +9,9 @@ type Version struct {
 	Name      string          `json:"name,omitempty"`
 	UpdatedAt time.Time       `json:"updatedAt,omitempty"`
 }
+
+type VersionCollection struct {
+	EntityCollection
+
+	Data []Version `json:"data"`
+}

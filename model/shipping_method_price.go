@@ -18,3 +18,9 @@ type ShippingMethodPrice struct {
 	ShippingMethodId  string          `json:"shippingMethodId,omitempty"`
 	UpdatedAt         time.Time       `json:"updatedAt,omitempty"`
 }
+
+type ShippingMethodPriceCollection struct {
+	EntityCollection
+
+	Data []ShippingMethodPrice `json:"data"`
+}

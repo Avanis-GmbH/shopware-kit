@@ -14,3 +14,9 @@ type ThemeTranslation struct {
 	ThemeId      string      `json:"themeId,omitempty"`
 	UpdatedAt    time.Time   `json:"updatedAt,omitempty"`
 }
+
+type ThemeTranslationCollection struct {
+	EntityCollection
+
+	Data []ThemeTranslation `json:"data"`
+}

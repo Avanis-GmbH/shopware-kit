@@ -12,3 +12,9 @@ type CountryStateTranslation struct {
 	Name           string        `json:"name,omitempty"`
 	UpdatedAt      time.Time     `json:"updatedAt,omitempty"`
 }
+
+type CountryStateTranslationCollection struct {
+	EntityCollection
+
+	Data []CountryStateTranslation `json:"data"`
+}

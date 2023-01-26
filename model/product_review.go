@@ -24,3 +24,9 @@ type ProductReview struct {
 	Title            string        `json:"title,omitempty"`
 	UpdatedAt        time.Time     `json:"updatedAt,omitempty"`
 }
+
+type ProductReviewCollection struct {
+	EntityCollection
+
+	Data []ProductReview `json:"data"`
+}

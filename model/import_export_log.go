@@ -23,3 +23,9 @@ type ImportExportLog struct {
 	UserId              string               `json:"userId,omitempty"`
 	Username            string               `json:"username,omitempty"`
 }
+
+type ImportExportLogCollection struct {
+	EntityCollection
+
+	Data []ImportExportLog `json:"data"`
+}

@@ -16,3 +16,9 @@ type Tag struct {
 	ShippingMethods      []ShippingMethod      `json:"shippingMethods,omitempty"`
 	UpdatedAt            time.Time             `json:"updatedAt,omitempty"`
 }
+
+type TagCollection struct {
+	EntityCollection
+
+	Data []Tag `json:"data"`
+}

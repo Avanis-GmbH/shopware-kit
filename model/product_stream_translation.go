@@ -13,3 +13,9 @@ type ProductStreamTranslation struct {
 	ProductStream   *ProductStream `json:"productStream,omitempty"`
 	Language        *Language      `json:"language,omitempty"`
 }
+
+type ProductStreamTranslationCollection struct {
+	EntityCollection
+
+	Data []ProductStreamTranslation `json:"data"`
+}

@@ -20,3 +20,9 @@ type PromotionDiscount struct {
 	UsageKey                string                    `json:"usageKey,omitempty"`
 	Value                   float64                   `json:"value,omitempty"`
 }
+
+type PromotionDiscountCollection struct {
+	EntityCollection
+
+	Data []PromotionDiscount `json:"data"`
+}

@@ -25,3 +25,9 @@ type NewsletterRecipient struct {
 	UpdatedAt      time.Time     `json:"updatedAt,omitempty"`
 	ZipCode        string        `json:"zipCode,omitempty"`
 }
+
+type NewsletterRecipientCollection struct {
+	EntityCollection
+
+	Data []NewsletterRecipient `json:"data"`
+}

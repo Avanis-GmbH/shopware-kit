@@ -21,3 +21,9 @@ type ProductTranslation struct {
 	SlotConfig           interface{} `json:"slotConfig,omitempty"`
 	UpdatedAt            time.Time   `json:"updatedAt,omitempty"`
 }
+
+type ProductTranslationCollection struct {
+	EntityCollection
+
+	Data []ProductTranslation `json:"data"`
+}

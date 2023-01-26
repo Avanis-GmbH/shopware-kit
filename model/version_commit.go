@@ -15,3 +15,9 @@ type VersionCommit struct {
 	Version       *Version            `json:"version,omitempty"`
 	VersionId     string              `json:"versionId,omitempty"`
 }
+
+type VersionCommitCollection struct {
+	EntityCollection
+
+	Data []VersionCommit `json:"data"`
+}

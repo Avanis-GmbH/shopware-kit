@@ -27,3 +27,9 @@ type Currency struct {
 	Translations                   []CurrencyTranslation     `json:"translations,omitempty"`
 	UpdatedAt                      time.Time                 `json:"updatedAt,omitempty"`
 }
+
+type CurrencyCollection struct {
+	EntityCollection
+
+	Data []Currency `json:"data"`
+}

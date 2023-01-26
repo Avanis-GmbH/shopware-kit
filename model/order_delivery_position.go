@@ -19,3 +19,9 @@ type OrderDeliveryPosition struct {
 	UpdatedAt              time.Time      `json:"updatedAt,omitempty"`
 	VersionId              string         `json:"versionId,omitempty"`
 }
+
+type OrderDeliveryPositionCollection struct {
+	EntityCollection
+
+	Data []OrderDeliveryPosition `json:"data"`
+}

@@ -12,3 +12,9 @@ type CustomerWishlistProduct struct {
 	Wishlist         *CustomerWishlist `json:"wishlist,omitempty"`
 	WishlistId       string            `json:"wishlistId,omitempty"`
 }
+
+type CustomerWishlistProductCollection struct {
+	EntityCollection
+
+	Data []CustomerWishlistProduct `json:"data"`
+}

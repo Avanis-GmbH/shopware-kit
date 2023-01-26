@@ -13,3 +13,9 @@ type Snippet struct {
 	UpdatedAt      time.Time   `json:"updatedAt,omitempty"`
 	Value          string      `json:"value,omitempty"`
 }
+
+type SnippetCollection struct {
+	EntityCollection
+
+	Data []Snippet `json:"data"`
+}

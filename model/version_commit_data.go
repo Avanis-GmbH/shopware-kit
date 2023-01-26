@@ -16,3 +16,9 @@ type VersionCommitData struct {
 	UserId          string         `json:"userId,omitempty"`
 	VersionCommitId string         `json:"versionCommitId,omitempty"`
 }
+
+type VersionCommitDataCollection struct {
+	EntityCollection
+
+	Data []VersionCommitData `json:"data"`
+}

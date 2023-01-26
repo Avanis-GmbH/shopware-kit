@@ -18,3 +18,9 @@ type LandingPageTranslation struct {
 	UpdatedAt            time.Time    `json:"updatedAt,omitempty"`
 	Url                  string       `json:"url,omitempty"`
 }
+
+type LandingPageTranslationCollection struct {
+	EntityCollection
+
+	Data []LandingPageTranslation `json:"data"`
+}

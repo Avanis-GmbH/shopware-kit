@@ -6,3 +6,9 @@ type ShippingMethodTag struct {
 	Tag              *Tag            `json:"tag,omitempty"`
 	TagId            string          `json:"tagId,omitempty"`
 }
+
+type ShippingMethodTagCollection struct {
+	EntityCollection
+
+	Data []ShippingMethodTag `json:"data"`
+}

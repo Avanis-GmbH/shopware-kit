@@ -12,3 +12,9 @@ type PromotionDiscountPrices struct {
 	PromotionDiscount *PromotionDiscount `json:"promotionDiscount,omitempty"`
 	UpdatedAt         time.Time          `json:"updatedAt,omitempty"`
 }
+
+type PromotionDiscountPricesCollection struct {
+	EntityCollection
+
+	Data []PromotionDiscountPrices `json:"data"`
+}

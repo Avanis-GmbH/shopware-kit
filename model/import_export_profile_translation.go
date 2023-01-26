@@ -11,3 +11,9 @@ type ImportExportProfileTranslation struct {
 	LanguageId            string               `json:"languageId,omitempty"`
 	UpdatedAt             time.Time            `json:"updatedAt,omitempty"`
 }
+
+type ImportExportProfileTranslationCollection struct {
+	EntityCollection
+
+	Data []ImportExportProfileTranslation `json:"data"`
+}

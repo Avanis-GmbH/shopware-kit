@@ -27,3 +27,9 @@ type Rule struct {
 	ShippingMethods                 []ShippingMethod      `json:"shippingMethods,omitempty"`
 	UpdatedAt                       time.Time             `json:"updatedAt,omitempty"`
 }
+
+type RuleCollection struct {
+	EntityCollection
+
+	Data []Rule `json:"data"`
+}

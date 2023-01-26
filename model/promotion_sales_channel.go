@@ -12,3 +12,9 @@ type PromotionSalesChannel struct {
 	SalesChannelId string        `json:"salesChannelId,omitempty"`
 	UpdatedAt      time.Time     `json:"updatedAt,omitempty"`
 }
+
+type PromotionSalesChannelCollection struct {
+	EntityCollection
+
+	Data []PromotionSalesChannel `json:"data"`
+}

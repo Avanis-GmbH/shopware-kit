@@ -17,3 +17,9 @@ type ProductPrice struct {
 	QuantityEnd      float64     `json:"quantityEnd,omitempty"`
 	Rule             *Rule       `json:"rule,omitempty"`
 }
+
+type ProductPriceCollection struct {
+	EntityCollection
+
+	Data []ProductPrice `json:"data"`
+}

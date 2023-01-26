@@ -6,3 +6,9 @@ type SalesChannelCountry struct {
 	SalesChannel   *SalesChannel `json:"salesChannel,omitempty"`
 	SalesChannelId string        `json:"salesChannelId,omitempty"`
 }
+
+type SalesChannelCountryCollection struct {
+	EntityCollection
+
+	Data []SalesChannelCountry `json:"data"`
+}

@@ -48,3 +48,9 @@ type Media struct {
 	User                        *User                        `json:"user,omitempty"`
 	UserId                      string                       `json:"userId,omitempty"`
 }
+
+type MediaCollection struct {
+	EntityCollection
+
+	Data []Media `json:"data"`
+}

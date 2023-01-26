@@ -15,3 +15,9 @@ type ProductSearchKeyword struct {
 	UpdatedAt        time.Time `json:"updatedAt,omitempty"`
 	VersionId        string    `json:"versionId,omitempty"`
 }
+
+type ProductSearchKeywordCollection struct {
+	EntityCollection
+
+	Data []ProductSearchKeyword `json:"data"`
+}

@@ -11,3 +11,9 @@ type ProductSortingTranslation struct {
 	ProductSortingId string          `json:"productSortingId,omitempty"`
 	UpdatedAt        time.Time       `json:"updatedAt,omitempty"`
 }
+
+type ProductSortingTranslationCollection struct {
+	EntityCollection
+
+	Data []ProductSortingTranslation `json:"data"`
+}

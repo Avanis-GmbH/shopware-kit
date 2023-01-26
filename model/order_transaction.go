@@ -17,3 +17,9 @@ type OrderTransaction struct {
 	UpdatedAt         time.Time          `json:"updatedAt,omitempty"`
 	VersionId         string             `json:"versionId,omitempty"`
 }
+
+type OrderTransactionCollection struct {
+	EntityCollection
+
+	Data []OrderTransaction `json:"data"`
+}

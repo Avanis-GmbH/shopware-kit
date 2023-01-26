@@ -16,3 +16,9 @@ type AppCmsBlock struct {
 	Translations []AppCmsBlockTranslation `json:"translations,omitempty"`
 	UpdatedAt    time.Time                `json:"updatedAt,omitempty"`
 }
+
+type AppCmsBlockCollection struct {
+	EntityCollection
+
+	Data []AppCmsBlock `json:"data"`
+}

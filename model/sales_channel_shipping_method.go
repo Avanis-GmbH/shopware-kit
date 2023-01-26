@@ -6,3 +6,9 @@ type SalesChannelShippingMethod struct {
 	ShippingMethod   *ShippingMethod `json:"shippingMethod,omitempty"`
 	ShippingMethodId string          `json:"shippingMethodId,omitempty"`
 }
+
+type SalesChannelShippingMethodCollection struct {
+	EntityCollection
+
+	Data []SalesChannelShippingMethod `json:"data"`
+}

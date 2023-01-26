@@ -28,3 +28,9 @@ type ShippingMethod struct {
 	Translations                   []ShippingMethodTranslation `json:"translations,omitempty"`
 	UpdatedAt                      time.Time                   `json:"updatedAt,omitempty"`
 }
+
+type ShippingMethodCollection struct {
+	EntityCollection
+
+	Data []ShippingMethod `json:"data"`
+}

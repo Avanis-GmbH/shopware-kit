@@ -15,3 +15,9 @@ type EventAction struct {
 	Title         string         `json:"title,omitempty"`
 	UpdatedAt     time.Time      `json:"updatedAt,omitempty"`
 }
+
+type EventActionCollection struct {
+	EntityCollection
+
+	Data []EventAction `json:"data"`
+}

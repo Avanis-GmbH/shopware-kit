@@ -20,3 +20,9 @@ type CustomerGroup struct {
 	Translations                        []CustomerGroupTranslation `json:"translations,omitempty"`
 	UpdatedAt                           time.Time                  `json:"updatedAt,omitempty"`
 }
+
+type CustomerGroupCollection struct {
+	EntityCollection
+
+	Data []CustomerGroup `json:"data"`
+}

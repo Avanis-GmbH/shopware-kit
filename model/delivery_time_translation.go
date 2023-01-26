@@ -12,3 +12,9 @@ type DeliveryTimeTranslation struct {
 	Name           string        `json:"name,omitempty"`
 	UpdatedAt      time.Time     `json:"updatedAt,omitempty"`
 }
+
+type DeliveryTimeTranslationCollection struct {
+	EntityCollection
+
+	Data []DeliveryTimeTranslation `json:"data"`
+}

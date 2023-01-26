@@ -19,3 +19,9 @@ type NumberRange struct {
 	TypeId                   string                    `json:"typeId,omitempty"`
 	UpdatedAt                time.Time                 `json:"updatedAt,omitempty"`
 }
+
+type NumberRangeCollection struct {
+	EntityCollection
+
+	Data []NumberRange `json:"data"`
+}

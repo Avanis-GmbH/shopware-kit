@@ -19,3 +19,9 @@ type ProductStreamFilter struct {
 	UpdatedAt       time.Time             `json:"updatedAt,omitempty"`
 	Value           string                `json:"value,omitempty"`
 }
+
+type ProductStreamFilterCollection struct {
+	EntityCollection
+
+	Data []ProductStreamFilter `json:"data"`
+}

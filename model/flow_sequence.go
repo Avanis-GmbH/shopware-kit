@@ -20,3 +20,9 @@ type FlowSequence struct {
 	TrueCase     bool           `json:"trueCase,omitempty"`
 	UpdatedAt    time.Time      `json:"updatedAt,omitempty"`
 }
+
+type FlowSequenceCollection struct {
+	EntityCollection
+
+	Data []FlowSequence `json:"data"`
+}

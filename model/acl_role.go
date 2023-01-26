@@ -14,3 +14,9 @@ type AclRole struct {
 	UpdatedAt    time.Time     `json:"updatedAt,omitempty"`
 	Users        []User        `json:"users,omitempty"`
 }
+
+type AclRoleCollection struct {
+	EntityCollection
+
+	Data []AclRole `json:"data"`
+}

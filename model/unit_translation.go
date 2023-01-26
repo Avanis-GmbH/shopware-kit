@@ -13,3 +13,9 @@ type UnitTranslation struct {
 	UnitId       string      `json:"unitId,omitempty"`
 	UpdatedAt    time.Time   `json:"updatedAt,omitempty"`
 }
+
+type UnitTranslationCollection struct {
+	EntityCollection
+
+	Data []UnitTranslation `json:"data"`
+}

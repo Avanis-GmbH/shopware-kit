@@ -16,3 +16,9 @@ type MediaFolderConfiguration struct {
 	ThumbnailQuality      float64              `json:"thumbnailQuality,omitempty"`
 	UpdatedAt             time.Time            `json:"updatedAt,omitempty"`
 }
+
+type MediaFolderConfigurationCollection struct {
+	EntityCollection
+
+	Data []MediaFolderConfiguration `json:"data"`
+}

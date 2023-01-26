@@ -14,3 +14,9 @@ type Webhook struct {
 	UpdatedAt  time.Time `json:"updatedAt,omitempty"`
 	Url        string    `json:"url,omitempty"`
 }
+
+type WebhookCollection struct {
+	EntityCollection
+
+	Data []Webhook `json:"data"`
+}

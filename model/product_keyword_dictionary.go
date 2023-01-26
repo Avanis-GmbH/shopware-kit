@@ -7,3 +7,9 @@ type ProductKeywordDictionary struct {
 	LanguageId string    `json:"languageId,omitempty"`
 	Reversed   string    `json:"reversed,omitempty"`
 }
+
+type ProductKeywordDictionaryCollection struct {
+	EntityCollection
+
+	Data []ProductKeywordDictionary `json:"data"`
+}

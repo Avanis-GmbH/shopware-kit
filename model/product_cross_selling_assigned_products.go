@@ -13,3 +13,9 @@ type ProductCrossSellingAssignedProducts struct {
 	ProductVersionId string               `json:"productVersionId,omitempty"`
 	UpdatedAt        time.Time            `json:"updatedAt,omitempty"`
 }
+
+type ProductCrossSellingAssignedProductsCollection struct {
+	EntityCollection
+
+	Data []ProductCrossSellingAssignedProducts `json:"data"`
+}

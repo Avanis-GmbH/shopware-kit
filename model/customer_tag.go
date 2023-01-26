@@ -6,3 +6,9 @@ type CustomerTag struct {
 	Tag        *Tag      `json:"tag,omitempty"`
 	TagId      string    `json:"tagId,omitempty"`
 }
+
+type CustomerTagCollection struct {
+	EntityCollection
+
+	Data []CustomerTag `json:"data"`
+}

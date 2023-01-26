@@ -7,3 +7,9 @@ type CategoryTag struct {
 	Tag               *Tag      `json:"tag,omitempty"`
 	TagId             string    `json:"tagId,omitempty"`
 }
+
+type CategoryTagCollection struct {
+	EntityCollection
+
+	Data []CategoryTag `json:"data"`
+}

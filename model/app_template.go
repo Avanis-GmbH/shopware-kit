@@ -12,3 +12,9 @@ type AppTemplate struct {
 	Template  string    `json:"template,omitempty"`
 	UpdatedAt time.Time `json:"updatedAt,omitempty"`
 }
+
+type AppTemplateCollection struct {
+	EntityCollection
+
+	Data []AppTemplate `json:"data"`
+}

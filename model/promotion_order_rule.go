@@ -6,3 +6,9 @@ type PromotionOrderRule struct {
 	Rule        *Rule      `json:"rule,omitempty"`
 	RuleId      string     `json:"ruleId,omitempty"`
 }
+
+type PromotionOrderRuleCollection struct {
+	EntityCollection
+
+	Data []PromotionOrderRule `json:"data"`
+}

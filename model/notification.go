@@ -15,3 +15,9 @@ type Notification struct {
 	Status                 string       `json:"status,omitempty"`
 	UpdatedAt              time.Time    `json:"updatedAt,omitempty"`
 }
+
+type NotificationCollection struct {
+	EntityCollection
+
+	Data []Notification `json:"data"`
+}

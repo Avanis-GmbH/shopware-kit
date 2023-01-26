@@ -11,3 +11,9 @@ type MediaThumbnailSize struct {
 	UpdatedAt                 time.Time                  `json:"updatedAt,omitempty"`
 	Width                     float64                    `json:"width,omitempty"`
 }
+
+type MediaThumbnailSizeCollection struct {
+	EntityCollection
+
+	Data []MediaThumbnailSize `json:"data"`
+}

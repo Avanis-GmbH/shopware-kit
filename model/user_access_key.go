@@ -14,3 +14,9 @@ type UserAccessKey struct {
 	UserId          string      `json:"userId,omitempty"`
 	WriteAccess     bool        `json:"writeAccess,omitempty"`
 }
+
+type UserAccessKeyCollection struct {
+	EntityCollection
+
+	Data []UserAccessKey `json:"data"`
+}

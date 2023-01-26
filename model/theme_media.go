@@ -6,3 +6,9 @@ type ThemeMedia struct {
 	Theme   *Theme `json:"theme,omitempty"`
 	ThemeId string `json:"themeId,omitempty"`
 }
+
+type ThemeMediaCollection struct {
+	EntityCollection
+
+	Data []ThemeMedia `json:"data"`
+}

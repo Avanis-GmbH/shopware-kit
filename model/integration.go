@@ -18,3 +18,9 @@ type Integration struct {
 	UpdatedAt            time.Time      `json:"updatedAt,omitempty"`
 	WriteAccess          bool           `json:"writeAccess,omitempty"`
 }
+
+type IntegrationCollection struct {
+	EntityCollection
+
+	Data []Integration `json:"data"`
+}

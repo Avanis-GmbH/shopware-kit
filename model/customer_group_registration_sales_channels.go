@@ -9,3 +9,9 @@ type CustomerGroupRegistrationSalesChannels struct {
 	SalesChannel    *SalesChannel  `json:"salesChannel,omitempty"`
 	SalesChannelId  string         `json:"salesChannelId,omitempty"`
 }
+
+type CustomerGroupRegistrationSalesChannelsCollection struct {
+	EntityCollection
+
+	Data []CustomerGroupRegistrationSalesChannels `json:"data"`
+}

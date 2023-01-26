@@ -21,3 +21,9 @@ type StateMachineState struct {
 	Translations                   []StateMachineStateTranslation `json:"translations,omitempty"`
 	UpdatedAt                      time.Time                      `json:"updatedAt,omitempty"`
 }
+
+type StateMachineStateCollection struct {
+	EntityCollection
+
+	Data []StateMachineState `json:"data"`
+}

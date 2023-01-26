@@ -12,3 +12,9 @@ type LogEntry struct {
 	Message   string      `json:"message,omitempty"`
 	UpdatedAt time.Time   `json:"updatedAt,omitempty"`
 }
+
+type LogEntryCollection struct {
+	EntityCollection
+
+	Data []LogEntry `json:"data"`
+}

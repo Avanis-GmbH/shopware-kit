@@ -20,3 +20,9 @@ type SalesChannelDomain struct {
 	UpdatedAt                   time.Time       `json:"updatedAt,omitempty"`
 	Url                         string          `json:"url,omitempty"`
 }
+
+type SalesChannelDomainCollection struct {
+	EntityCollection
+
+	Data []SalesChannelDomain `json:"data"`
+}

@@ -20,3 +20,9 @@ type SeoUrl struct {
 	UpdatedAt      time.Time     `json:"updatedAt,omitempty"`
 	Url            string        `json:"url,omitempty"`
 }
+
+type SeoUrlCollection struct {
+	EntityCollection
+
+	Data []SeoUrl `json:"data"`
+}

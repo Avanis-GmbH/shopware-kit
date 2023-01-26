@@ -17,3 +17,9 @@ type ProductManufacturer struct {
 	UpdatedAt    time.Time                        `json:"updatedAt,omitempty"`
 	VersionId    string                           `json:"versionId,omitempty"`
 }
+
+type ProductManufacturerCollection struct {
+	EntityCollection
+
+	Data []ProductManufacturer `json:"data"`
+}

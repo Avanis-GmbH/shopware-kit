@@ -7,3 +7,9 @@ type ProductProperty struct {
 	ProductId        string               `json:"productId,omitempty"`
 	ProductVersionId string               `json:"productVersionId,omitempty"`
 }
+
+type ProductPropertyCollection struct {
+	EntityCollection
+
+	Data []ProductProperty `json:"data"`
+}

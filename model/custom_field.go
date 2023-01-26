@@ -14,3 +14,9 @@ type CustomField struct {
 	Type                      string                     `json:"type,omitempty"`
 	UpdatedAt                 time.Time                  `json:"updatedAt,omitempty"`
 }
+
+type CustomFieldCollection struct {
+	EntityCollection
+
+	Data []CustomField `json:"data"`
+}

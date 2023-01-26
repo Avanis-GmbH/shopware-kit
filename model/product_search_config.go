@@ -13,3 +13,9 @@ type ProductSearchConfig struct {
 	MinSearchLength float64                    `json:"minSearchLength,omitempty"`
 	UpdatedAt       time.Time                  `json:"updatedAt,omitempty"`
 }
+
+type ProductSearchConfigCollection struct {
+	EntityCollection
+
+	Data []ProductSearchConfig `json:"data"`
+}

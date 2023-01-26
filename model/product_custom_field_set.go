@@ -7,3 +7,9 @@ type ProductCustomFieldSet struct {
 	ProductId        string          `json:"productId,omitempty"`
 	ProductVersionId string          `json:"productVersionId,omitempty"`
 }
+
+type ProductCustomFieldSetCollection struct {
+	EntityCollection
+
+	Data []ProductCustomFieldSet `json:"data"`
+}

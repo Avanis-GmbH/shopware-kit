@@ -17,3 +17,9 @@ type AppPaymentMethod struct {
 	PayUrl          string         `json:"payUrl,omitempty"`
 	UpdatedAt       time.Time      `json:"updatedAt,omitempty"`
 }
+
+type AppPaymentMethodCollection struct {
+	EntityCollection
+
+	Data []AppPaymentMethod `json:"data"`
+}
