@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 
@@ -145,7 +144,7 @@ func (c *Client) checkResponse(r *http.Response) error {
 		return c.ResponseHandler(r)
 	}
 
-	data, err := ioutil.ReadAll(r.Body)
+	data, err := io.ReadAll(r.Body)
 	if err != nil {
 		return fmt.Errorf("parsing json response failed: %w", err)
 	}
