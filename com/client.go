@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 )
 
@@ -22,14 +23,14 @@ type Client struct {
 }
 
 func NewClient(ctx context.Context, shopURL string, credentials OAuthCredentials, httpClient *http.Client) (*Client, error) {
-	shopClient := &Client{ctx: ctx, remote: shopURL, credentials: credentials, client: httpClient}
+	c := &Client{ctx: ctx, remote: shopURL, credentials: credentials, client: httpClient}
 
-	err := shopClient.authorize()
+	err := c.authorize()
 	if err != nil {
 		return nil, err
 	}
 
-	return nil, nil
+	return c, nil
 }
 
 func (c *Client) authorize() error {
@@ -53,7 +54,7 @@ func (c *Client) authorize() error {
 
 func (c *Client) BareDo(ctx context.Context, req *http.Request) (*http.Response, error) {
 	if ctx == nil {
-		return nil, fmt.Errorf("context must be non-nil")
+		return nil, errors.New("context is nil")
 	}
 
 	resp, err := c.client.Do(req)
@@ -63,7 +64,7 @@ func (c *Client) BareDo(ctx context.Context, req *http.Request) (*http.Response,
 			return nil, ctx.Err()
 		default:
 		}
-		return nil, err
+		return nil, errors.Wrapf(err, "failed to execute request")
 	}
 
 	err = c.checkResponse(resp)
@@ -82,15 +83,10 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 	case io.Writer:
 		_, err = io.Copy(v, resp.Body)
 	default:
-		decErr := json.NewDecoder(resp.Body).Decode(v)
-		if decErr == io.EOF {
-			decErr = nil // ignore EOF errors caused by empty response body
-		}
-		if decErr != nil {
-			err = decErr
-		}
+		err = json.NewDecoder(resp.Body).Decode(v)
 	}
-	return resp, err
+
+	return resp, errors.Wrap(err, "failed to decode response body")
 }
 
 func (c *Client) NewRequest(context ApiContext, method, urlStr string, body interface{}) (*http.Request, error) {
