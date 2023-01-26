@@ -13,411 +13,414 @@ func (c *Client) getSegment(v interface{}) string {
 		v = reflect.ValueOf(v).Elem().Interface()
 	}
 
-	// When v is a type that extends a EntityCollection get the data type
-	if ec, ok := v.(model.EntityCollection); ok {
-		v = ec.Data
+	// If v is a slice, get the type of the first element.
+	if reflect.TypeOf(v).Kind() == reflect.Slice {
+		if reflect.ValueOf(v).Len() == 0 {
+			return "unknown"
+		}
+		v = reflect.ValueOf(v).Index(0).Interface()
 	}
 
 	switch v.(type) {
-	case model.AclRole:
+	case model.AclRole, AclRoleCollection:
 		return "acl-role"
-	case model.AclUserRole:
+	case model.AclUserRole, AclUserRoleCollection:
 		return "acl-user-role"
-	case model.AppActionButtonTranslation:
+	case model.AppActionButtonTranslation, AppActionButtonTranslationCollection:
 		return "app-action-button-translation"
-	case model.AppActionButton:
+	case model.AppActionButton, AppActionButtonCollection:
 		return "app-action-button"
-	case model.AppCmsBlockTranslation:
+	case model.AppCmsBlockTranslation, AppCmsBlockTranslationCollection:
 		return "app-cms-block-translation"
-	case model.AppCmsBlock:
+	case model.AppCmsBlock, AppCmsBlockCollection:
 		return "app-cms-block"
-	case model.AppPaymentMethod:
+	case model.AppPaymentMethod, AppPaymentMethodCollection:
 		return "app-payment-method"
-	case model.AppTemplate:
+	case model.AppTemplate, AppTemplateCollection:
 		return "app-template"
-	case model.AppTranslation:
+	case model.AppTranslation, AppTranslationCollection:
 		return "app-translation"
-	case model.App:
+	case model.App, AppCollection:
 		return "app"
-	case model.CategoryTag:
+	case model.CategoryTag, CategoryTagCollection:
 		return "category-tag"
-	case model.CategoryTranslation:
+	case model.CategoryTranslation, CategoryTranslationCollection:
 		return "category-translation"
-	case model.Category:
+	case model.Category, CategoryCollection:
 		return "category"
-	case model.CmsBlock:
+	case model.CmsBlock, CmsBlockCollection:
 		return "cms-block"
-	case model.CmsPageTranslation:
+	case model.CmsPageTranslation, CmsPageTranslationCollection:
 		return "cms-page-translation"
-	case model.CmsPage:
+	case model.CmsPage, CmsPageCollection:
 		return "cms-page"
-	case model.CmsSection:
+	case model.CmsSection, CmsSectionCollection:
 		return "cms-section"
-	case model.CmsSlotTranslation:
+	case model.CmsSlotTranslation, CmsSlotTranslationCollection:
 		return "cms-slot-translation"
-	case model.CmsSlot:
+	case model.CmsSlot, CmsSlotCollection:
 		return "cms-slot"
-	case model.CountryStateTranslation:
+	case model.CountryStateTranslation, CountryStateTranslationCollection:
 		return "country-state-translation"
-	case model.CountryState:
+	case model.CountryState, CountryStateCollection:
 		return "country-state"
-	case model.CountryTranslation:
+	case model.CountryTranslation, CountryTranslationCollection:
 		return "country-translation"
-	case model.Country:
+	case model.Country, CountryCollection:
 		return "country"
-	case model.CurrencyCountryRounding:
+	case model.CurrencyCountryRounding, CurrencyCountryRoundingCollection:
 		return "currency-country-rounding"
-	case model.CurrencyTranslation:
+	case model.CurrencyTranslation, CurrencyTranslationCollection:
 		return "currency-translation"
-	case model.Currency:
+	case model.Currency, CurrencyCollection:
 		return "currency"
-	case model.CustomFieldSetRelation:
+	case model.CustomFieldSetRelation, CustomFieldSetRelationCollection:
 		return "custom-field-set-relation"
-	case model.CustomFieldSet:
+	case model.CustomFieldSet, CustomFieldSetCollection:
 		return "custom-field-set"
-	case model.CustomField:
+	case model.CustomField, CustomFieldCollection:
 		return "custom-field"
-	case model.CustomerAddress:
+	case model.CustomerAddress, CustomerAddressCollection:
 		return "customer-address"
-	case model.CustomerGroupRegistrationSalesChannels:
+	case model.CustomerGroupRegistrationSalesChannels, CustomerGroupRegistrationSalesChannelsCollection:
 		return "customer-group-registration-sales-channels"
-	case model.CustomerGroupTranslation:
+	case model.CustomerGroupTranslation, CustomerGroupTranslationCollection:
 		return "customer-group-translation"
-	case model.CustomerGroup:
+	case model.CustomerGroup, CustomerGroupCollection:
 		return "customer-group"
-	case model.CustomerRecovery:
+	case model.CustomerRecovery, CustomerRecoveryCollection:
 		return "customer-recovery"
-	case model.CustomerTag:
+	case model.CustomerTag, CustomerTagCollection:
 		return "customer-tag"
-	case model.CustomerWishlistProduct:
+	case model.CustomerWishlistProduct, CustomerWishlistProductCollection:
 		return "customer-wishlist-product"
-	case model.CustomerWishlist:
+	case model.CustomerWishlist, CustomerWishlistCollection:
 		return "customer-wishlist"
-	case model.Customer:
+	case model.Customer, CustomerCollection:
 		return "customer"
-	case model.DeadMessage:
+	case model.DeadMessage, DeadMessageCollection:
 		return "dead-message"
-	case model.DeliveryTimeTranslation:
+	case model.DeliveryTimeTranslation, DeliveryTimeTranslationCollection:
 		return "delivery-time-translation"
-	case model.DeliveryTime:
+	case model.DeliveryTime, DeliveryTimeCollection:
 		return "delivery-time"
-	case model.DocumentBaseConfigSalesChannel:
+	case model.DocumentBaseConfigSalesChannel, DocumentBaseConfigSalesChannelCollection:
 		return "document-base-config-sales-channel"
-	case model.DocumentBaseConfig:
+	case model.DocumentBaseConfig, DocumentBaseConfigCollection:
 		return "document-base-config"
-	case model.DocumentTypeTranslation:
+	case model.DocumentTypeTranslation, DocumentTypeTranslationCollection:
 		return "document-type-translation"
-	case model.DocumentType:
+	case model.DocumentType, DocumentTypeCollection:
 		return "document-type"
-	case model.Document:
+	case model.Document, DocumentCollection:
 		return "document"
-	case model.EventActionRule:
+	case model.EventActionRule, EventActionRuleCollection:
 		return "event-action-rule"
-	case model.EventActionSalesChannel:
+	case model.EventActionSalesChannel, EventActionSalesChannelCollection:
 		return "event-action-sales-channel"
-	case model.EventAction:
+	case model.EventAction, EventActionCollection:
 		return "event-action"
-	case model.FlowSequence:
+	case model.FlowSequence, FlowSequenceCollection:
 		return "flow-sequence"
-	case model.Flow:
+	case model.Flow, FlowCollection:
 		return "flow"
-	case model.ImportExportFile:
+	case model.ImportExportFile, ImportExportFileCollection:
 		return "import-export-file"
-	case model.ImportExportLog:
+	case model.ImportExportLog, ImportExportLogCollection:
 		return "import-export-log"
-	case model.ImportExportProfileTranslation:
+	case model.ImportExportProfileTranslation, ImportExportProfileTranslationCollection:
 		return "import-export-profile-translation"
-	case model.ImportExportProfile:
+	case model.ImportExportProfile, ImportExportProfileCollection:
 		return "import-export-profile"
-	case model.IntegrationRole:
+	case model.IntegrationRole, IntegrationRoleCollection:
 		return "integration-role"
-	case model.Integration:
+	case model.Integration, IntegrationCollection:
 		return "integration"
-	case model.LandingPageSalesChannel:
+	case model.LandingPageSalesChannel, LandingPageSalesChannelCollection:
 		return "landing-page-sales-channel"
-	case model.LandingPage:
+	case model.LandingPage, LandingPageCollection:
 		return "landing-page"
-	case model.Language:
+	case model.Language, LanguageCollection:
 		return "language"
-	case model.LocaleTranslation:
+	case model.LocaleTranslation, LocaleTranslationCollection:
 		return "locale-translation"
-	case model.Locale:
+	case model.Locale, LocaleCollection:
 		return "locale"
-	case model.LogEntry:
+	case model.LogEntry, LogEntryCollection:
 		return "log-entry"
-	case model.MailHeaderFooterTranslation:
+	case model.MailHeaderFooterTranslation, MailHeaderFooterTranslationCollection:
 		return "mail-header-footer-translation"
-	case model.MailHeaderFooter:
+	case model.MailHeaderFooter, MailHeaderFooterCollection:
 		return "mail-header-footer"
-	case model.MailTemplateMedia:
+	case model.MailTemplateMedia, MailTemplateMediaCollection:
 		return "mail-template-media"
-	case model.MailTemplateTranslation:
+	case model.MailTemplateTranslation, MailTemplateTranslationCollection:
 		return "mail-template-translation"
-	case model.MailTemplateTypeTranslation:
+	case model.MailTemplateTypeTranslation, MailTemplateTypeTranslationCollection:
 		return "mail-template-type-translation"
-	case model.MailTemplateType:
+	case model.MailTemplateType, MailTemplateTypeCollection:
 		return "mail-template-type"
-	case model.MailTemplate:
+	case model.MailTemplate, MailTemplateCollection:
 		return "mail-template"
-	case model.MainCategory:
+	case model.MainCategory, MainCategoryCollection:
 		return "main-category"
-	case model.MediaDefaultFolder:
+	case model.MediaDefaultFolder, MediaDefaultFolderCollection:
 		return "media-default-folder"
-	case model.MediaFolderConfigurationMediaThumbnailSize:
+	case model.MediaFolderConfigurationMediaThumbnailSize, MediaFolderConfigurationMediaThumbnailSizeCollection:
 		return "media-folder-configuration-media-thumbnail-size"
-	case model.MediaFolderConfiguration:
+	case model.MediaFolderConfiguration, MediaFolderConfigurationCollection:
 		return "media-folder-configuration"
-	case model.MediaFolder:
+	case model.MediaFolder, MediaFolderCollection:
 		return "media-folder"
-	case model.MediaTag:
+	case model.MediaTag, MediaTagCollection:
 		return "media-tag"
-	case model.MediaThumbnailSize:
+	case model.MediaThumbnailSize, MediaThumbnailSizeCollection:
 		return "media-thumbnail-size"
-	case model.MediaThumbnail:
+	case model.MediaThumbnail, MediaThumbnailCollection:
 		return "media-thumbnail"
-	case model.MediaTranslation:
+	case model.MediaTranslation, MediaTranslationCollection:
 		return "media-translation"
-	case model.Media:
+	case model.Media, MediaCollection:
 		return "media"
-	case model.MessageQueueStats:
+	case model.MessageQueueStats, MessageQueueStatsCollection:
 		return "message-queue-stats"
-	case model.NewsletterRecipientTag:
+	case model.NewsletterRecipientTag, NewsletterRecipientTagCollection:
 		return "newsletter-recipient-tag"
-	case model.NewsletterRecipient:
+	case model.NewsletterRecipient, NewsletterRecipientCollection:
 		return "newsletter-recipient"
-	case model.Notification:
+	case model.Notification, NotificationCollection:
 		return "notification"
-	case model.NumberRangeSalesChannel:
+	case model.NumberRangeSalesChannel, NumberRangeSalesChannelCollection:
 		return "number-range-sales-channel"
-	case model.NumberRangeState:
+	case model.NumberRangeState, NumberRangeStateCollection:
 		return "number-range-state"
-	case model.NumberRangeTypeTranslation:
+	case model.NumberRangeTypeTranslation, NumberRangeTypeTranslationCollection:
 		return "number-range-type-translation"
-	case model.NumberRangeType:
+	case model.NumberRangeType, NumberRangeTypeCollection:
 		return "number-range-type"
-	case model.NumberRange:
+	case model.NumberRange, NumberRangeCollection:
 		return "number-range"
-	case model.OrderAddress:
+	case model.OrderAddress, OrderAddressCollection:
 		return "order-address"
-	case model.OrderCustomer:
+	case model.OrderCustomer, OrderCustomerCollection:
 		return "order-customer"
-	case model.OrderDeliveryPosition:
+	case model.OrderDeliveryPosition, OrderDeliveryPositionCollection:
 		return "order-delivery-position"
-	case model.OrderDelivery:
+	case model.OrderDelivery, OrderDeliveryCollection:
 		return "order-delivery"
-	case model.OrderLineItem:
+	case model.OrderLineItem, OrderLineItemCollection:
 		return "order-line-item"
-	case model.OrderTag:
+	case model.OrderTag, OrderTagCollection:
 		return "order-tag"
-	case model.OrderTransaction:
+	case model.OrderTransaction, OrderTransactionCollection:
 		return "order-transaction"
-	case model.Order:
+	case model.Order, OrderCollection:
 		return "order"
-	case model.PaymentMethodTranslation:
+	case model.PaymentMethodTranslation, PaymentMethodTranslationCollection:
 		return "payment-method-translation"
-	case model.PaymentMethod:
+	case model.PaymentMethod, PaymentMethodCollection:
 		return "payment-method"
-	case model.PluginTranslation:
+	case model.PluginTranslation, PluginTranslationCollection:
 		return "plugin-translation"
-	case model.Plugin:
+	case model.Plugin, PluginCollection:
 		return "plugin"
-	case model.ProductCategoryTree:
+	case model.ProductCategoryTree, ProductCategoryTreeCollection:
 		return "product-category-tree"
-	case model.ProductCategory:
+	case model.ProductCategory, ProductCategoryCollection:
 		return "product-category"
-	case model.ProductConfiguratorSetting:
+	case model.ProductConfiguratorSetting, ProductConfiguratorSettingCollection:
 		return "product-configurator-setting"
-	case model.ProductCrossSellingAssignedProducts:
+	case model.ProductCrossSellingAssignedProducts, ProductCrossSellingAssignedProductsCollection:
 		return "product-cross-selling-assigned-products"
-	case model.ProductCrossSellingTranslation:
+	case model.ProductCrossSellingTranslation, ProductCrossSellingTranslationCollection:
 		return "product-cross-selling-translation"
-	case model.ProductCrossSelling:
+	case model.ProductCrossSelling, ProductCrossSellingCollection:
 		return "product-cross-selling"
-	case model.ProductCustomFieldSet:
+	case model.ProductCustomFieldSet, ProductCustomFieldSetCollection:
 		return "product-custom-field-set"
-	case model.ProductExport:
+	case model.ProductExport, ProductExportCollection:
 		return "product-export"
-	case model.ProductFeatureSetTranslation:
+	case model.ProductFeatureSetTranslation, ProductFeatureSetTranslationCollection:
 		return "product-feature-set-translation"
-	case model.ProductFeatureSet:
+	case model.ProductFeatureSet, ProductFeatureSetCollection:
 		return "product-feature-set"
-	case model.ProductKeywordDictionary:
+	case model.ProductKeywordDictionary, ProductKeywordDictionaryCollection:
 		return "product-keyword-dictionary"
-	case model.ProductManufacturerTranslation:
+	case model.ProductManufacturerTranslation, ProductManufacturerTranslationCollection:
 		return "product-manufacturer-translation"
-	case model.ProductManufacturer:
+	case model.ProductManufacturer, ProductManufacturerCollection:
 		return "product-manufacturer"
-	case model.ProductMedia:
+	case model.ProductMedia, ProductMediaCollection:
 		return "product-media"
-	case model.ProductOption:
+	case model.ProductOption, ProductOptionCollection:
 		return "product-option"
-	case model.ProductPrice:
+	case model.ProductPrice, ProductPriceCollection:
 		return "product-price"
-	case model.ProductProperty:
+	case model.ProductProperty, ProductPropertyCollection:
 		return "product-property"
-	case model.ProductReview:
+	case model.ProductReview, ProductReviewCollection:
 		return "product-review"
-	case model.ProductSearchConfigField:
+	case model.ProductSearchConfigField, ProductSearchConfigFieldCollection:
 		return "product-search-config-field"
-	case model.ProductSearchConfig:
+	case model.ProductSearchConfig, ProductSearchConfigCollection:
 		return "product-search-config"
-	case model.ProductSearchKeyword:
+	case model.ProductSearchKeyword, ProductSearchKeywordCollection:
 		return "product-search-keyword"
-	case model.ProductSortingTranslation:
+	case model.ProductSortingTranslation, ProductSortingTranslationCollection:
 		return "product-sorting-translation"
-	case model.ProductSorting:
+	case model.ProductSorting, ProductSortingCollection:
 		return "product-sorting"
-	case model.ProductStreamFilter:
+	case model.ProductStreamFilter, ProductStreamFilterCollection:
 		return "product-stream-filter"
-	case model.ProductStreamMapping:
+	case model.ProductStreamMapping, ProductStreamMappingCollection:
 		return "product-stream-mapping"
-	case model.ProductStreamTranslation:
+	case model.ProductStreamTranslation, ProductStreamTranslationCollection:
 		return "product-stream-translation"
-	case model.ProductStream:
+	case model.ProductStream, ProductStreamCollection:
 		return "product-stream"
-	case model.ProductTag:
+	case model.ProductTag, ProductTagCollection:
 		return "product-tag"
-	case model.ProductTranslation:
+	case model.ProductTranslation, ProductTranslationCollection:
 		return "product-translation"
-	case model.ProductVisibility:
+	case model.ProductVisibility, ProductVisibilityCollection:
 		return "product-visibility"
-	case model.Product:
+	case model.Product, ProductCollection:
 		return "product"
-	case model.PromotionCartRule:
+	case model.PromotionCartRule, PromotionCartRuleCollection:
 		return "promotion-cart-rule"
-	case model.PromotionDiscountPrices:
+	case model.PromotionDiscountPrices, PromotionDiscountPricesCollection:
 		return "promotion-discount-prices"
-	case model.PromotionDiscountRule:
+	case model.PromotionDiscountRule, PromotionDiscountRuleCollection:
 		return "promotion-discount-rule"
-	case model.PromotionDiscount:
+	case model.PromotionDiscount, PromotionDiscountCollection:
 		return "promotion-discount"
-	case model.PromotionIndividualCode:
+	case model.PromotionIndividualCode, PromotionIndividualCodeCollection:
 		return "promotion-individual-code"
-	case model.PromotionOrderRule:
+	case model.PromotionOrderRule, PromotionOrderRuleCollection:
 		return "promotion-order-rule"
-	case model.PromotionPersonaCustomer:
+	case model.PromotionPersonaCustomer, PromotionPersonaCustomerCollection:
 		return "promotion-persona-customer"
-	case model.PromotionPersonaRule:
+	case model.PromotionPersonaRule, PromotionPersonaRuleCollection:
 		return "promotion-persona-rule"
-	case model.PromotionSalesChannel:
+	case model.PromotionSalesChannel, PromotionSalesChannelCollection:
 		return "promotion-sales-channel"
-	case model.PromotionSetgroupRule:
+	case model.PromotionSetgroupRule, PromotionSetgroupRuleCollection:
 		return "promotion-setgroup-rule"
-	case model.PromotionSetgroup:
+	case model.PromotionSetgroup, PromotionSetgroupCollection:
 		return "promotion-setgroup"
-	case model.PromotionTranslation:
+	case model.PromotionTranslation, PromotionTranslationCollection:
 		return "promotion-translation"
-	case model.Promotion:
+	case model.Promotion, PromotionCollection:
 		return "promotion"
-	case model.PropertyGroupOptionTranslation:
+	case model.PropertyGroupOptionTranslation, PropertyGroupOptionTranslationCollection:
 		return "property-group-option-translation"
-	case model.PropertyGroupOption:
+	case model.PropertyGroupOption, PropertyGroupOptionCollection:
 		return "property-group-option"
-	case model.PropertyGroupTranslation:
+	case model.PropertyGroupTranslation, PropertyGroupTranslationCollection:
 		return "property-group-translation"
-	case model.PropertyGroup:
+	case model.PropertyGroup, PropertyGroupCollection:
 		return "property-group"
-	case model.RuleCondition:
+	case model.RuleCondition, RuleConditionCollection:
 		return "rule-condition"
-	case model.Rule:
+	case model.Rule, RuleCollection:
 		return "rule"
-	case model.SalesChannelAnalytics:
+	case model.SalesChannelAnalytics, SalesChannelAnalyticsCollection:
 		return "sales-channel-analytics"
-	case model.SalesChannelCountry:
+	case model.SalesChannelCountry, SalesChannelCountryCollection:
 		return "sales-channel-country"
-	case model.SalesChannelCurrency:
+	case model.SalesChannelCurrency, SalesChannelCurrencyCollection:
 		return "sales-channel-currency"
-	case model.SalesChannelDomain:
+	case model.SalesChannelDomain, SalesChannelDomainCollection:
 		return "sales-channel-domain"
-	case model.SalesChannelLanguage:
+	case model.SalesChannelLanguage, SalesChannelLanguageCollection:
 		return "sales-channel-language"
-	case model.SalesChannelPaymentMethod:
+	case model.SalesChannelPaymentMethod, SalesChannelPaymentMethodCollection:
 		return "sales-channel-payment-method"
-	case model.SalesChannelShippingMethod:
+	case model.SalesChannelShippingMethod, SalesChannelShippingMethodCollection:
 		return "sales-channel-shipping-method"
-	case model.SalesChannelTypeTranslation:
+	case model.SalesChannelTypeTranslation, SalesChannelTypeTranslationCollection:
 		return "sales-channel-type-translation"
-	case model.SalesChannelType:
+	case model.SalesChannelType, SalesChannelTypeCollection:
 		return "sales-channel-type"
-	case model.SalesChannelTranslation:
+	case model.SalesChannelTranslation, SalesChannelTranslationCollection:
 		return "sales-channel-translation"
-	case model.SalesChannel:
+	case model.SalesChannel, SalesChannelCollection:
 		return "sales-channel"
-	case model.SalutationTranslation:
+	case model.SalutationTranslation, SalutationTranslationCollection:
 		return "salutation-translation"
-	case model.Salutation:
+	case model.Salutation, SalutationCollection:
 		return "salutation"
-	case model.ScheduledTask:
+	case model.ScheduledTask, ScheduledTaskCollection:
 		return "scheduled-task"
-	case model.Script:
+	case model.Script, ScriptCollection:
 		return "script"
-	case model.SeoUrlTemplate:
+	case model.SeoUrlTemplate, SeoUrlTemplateCollection:
 		return "seo-url-template"
-	case model.SeoUrl:
+	case model.SeoUrl, SeoUrlCollection:
 		return "seo-url"
-	case model.ShippingMethodPrice:
+	case model.ShippingMethodPrice, ShippingMethodPriceCollection:
 		return "shipping-method-price"
-	case model.ShippingMethodTag:
+	case model.ShippingMethodTag, ShippingMethodTagCollection:
 		return "shipping-method-tag"
-	case model.ShippingMethodTranslation:
+	case model.ShippingMethodTranslation, ShippingMethodTranslationCollection:
 		return "shipping-method-translation"
-	case model.ShippingMethod:
+	case model.ShippingMethod, ShippingMethodCollection:
 		return "shipping-method"
-	case model.SnippetSet:
+	case model.SnippetSet, SnippetSetCollection:
 		return "snippet-set"
-	case model.Snippet:
+	case model.Snippet, SnippetCollection:
 		return "snippet"
-	case model.StateMachineHistory:
+	case model.StateMachineHistory, StateMachineHistoryCollection:
 		return "state-machine-history"
-	case model.StateMachineStateTranslation:
+	case model.StateMachineStateTranslation, StateMachineStateTranslationCollection:
 		return "state-machine-state-translation"
-	case model.StateMachineState:
+	case model.StateMachineState, StateMachineStateCollection:
 		return "state-machine-state"
-	case model.StateMachineTransition:
+	case model.StateMachineTransition, StateMachineTransitionCollection:
 		return "state-machine-transition"
-	case model.StateMachineTranslation:
+	case model.StateMachineTranslation, StateMachineTranslationCollection:
 		return "state-machine-translation"
-	case model.StateMachine:
+	case model.StateMachine, StateMachineCollection:
 		return "state-machine"
-	case model.SystemConfig:
+	case model.SystemConfig, SystemConfigCollection:
 		return "system-config"
-	case model.Tag:
+	case model.Tag, TagCollection:
 		return "tag"
-	case model.TaxRuleTypeTranslation:
+	case model.TaxRuleTypeTranslation, TaxRuleTypeTranslationCollection:
 		return "tax-rule-type-translation"
-	case model.TaxRuleType:
+	case model.TaxRuleType, TaxRuleTypeCollection:
 		return "tax-rule-type"
-	case model.TaxRule:
+	case model.TaxRule, TaxRuleCollection:
 		return "tax-rule"
-	case model.Tax:
+	case model.Tax, TaxCollection:
 		return "tax"
-	case model.ThemeMedia:
+	case model.ThemeMedia, ThemeMediaCollection:
 		return "theme-media"
-	case model.ThemeSalesChannel:
+	case model.ThemeSalesChannel, ThemeSalesChannelCollection:
 		return "theme-sales-channel"
-	case model.ThemeTranslation:
+	case model.ThemeTranslation, ThemeTranslationCollection:
 		return "theme-translation"
-	case model.Theme:
+	case model.Theme, ThemeCollection:
 		return "theme"
-	case model.UnitTranslation:
+	case model.UnitTranslation, UnitTranslationCollection:
 		return "unit-translation"
-	case model.Unit:
+	case model.Unit, UnitCollection:
 		return "unit"
-	case model.UserAccessKey:
+	case model.UserAccessKey, UserAccessKeyCollection:
 		return "user-access-key"
-	case model.UserConfig:
+	case model.UserConfig, UserConfigCollection:
 		return "user-config"
-	case model.UserRecovery:
+	case model.UserRecovery, UserRecoveryCollection:
 		return "user-recovery"
-	case model.User:
+	case model.User, UserCollection:
 		return "user"
-	case model.VersionCommitData:
+	case model.VersionCommitData, VersionCommitDataCollection:
 		return "version-commit-data"
-	case model.Version:
+	case model.Version, VersionCollection:
 		return "version"
-	case model.WebhookEventLog:
+	case model.WebhookEventLog, WebhookEventLogCollection:
 		return "webhook-event-log"
-	case model.Webhook:
+	case model.Webhook, WebhookCollection:
 		return "webhook"
 	}
 
