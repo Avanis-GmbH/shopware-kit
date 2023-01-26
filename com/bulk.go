@@ -1,6 +1,11 @@
 package com
 
-import "net/http"
+import (
+	"net/http"
+	"reflect"
+
+	"github.com/pkg/errors"
+)
 
 type SyncOperation struct {
 	Entity  string      `json:"entity"`
@@ -16,13 +21,21 @@ func (c *Client) Sync(ctx ApiContext, payload map[string]SyncOperation) (*http.R
 	req, err := c.NewRequest(ctx, http.MethodPost, "/api/_action/sync", payload)
 
 	if err != nil {
-		return nil, err
+		return nil, errors.Wrapf(err, "failed to create request for sync operation")
 	}
 
 	return c.Do(ctx.Context, req, nil)
 }
 
 func (c *Client) Upsert(ctx ApiContext, entity interface{}) (*http.Response, error) {
+	if c.getSegment(entity) == "unknown" {
+		return nil, errors.New("unknown entity")
+	}
+
+	if reflect.ValueOf(entity).Kind() != reflect.Slice {
+		return nil, errors.New("entity is not a slice")
+	}
+
 	return c.Sync(ctx, map[string]SyncOperation{c.getSegment(entity): {
 		Entity:  c.getSegment(entity),
 		Action:  "upsert",
