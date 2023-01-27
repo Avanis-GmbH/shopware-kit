@@ -2,6 +2,7 @@ package com
 
 import (
 	"reflect"
+	"strings"
 
 	"github.com/iancoleman/strcase"
 )
@@ -22,12 +23,12 @@ func (c *Client) GetSegment(v interface{}) string {
 		v = reflect.ValueOf(v).Index(0).Interface()
 	}
 
-	t := reflect.TypeOf(v).Name()
+	// If the type name contains "Collection", remove it.
+	return strcase.ToKebab(strings.TrimSuffix(reflect.TypeOf(v).Name(), "Collection"))
+}
+
+func (c *Client) GetSegmentSnakeCase(v interface{}) string {
 
 	// If the type name contains "Collection", remove it.
-	if t[len(t)-10:] == "Collection" {
-		t = t[:len(t)-10]
-	}
-
-	return strcase.ToKebab(t)
+	return strcase.ToSnake(c.GetSegment(v))
 }

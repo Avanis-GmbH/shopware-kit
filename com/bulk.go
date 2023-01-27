@@ -35,7 +35,7 @@ func (c *Client) Sync(ctx ApiContext, payload map[string]SyncOperation) (*http.R
 // Provided entities must be a slice
 // Uses underlying Sync method to perform the request
 func (c *Client) Upsert(ctx ApiContext, entities interface{}) (*http.Response, error) {
-	if c.GetSegment(entities) == "unknown" {
+	if c.GetSegmentSnakeCase(entities) == "unknown" {
 		return nil, errors.New("unknown entity")
 	}
 
@@ -43,8 +43,8 @@ func (c *Client) Upsert(ctx ApiContext, entities interface{}) (*http.Response, e
 		return nil, errors.New("entity is not a slice")
 	}
 
-	return c.Sync(ctx, map[string]SyncOperation{c.GetSegment(entities): {
-		Entity:  c.GetSegment(entities),
+	return c.Sync(ctx, map[string]SyncOperation{c.GetSegmentSnakeCase(entities): {
+		Entity:  c.GetSegmentSnakeCase(entities),
 		Action:  "upsert",
 		Payload: entities,
 	}})
@@ -59,8 +59,8 @@ func (c *Client) Delete(ctx ApiContext, entity interface{}, ids []string) (*http
 		payload = append(payload, deleteEntity{Id: id})
 	}
 
-	return c.Sync(ctx, map[string]SyncOperation{c.GetSegment(entity): {
-		Entity:  c.GetSegment(entity),
+	return c.Sync(ctx, map[string]SyncOperation{c.GetSegmentSnakeCase(entity): {
+		Entity:  c.GetSegmentSnakeCase(entity),
 		Action:  "delete",
 		Payload: payload,
 	}})
