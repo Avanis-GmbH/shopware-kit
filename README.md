@@ -1,4 +1,4 @@
-# Shopware Universal API Client
+# Shopware Universal Client Kit
 
 GoSuck is a universal API client for Shopware 6. It is based on the [Shopware 6 API](https://developer.shopware.com/docs/guides/api-guide/).
 It can be used as a standalone client or directly with the included models, which are derived from the Shopware 6 API Documentation.
