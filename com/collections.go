@@ -2,6 +2,8 @@ package com
 
 import "github.com/Avanis-GmbH/GoSUCK/model"
 
+// Collection is the interface for all collections returned by the shopware api
+// Implemented by entityCollection which in turn is embedded by all other collections.
 type Collection interface {
 	setTotal(int64)
 	getTotal() int64
@@ -11,6 +13,7 @@ type Collection interface {
 	getData() []interface{}
 }
 
+// entityCollection is the base collection for all other collections
 type entityCollection struct {
 	Total        int64       `json:"total"`
 	Aggregations interface{} `json:"aggregations"`

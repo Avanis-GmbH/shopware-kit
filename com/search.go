@@ -6,6 +6,8 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Search performs a search request for the given criteria and collection
+// The collection must be a pointer to a struct that implements the Collection interface
 func (c *Client) Search(ctx ApiContext, criteria Criteria, v Collection) error {
 	url, err := url.JoinPath("/api/search", c.getSegment(v))
 	if err != nil {
@@ -25,6 +27,7 @@ func (c *Client) Search(ctx ApiContext, criteria Criteria, v Collection) error {
 	return nil
 }
 
+// SearchAll performs multiple search requests with a limited size until all results are fetched
 func (c *Client) SearchAll(ctx ApiContext, criteria Criteria, v Collection) error {
 	if criteria.Limit == 0 {
 		criteria.Limit = 50
@@ -55,6 +58,7 @@ func (c *Client) SearchAll(ctx ApiContext, criteria Criteria, v Collection) erro
 	return nil
 }
 
+// SearchIds performs a search request for the given criteria and returns only the ids
 func (c *Client) SearchIds(ctx ApiContext, criteria Criteria, v interface{}) (*SearchIdsResponse, error) {
 	url, err := url.JoinPath("/api/search-ids", c.getSegment(v))
 	if err != nil {
@@ -75,6 +79,7 @@ func (c *Client) SearchIds(ctx ApiContext, criteria Criteria, v interface{}) (*S
 	return data, nil
 }
 
+// SearchIdsResponse is the response for a searchIds request
 type SearchIdsResponse struct {
 	Total int      `json:"total"`
 	Data  []string `json:"data"`

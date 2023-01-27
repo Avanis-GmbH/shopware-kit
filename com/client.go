@@ -13,6 +13,7 @@ import (
 	"golang.org/x/oauth2"
 )
 
+// Client is the main client struct for the shopware api communication
 type Client struct {
 	remote          string
 	client          *http.Client
@@ -21,6 +22,7 @@ type Client struct {
 	ResponseHandler func(resp *http.Response) error
 }
 
+// NewClient creates a new client for the shopware api
 func NewClient(ctx context.Context, shopURL string, credentials OAuthCredentials, httpClient *http.Client) (*Client, error) {
 	c := &Client{ctx: ctx, remote: shopURL, credentials: credentials, client: httpClient}
 
@@ -32,6 +34,7 @@ func NewClient(ctx context.Context, shopURL string, credentials OAuthCredentials
 	return c, nil
 }
 
+// Authorizes the clients requests
 func (c *Client) authorize() error {
 	if c.client != nil {
 		c.ctx = context.WithValue(c.ctx, oauth2.HTTPClient, c.client)
@@ -51,6 +54,7 @@ func (c *Client) authorize() error {
 	return nil
 }
 
+// Execute the HTTP request, checks and returns the raw response
 func (c *Client) BareDo(ctx context.Context, req *http.Request) (*http.Response, error) {
 	if ctx == nil {
 		return nil, errors.New("context is nil")
@@ -70,6 +74,7 @@ func (c *Client) BareDo(ctx context.Context, req *http.Request) (*http.Response,
 	return resp, err
 }
 
+// Executes the request, decodes the response body into v
 func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*http.Response, error) {
 	resp, err := c.BareDo(ctx, req)
 	if err != nil {
@@ -88,6 +93,8 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 	return resp, errors.Wrap(err, "failed to decode response body")
 }
 
+// Creates a new request with the given context, method, url and body
+// The body will be encoded as json and the content type will be set to application/json
 func (c *Client) NewRequest(context ApiContext, method, urlStr string, body interface{}) (*http.Request, error) {
 	var buf io.ReadWriter
 	if body != nil {
@@ -100,7 +107,6 @@ func (c *Client) NewRequest(context ApiContext, method, urlStr string, body inte
 	}
 
 	req, err := c.NewRawRequest(context, method, urlStr, buf)
-
 	if err != nil {
 		return nil, err
 	}
@@ -112,6 +118,8 @@ func (c *Client) NewRequest(context ApiContext, method, urlStr string, body inte
 	return req, nil
 }
 
+// Creates a new request using a io.Reader as body and without encoding the body as json
+// This has to be done manually by the caller if needed
 func (c *Client) NewRawRequest(context ApiContext, method, urlStr string, body io.Reader) (*http.Request, error) {
 	url, err := url.JoinPath(c.remote, urlStr)
 	if err != nil {
@@ -123,6 +131,7 @@ func (c *Client) NewRawRequest(context ApiContext, method, urlStr string, body i
 		return nil, err
 	}
 
+	req.Header.Set("Accept", "application/json")
 	req.Header.Set("sw-language-id", context.LanguageId)
 	req.Header.Set("sw-version-id", context.VersionId)
 
@@ -130,11 +139,10 @@ func (c *Client) NewRawRequest(context ApiContext, method, urlStr string, body i
 		req.Header.Set("sw-skip-trigger-flow", "1")
 	}
 
-	req.Header.Set("Accept", "application/json")
-
 	return req, nil
 }
 
+// Checks the response for errors and returns them if present
 func (c *Client) checkResponse(r *http.Response) error {
 	if c := r.StatusCode; 200 <= c && c <= 299 {
 		return nil
@@ -152,6 +160,7 @@ func (c *Client) checkResponse(r *http.Response) error {
 	return fmt.Errorf("request failed: %s", string(data))
 }
 
+// ApiContext is the context for the api requests
 type ApiContext struct {
 	Context    context.Context
 	LanguageId string
@@ -159,6 +168,7 @@ type ApiContext struct {
 	SkipFlows  bool
 }
 
+// NewApiContext creates a new ApiContext with the given context and default values
 func NewApiContext(ctx context.Context) ApiContext {
 	return ApiContext{
 		Context:    ctx,

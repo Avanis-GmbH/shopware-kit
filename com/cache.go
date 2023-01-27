@@ -6,6 +6,7 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Clear the shopware cache
 func (c Client) Clear(ctx ApiContext) (*http.Response, error) {
 	r, err := c.NewRequest(ctx, http.MethodDelete, "/api/_action/cache", nil)
 

@@ -7,16 +7,20 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Sync Operations for bulk request
+// (https://shopware.stoplight.io/docs/admin-api/0612cb5d960ef-bulk-edit-entities)
 type SyncOperation struct {
 	Entity  string      `json:"entity"`
 	Action  string      `json:"action"`
 	Payload interface{} `json:"payload"`
 }
 
-type DeleteEntity struct {
+type deleteEntity struct {
 	Id string `json:"id"`
 }
 
+// Starts a sync process for the list of provided actions.
+// This can be inserts, upserts, updates and deletes on different entities.
 func (c *Client) Sync(ctx ApiContext, payload map[string]SyncOperation) (*http.Response, error) {
 	req, err := c.NewRequest(ctx, http.MethodPost, "/api/_action/sync", payload)
 
@@ -27,27 +31,32 @@ func (c *Client) Sync(ctx ApiContext, payload map[string]SyncOperation) (*http.R
 	return c.Do(ctx.Context, req, nil)
 }
 
-func (c *Client) Upsert(ctx ApiContext, entity interface{}) (*http.Response, error) {
-	if c.getSegment(entity) == "unknown" {
+// Inserts or updates the provided entities in bulk mode
+// Provided entities must be a slice
+// Uses underlying Sync method to perform the request
+func (c *Client) Upsert(ctx ApiContext, entities interface{}) (*http.Response, error) {
+	if c.getSegment(entities) == "unknown" {
 		return nil, errors.New("unknown entity")
 	}
 
-	if reflect.ValueOf(entity).Kind() != reflect.Slice {
+	if reflect.ValueOf(entities).Kind() != reflect.Slice {
 		return nil, errors.New("entity is not a slice")
 	}
 
-	return c.Sync(ctx, map[string]SyncOperation{c.getSegment(entity): {
-		Entity:  c.getSegment(entity),
+	return c.Sync(ctx, map[string]SyncOperation{c.getSegment(entities): {
+		Entity:  c.getSegment(entities),
 		Action:  "upsert",
-		Payload: entity,
+		Payload: entities,
 	}})
 }
 
+// Deletes the provided entities in bulk mode
+// Uses underlying Sync method to perform the request
 func (c *Client) Delete(ctx ApiContext, entity interface{}, ids []string) (*http.Response, error) {
-	payload := make([]DeleteEntity, 0)
+	payload := make([]deleteEntity, 0)
 
 	for _, id := range ids {
-		payload = append(payload, DeleteEntity{Id: id})
+		payload = append(payload, deleteEntity{Id: id})
 	}
 
 	return c.Sync(ctx, map[string]SyncOperation{c.getSegment(entity): {

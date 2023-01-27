@@ -8,16 +8,19 @@ import (
 	"golang.org/x/oauth2/clientcredentials"
 )
 
+// OAuthCredentials is the interface for the different types of credentials
 type OAuthCredentials interface {
 	GetTokenSource(ctx context.Context, tokenURL string) (oauth2.TokenSource, error)
 }
 
+// PasswordCredentials are the credentials for the password grant type
 type PasswordCredentials struct {
 	Username string
 	Password string
 	Scopes   []string
 }
 
+// NewPasswordCredentials creates a new PasswordCredentials struct with the given parameters
 func NewPasswordCredentials(username, password string, scopes []string) PasswordCredentials {
 	return PasswordCredentials{
 		Username: username,
@@ -26,6 +29,7 @@ func NewPasswordCredentials(username, password string, scopes []string) Password
 	}
 }
 
+// GetTokenSource returns the token source for the password grant type
 func (c PasswordCredentials) GetTokenSource(ctx context.Context, tokenURL string) (oauth2.TokenSource, error) {
 	oauthConf := &oauth2.Config{
 		ClientID: "administration",
@@ -42,12 +46,14 @@ func (c PasswordCredentials) GetTokenSource(ctx context.Context, tokenURL string
 	return oauth2.StaticTokenSource(token), nil
 }
 
+// IntegrationCredentials are the credentials for the authorization using a API key
 type IntegrationCredentials struct {
 	ClientId     string
 	ClientSecret string
 	Scopes       []string
 }
 
+// NewIntegrationCredentials creates a new IntegrationCredentials struct with the given parameters
 func NewIntegrationCredentials(clientId, clientSecret string, scopes []string) IntegrationCredentials {
 	return IntegrationCredentials{
 		ClientId:     clientId,
@@ -56,6 +62,7 @@ func NewIntegrationCredentials(clientId, clientSecret string, scopes []string) I
 	}
 }
 
+// GetTokenSource returns the token source for the client credentials grant type
 func (c IntegrationCredentials) GetTokenSource(ctx context.Context, tokenURL string) (oauth2.TokenSource, error) {
 	oauthConf := &clientcredentials.Config{
 		ClientID:     c.ClientId,
