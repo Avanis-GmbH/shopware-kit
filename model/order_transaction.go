@@ -9,10 +9,10 @@ type OrderTransaction struct {
 	CustomFields      interface{}        `json:"customFields,omitempty"`
 	Id                string             `json:"id,omitempty"`
 	Order             *Order             `json:"order,omitempty"`
-	OrderId           string             `json:"orderId"` // required
+	OrderId           string             `json:"orderId,omitempty"` // required
 	OrderVersionId    string             `json:"orderVersionId,omitempty"`
 	PaymentMethod     *PaymentMethod     `json:"paymentMethod,omitempty"`
-	PaymentMethodId   string             `json:"paymentMethodId"` // required
+	PaymentMethodId   string             `json:"paymentMethodId,omitempty"` // required
 	StateId           string             `json:"stateId,omitempty"`
 	StateMachineState *StateMachineState `json:"stateMachineState,omitempty"`
 	UpdatedAt         time.Time          `json:"updatedAt,omitempty"`
@@ -20,9 +20,9 @@ type OrderTransaction struct {
 }
 
 type Amount struct {
-	UnitPrice       float64         `json:"unitPrice"`  // required
-	TotalPrice      float64         `json:"totalPrice"` // required
-	Quantity        float64         `json:"quantity"`   // required
+	UnitPrice       float64         `json:"unitPrice,omitempty"`  // required
+	TotalPrice      float64         `json:"totalPrice,omitempty"` // required
+	Quantity        float64         `json:"quantity,omitempty"`   // required
 	CalculatedTaxes interface{}     `json:"calculatedTaxes,omitempty"`
 	TaxRules        interface{}     `json:"taxRules,omitempty"`
 	ReferencePrice  interface{}     `json:"referencePrice,omitempty"`
@@ -32,12 +32,12 @@ type Amount struct {
 
 type Capture struct {
 	Id                        string             `json:"id,omitempty"`
-	OrderTransactionId        string             `json:"orderTransactionId"` // required
+	OrderTransactionId        string             `json:"orderTransactionId,omitempty"` // required
 	OrderTransactionVersionId string             `json:"orderTransactionVersionId,omitempty"`
-	StateId                   string             `json:"stateId"` // required
+	StateId                   string             `json:"stateId,omitempty"` // required
 	ExternalReference         string             `json:"externalReference,omitempty"`
-	TotalAmount               float64            `json:"totalAmount"` // required
-	Amount                    Amount             `json:"amount"`      // required
+	TotalAmount               float64            `json:"totalAmount,omitempty"` // required
+	Amount                    Amount             `json:"amount,omitempty"`      // required
 	CustomFields              interface{}        `json:"customFields,omitempty"`
 	CreatedAt                 time.Time          `json:"createdAt,omitempty"`
 	UpdatedAt                 time.Time          `json:"updatedAt,omitempty"`
@@ -48,12 +48,12 @@ type Capture struct {
 
 type Refund struct {
 	Id                 string             `json:"id,omitempty"`
-	CaptureId          string             `json:"captureId"` // required
-	StateId            string             `json:"stateId"`   // required
+	CaptureId          string             `json:"captureId,omitempty"` // required
+	StateId            string             `json:"stateId,omitempty"`   // required
 	ExternalReference  string             `json:"externalReference,omitempty"`
 	Reason             string             `json:"reason,omitempty"`
-	TotalAmount        float64            `json:"totalAmount"` // required
-	Amount             Amount             `json:"amount"`      // required
+	TotalAmount        float64            `json:"totalAmount,omitempty"` // required
+	Amount             Amount             `json:"amount,omitempty"`      // required
 	CustomFields       interface{}        `json:"customFields,omitempty"`
 	CreatedAt          time.Time          `json:"createdAt,omitempty"`
 	UpdatedAt          time.Time          `json:"updatedAt,omitempty"`
@@ -64,12 +64,12 @@ type Refund struct {
 
 type Position struct {
 	Id                            string        `json:"id,omitempty"`
-	RefundId                      string        `json:"refundId"`        // required
-	OrderLineItemId               string        `json:"orderLineItemId"` // required
+	RefundId                      string        `json:"refundId,omitempty"`        // required
+	OrderLineItemId               string        `json:"orderLineItemId,omitempty"` // required
 	ExternalReference             string        `json:"externalReference,omitempty"`
 	Reason                        string        `json:"reason,omitempty"`
-	Quantity                      float64       `json:"quantity"` // required
-	Amount                        Amount        `json:"amount"`   // required
+	Quantity                      float64       `json:"quantity,omitempty"` // required
+	Amount                        Amount        `json:"amount,omitempty"`   // required
 	RefundPrice                   float64       `json:"refundPrice,omitempty"`
 	CustomFields                  interface{}   `json:"customFields,omitempty"`
 	CreatedAt                     time.Time     `json:"createdAt,omitempty"`

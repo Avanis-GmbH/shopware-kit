@@ -8,9 +8,9 @@ type StateMachine struct {
 	HistoryEntries []StateMachineHistory     `json:"historyEntries,omitempty"`
 	Id             string                    `json:"id,omitempty"`
 	InitialStateId string                    `json:"initialStateId,omitempty"`
-	Name           string                    `json:"name"` // required
+	Name           string                    `json:"name,omitempty"` // required
 	States         []StateMachineState       `json:"states,omitempty"`
-	TechnicalName  string                    `json:"technicalName"` // required
+	TechnicalName  string                    `json:"technicalName,omitempty"` // required
 	Transitions    []StateMachineTransition  `json:"transitions,omitempty"`
 	Translated     interface{}               `json:"translated,omitempty"`
 	Translations   []StateMachineTranslation `json:"translations,omitempty"`

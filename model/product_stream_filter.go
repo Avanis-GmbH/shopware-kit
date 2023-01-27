@@ -11,11 +11,11 @@ type ProductStreamFilter struct {
 	Parameters      interface{}           `json:"parameters,omitempty"`
 	Parent          *ProductStreamFilter  `json:"parent,omitempty"`
 	ParentId        string                `json:"parentId,omitempty"`
-	Position        float64               `json:"position"`
+	Position        float64               `json:"position,omitempty"`
 	ProductStream   *ProductStream        `json:"productStream,omitempty"`
-	ProductStreamId string                `json:"productStreamId"` // required
+	ProductStreamId string                `json:"productStreamId,omitempty"` // required
 	Queries         []ProductStreamFilter `json:"queries,omitempty"`
-	Type            string                `json:"type"` // required
+	Type            string                `json:"type,omitempty"` // required
 	UpdatedAt       time.Time             `json:"updatedAt,omitempty"`
 	Value           string                `json:"value,omitempty"`
 }

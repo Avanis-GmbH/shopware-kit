@@ -17,10 +17,10 @@ type CmsSection struct {
 	MobileBehavior      string      `json:"mobileBehavior,omitempty"`
 	Name                string      `json:"name,omitempty"`
 	Page                *CmsPage    `json:"page,omitempty"`
-	PageId              string      `json:"pageId"`   // required
-	Position            float64     `json:"position"` // required
+	PageId              string      `json:"pageId,omitempty"`   // required
+	Position            float64     `json:"position,omitempty"` // required
 	SizingMode          string      `json:"sizingMode,omitempty"`
-	Type                string      `json:"type"` // required
+	Type                string      `json:"type,omitempty"` // required
 	UpdatedAt           time.Time   `json:"updatedAt,omitempty"`
 	VersionId           string      `json:"versionId,omitempty"`
 }

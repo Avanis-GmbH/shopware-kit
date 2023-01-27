@@ -2,7 +2,7 @@ package model
 
 type MediaFolderConfigurationMediaThumbnailSize struct {
 	MediaFolderConfiguration   *MediaFolderConfiguration `json:"mediaFolderConfiguration,omitempty"`
-	MediaFolderConfigurationId string                    `json:"mediaFolderConfigurationId"` // required
+	MediaFolderConfigurationId string                    `json:"mediaFolderConfigurationId,omitempty"` // required
 	MediaThumbnailSize         *MediaThumbnailSize       `json:"mediaThumbnailSize,omitempty"`
-	MediaThumbnailSizeId       string                    `json:"mediaThumbnailSizeId"` // required
+	MediaThumbnailSizeId       string                    `json:"mediaThumbnailSizeId,omitempty"` // required
 }

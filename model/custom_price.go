@@ -9,9 +9,9 @@ type CustomPrice struct {
 	CustomerGroupId  string         `json:"customerGroupId,omitempty"`
 	CustomerId       string         `json:"customerId,omitempty"`
 	Id               string         `json:"id,omitempty"`
-	Price            interface{}    `json:"price"` // required
+	Price            interface{}    `json:"price,omitempty"` // required
 	Product          *Product       `json:"product,omitempty"`
-	ProductId        string         `json:"productId"` // required
+	ProductId        string         `json:"productId,omitempty"` // required
 	ProductVersionId string         `json:"productVersionId,omitempty"`
 	UpdatedAt        time.Time      `json:"updatedAt,omitempty"`
 }

@@ -18,12 +18,12 @@ type CmsBlock struct {
 	MarginRight         string      `json:"marginRight,omitempty"`
 	MarginTop           string      `json:"marginTop,omitempty"`
 	Name                string      `json:"name,omitempty"`
-	Position            float64     `json:"position"` // required
+	Position            float64     `json:"position,omitempty"` // required
 	Section             *CmsSection `json:"section,omitempty"`
 	SectionId           string      `json:"sectionId,omitempty"`
 	SectionPosition     string      `json:"sectionPosition,omitempty"`
 	Slots               []CmsSlot   `json:"slots,omitempty"`
-	Type                string      `json:"type"` // required
+	Type                string      `json:"type,omitempty"` // required
 	UpdatedAt           time.Time   `json:"updatedAt,omitempty"`
 	VersionId           string      `json:"versionId,omitempty"`
 }

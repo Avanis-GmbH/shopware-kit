@@ -13,7 +13,7 @@ type LandingPage struct {
 	Keywords         string                   `json:"keywords,omitempty"`
 	MetaDescription  string                   `json:"metaDescription,omitempty"`
 	MetaTitle        string                   `json:"metaTitle,omitempty"`
-	Name             string                   `json:"name"` // required
+	Name             string                   `json:"name,omitempty"` // required
 	SalesChannels    []SalesChannel           `json:"salesChannels,omitempty"`
 	SeoUrls          []SeoUrl                 `json:"seoUrls,omitempty"`
 	SlotConfig       interface{}              `json:"slotConfig,omitempty"`
@@ -21,6 +21,6 @@ type LandingPage struct {
 	Translated       interface{}              `json:"translated,omitempty"`
 	Translations     []LandingPageTranslation `json:"translations,omitempty"`
 	UpdatedAt        time.Time                `json:"updatedAt,omitempty"`
-	Url              string                   `json:"url"` // required
+	Url              string                   `json:"url,omitempty"` // required
 	VersionId        string                   `json:"versionId,omitempty"`
 }

@@ -10,7 +10,7 @@ type ProductManufacturer struct {
 	Link         string                           `json:"link,omitempty"`
 	Media        *Media                           `json:"media,omitempty"`
 	MediaId      string                           `json:"mediaId,omitempty"`
-	Name         string                           `json:"name"` // required
+	Name         string                           `json:"name,omitempty"` // required
 	Products     []Product                        `json:"products,omitempty"`
 	Translated   interface{}                      `json:"translated,omitempty"`
 	Translations []ProductManufacturerTranslation `json:"translations,omitempty"`

@@ -11,7 +11,7 @@ type CustomFieldSet struct {
 	CustomFields []CustomField            `json:"customFields,omitempty"`
 	Global       bool                     `json:"global,omitempty"`
 	Id           string                   `json:"id,omitempty"`
-	Name         string                   `json:"name"` // required
+	Name         string                   `json:"name,omitempty"` // required
 	Position     float64                  `json:"position,omitempty"`
 	Products     []Product                `json:"products,omitempty"`
 	Relations    []CustomFieldSetRelation `json:"relations,omitempty"`

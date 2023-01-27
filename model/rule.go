@@ -13,12 +13,12 @@ type Rule struct {
 	Id                              string                `json:"id,omitempty"`
 	Invalid                         bool                  `json:"invalid,omitempty"`
 	ModuleTypes                     interface{}           `json:"moduleTypes,omitempty"`
-	Name                            string                `json:"name"` // required
+	Name                            string                `json:"name,omitempty"` // required
 	OrderPromotions                 []Promotion           `json:"orderPromotions,omitempty"`
 	Payload                         interface{}           `json:"payload,omitempty"`
 	PaymentMethods                  []PaymentMethod       `json:"paymentMethods,omitempty"`
 	PersonaPromotions               []Promotion           `json:"personaPromotions,omitempty"`
-	Priority                        int64                 `json:"priority"` // required
+	Priority                        int64                 `json:"priority,omitempty"` // required
 	ProductPrices                   []ProductPrice        `json:"productPrices,omitempty"`
 	PromotionDiscounts              []PromotionDiscount   `json:"promotionDiscounts,omitempty"`
 	PromotionSetGroups              []PromotionSetgroup   `json:"promotionSetGroups,omitempty"`

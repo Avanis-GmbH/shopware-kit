@@ -8,7 +8,7 @@ type CustomerGroup struct {
 	CustomFields                        interface{}                `json:"customFields,omitempty"`
 	DisplayGross                        bool                       `json:"displayGross,omitempty"`
 	Id                                  string                     `json:"id,omitempty"`
-	Name                                string                     `json:"name"` // required
+	Name                                string                     `json:"name,omitempty"` // required
 	RegistrationActive                  bool                       `json:"registrationActive,omitempty"`
 	RegistrationIntroduction            string                     `json:"registrationIntroduction,omitempty"`
 	RegistrationOnlyCompanyRegistration bool                       `json:"registrationOnlyCompanyRegistration,omitempty"`

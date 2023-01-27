@@ -2,10 +2,10 @@ package model
 
 type MailTemplateMedia struct {
 	Id             string        `json:"id,omitempty"`
-	LanguageId     string        `json:"languageId"` // required
+	LanguageId     string        `json:"languageId,omitempty"` // required
 	MailTemplate   *MailTemplate `json:"mailTemplate,omitempty"`
-	MailTemplateId string        `json:"mailTemplateId"` // required
+	MailTemplateId string        `json:"mailTemplateId,omitempty"` // required
 	Media          *Media        `json:"media,omitempty"`
-	MediaId        string        `json:"mediaId"` // required
-	Position       float64       `json:"position"`
+	MediaId        string        `json:"mediaId,omitempty"` // required
+	Position       float64       `json:"position,omitempty"`
 }

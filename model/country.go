@@ -4,7 +4,7 @@ import "time"
 
 type Country struct {
 	Active                         bool                      `json:"active,omitempty"`
-	AddressFormat                  string                    `json:"addressFormat"` // required
+	AddressFormat                  string                    `json:"addressFormat,omitempty"` // required
 	CheckVatIdPattern              bool                      `json:"checkVatIdPattern,omitempty"`
 	CompanyTax                     interface{}               `json:"companyTax,omitempty"`
 	CompanyTaxFree                 bool                      `json:"companyTaxFree,omitempty"`
@@ -18,7 +18,7 @@ type Country struct {
 	Id                             string                    `json:"id,omitempty"`
 	Iso                            string                    `json:"iso,omitempty"`
 	Iso3                           string                    `json:"iso3,omitempty"`
-	Name                           string                    `json:"name"` // required
+	Name                           string                    `json:"name,omitempty"` // required
 	OrderAddresses                 []OrderAddress            `json:"orderAddresses,omitempty"`
 	Position                       float64                   `json:"position,omitempty"`
 	SalesChannelDefaultAssignments []SalesChannel            `json:"salesChannelDefaultAssignments,omitempty"`

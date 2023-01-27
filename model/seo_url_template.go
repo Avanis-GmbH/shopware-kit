@@ -5,10 +5,10 @@ import "time"
 type SeoUrlTemplate struct {
 	CreatedAt      time.Time     `json:"createdAt,omitempty"`
 	CustomFields   interface{}   `json:"customFields,omitempty"`
-	EntityName     string        `json:"entityName"` // required
+	EntityName     string        `json:"entityName,omitempty"` // required
 	Id             string        `json:"id,omitempty"`
 	IsValid        bool          `json:"isValid,omitempty"`
-	RouteName      string        `json:"routeName"` // required
+	RouteName      string        `json:"routeName,omitempty"` // required
 	SalesChannel   *SalesChannel `json:"salesChannel,omitempty"`
 	SalesChannelId string        `json:"salesChannelId,omitempty"`
 	Template       string        `json:"template,omitempty"`

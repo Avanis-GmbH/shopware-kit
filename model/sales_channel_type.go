@@ -11,7 +11,7 @@ type SalesChannelType struct {
 	IconName        string                        `json:"iconName,omitempty"`
 	Id              string                        `json:"id,omitempty"`
 	Manufacturer    string                        `json:"manufacturer,omitempty"`
-	Name            string                        `json:"name"` // required
+	Name            string                        `json:"name,omitempty"` // required
 	SalesChannels   []SalesChannel                `json:"salesChannels,omitempty"`
 	ScreenshotUrls  interface{}                   `json:"screenshotUrls,omitempty"`
 	Translated      interface{}                   `json:"translated,omitempty"`

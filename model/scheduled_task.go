@@ -7,10 +7,10 @@ type ScheduledTask struct {
 	DeadMessages       []DeadMessage `json:"deadMessages,omitempty"`
 	Id                 string        `json:"id,omitempty"`
 	LastExecutionTime  time.Time     `json:"lastExecutionTime,omitempty"`
-	Name               string        `json:"name"` // required
+	Name               string        `json:"name,omitempty"` // required
 	NextExecutionTime  time.Time     `json:"nextExecutionTime,omitempty"`
-	RunInterval        int64         `json:"runInterval"`        // required
-	ScheduledTaskClass string        `json:"scheduledTaskClass"` // required
-	Status             string        `json:"status"`             // required
+	RunInterval        int64         `json:"runInterval,omitempty"`        // required
+	ScheduledTaskClass string        `json:"scheduledTaskClass,omitempty"` // required
+	Status             string        `json:"status,omitempty"`             // required
 	UpdatedAt          time.Time     `json:"updatedAt,omitempty"`
 }

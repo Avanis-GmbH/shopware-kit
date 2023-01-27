@@ -19,7 +19,7 @@ type CmsPage struct {
 	Sections          []CmsSection         `json:"sections,omitempty"`
 	Translated        interface{}          `json:"translated,omitempty"`
 	Translations      []CmsPageTranslation `json:"translations,omitempty"`
-	Type              string               `json:"type"` // required
+	Type              string               `json:"type,omitempty"` // required
 	UpdatedAt         time.Time            `json:"updatedAt,omitempty"`
 	VersionId         string               `json:"versionId,omitempty"`
 }

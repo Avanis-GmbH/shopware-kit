@@ -4,9 +4,9 @@ import "time"
 
 type AclUserRole struct {
 	AclRole   *AclRole  `json:"aclRole,omitempty"`
-	AclRoleId string    `json:"aclRoleId"` // required
+	AclRoleId string    `json:"aclRoleId,omitempty"` // required
 	CreatedAt time.Time `json:"createdAt,omitempty"`
 	UpdatedAt time.Time `json:"updatedAt,omitempty"`
 	User      *User     `json:"user,omitempty"`
-	UserId    string    `json:"userId"` // required
+	UserId    string    `json:"userId,omitempty"` // required
 }

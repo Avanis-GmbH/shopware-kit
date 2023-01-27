@@ -8,13 +8,13 @@ type FlowSequence struct {
 	Config       interface{}    `json:"config,omitempty"`
 	CreatedAt    time.Time      `json:"createdAt,omitempty"`
 	CustomFields interface{}    `json:"customFields,omitempty"`
-	DisplayGroup float64        `json:"displayGroup"`
+	DisplayGroup float64        `json:"displayGroup,omitempty"`
 	Flow         *Flow          `json:"flow,omitempty"`
-	FlowId       string         `json:"flowId"` // required
+	FlowId       string         `json:"flowId,omitempty"` // required
 	Id           string         `json:"id,omitempty"`
 	Parent       *FlowSequence  `json:"parent,omitempty"`
 	ParentId     string         `json:"parentId,omitempty"`
-	Position     float64        `json:"position"`
+	Position     float64        `json:"position,omitempty"`
 	Rule         *Rule          `json:"rule,omitempty"`
 	RuleId       string         `json:"ruleId,omitempty"`
 	TrueCase     bool           `json:"trueCase,omitempty"`

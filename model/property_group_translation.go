@@ -9,7 +9,7 @@ type PropertyGroupTranslation struct {
 	Language        *Language      `json:"language,omitempty"`
 	LanguageId      string         `json:"languageId,omitempty"`
 	Name            string         `json:"name,omitempty"`
-	Position        float64        `json:"position"`
+	Position        float64        `json:"position,omitempty"`
 	PropertyGroup   *PropertyGroup `json:"propertyGroup,omitempty"`
 	PropertyGroupId string         `json:"propertyGroupId,omitempty"`
 	UpdatedAt       time.Time      `json:"updatedAt,omitempty"`

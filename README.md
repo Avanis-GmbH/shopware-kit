@@ -33,7 +33,7 @@ type Order struct {
 	AmountTotal             float64            `json:"amountTotal,omitempty"`
 	AutoIncrement           float64            `json:"autoIncrement,omitempty"`
 	BillingAddress          *OrderAddress      `json:"billingAddress,omitempty"`
-	BillingAddressId        string             `json:"billingAddressId"` // required
+	BillingAddressId        string             `json:"billingAddressId,omitempty"` // required
 	BillingAddressVersionId string             `json:"billingAddressVersionId,omitempty"`
 	CampaignCode            string             `json:"campaignCode,omitempty"`
 	CreatedAt               time.Time          `json:"createdAt,omitempty"`

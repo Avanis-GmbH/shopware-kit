@@ -19,11 +19,11 @@ type PaymentMethod struct {
 	Id                             string                     `json:"id,omitempty"`
 	Media                          *Media                     `json:"media,omitempty"`
 	MediaId                        string                     `json:"mediaId,omitempty"`
-	Name                           string                     `json:"name"` // required
+	Name                           string                     `json:"name,omitempty"` // required
 	OrderTransactions              []OrderTransaction         `json:"orderTransactions,omitempty"`
 	Plugin                         *Plugin                    `json:"plugin,omitempty"`
 	PluginId                       string                     `json:"pluginId,omitempty"`
-	Position                       float64                    `json:"position"`
+	Position                       float64                    `json:"position,omitempty"`
 	Prepared                       bool                       `json:"prepared,omitempty"`
 	SalesChannelDefaultAssignments []SalesChannel             `json:"salesChannelDefaultAssignments,omitempty"`
 	SalesChannels                  []SalesChannel             `json:"salesChannels,omitempty"`

@@ -4,7 +4,7 @@ import "time"
 
 type VersionCommitData struct {
 	Action          string         `json:"action,omitempty"`
-	AutoIncrement   float64        `json:"autoIncrement"`
+	AutoIncrement   float64        `json:"autoIncrement,omitempty"`
 	Commit          *VersionCommit `json:"commit,omitempty"`
 	CreatedAt       time.Time      `json:"createdAt,omitempty"`
 	EntityId        interface{}    `json:"entityId,omitempty"`
