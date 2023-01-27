@@ -1,6 +1,6 @@
 package com
 
-import "github.com/Avanis-GmbH/SUC/model"
+import "github.com/Avanis-GmbH/GoSUCK/model"
 
 type Collection interface {
 	setTotal(int64)

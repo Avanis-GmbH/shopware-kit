@@ -3,7 +3,7 @@ package com
 import (
 	"reflect"
 
-	"github.com/Avanis-GmbH/SUC/model"
+	"github.com/Avanis-GmbH/GoSUCK/model"
 )
 
 // Returns the segment of the path that is used to identify the resource.

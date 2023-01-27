@@ -1,4 +1,4 @@
-module github.com/Avanis-GmbH/SUC
+module github.com/Avanis-GmbH/GoSUCK
 
 go 1.19
 
