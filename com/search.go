@@ -9,7 +9,7 @@ import (
 // Search performs a search request for the given criteria and collection
 // The collection must be a pointer to a struct that implements the Collection interface
 func (c *Client) Search(ctx ApiContext, criteria Criteria, v Collection) error {
-	url, err := url.JoinPath("/api/search", c.getSegment(v))
+	url, err := url.JoinPath("/api/search", c.GetSegment(v))
 	if err != nil {
 		return errors.Wrapf(err, "failed to join path for %T", v)
 	}
@@ -60,7 +60,7 @@ func (c *Client) SearchAll(ctx ApiContext, criteria Criteria, v Collection) erro
 
 // SearchIds performs a search request for the given criteria and returns only the ids
 func (c *Client) SearchIds(ctx ApiContext, criteria Criteria, v interface{}) (*SearchIdsResponse, error) {
-	url, err := url.JoinPath("/api/search-ids", c.getSegment(v))
+	url, err := url.JoinPath("/api/search-ids", c.GetSegment(v))
 	if err != nil {
 		return nil, errors.Wrapf(err, "failed to join path for %T", v)
 	}
