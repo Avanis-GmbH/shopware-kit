@@ -3,7 +3,7 @@ package com
 import "github.com/Avanis-GmbH/GoSUCK/model"
 
 // Collection is the interface for all collections returned by the shopware api
-// Implemented by entityCollection which in turn is embedded by all other collections.
+// Implemented by EntityCollection which in turn is embedded by all other collections.
 type Collection interface {
 	setTotal(int64)
 	getTotal() int64
@@ -13,1276 +13,1276 @@ type Collection interface {
 	getData() []interface{}
 }
 
-// entityCollection is the base collection for all other collections
-type entityCollection struct {
+// EntityCollection is the base collection for all other collections
+type EntityCollection struct {
 	Total        int64       `json:"total"`
 	Aggregations interface{} `json:"aggregations"`
 
 	Data []interface{} `json:"data"`
 }
 
-func (c *entityCollection) setTotal(total int64) {
+func (c *EntityCollection) setTotal(total int64) {
 	c.Total = total
 }
 
-func (c entityCollection) getTotal() int64 {
+func (c EntityCollection) getTotal() int64 {
 	return c.Total
 }
 
-func (c *entityCollection) setAggregations(aggregations interface{}) {
+func (c *EntityCollection) setAggregations(aggregations interface{}) {
 	c.Aggregations = aggregations
 }
 
-func (c entityCollection) getAggregations() interface{} {
+func (c EntityCollection) getAggregations() interface{} {
 	return c.Aggregations
 }
 
-func (c *entityCollection) setData(data []interface{}) {
+func (c *EntityCollection) setData(data []interface{}) {
 	c.Data = data
 }
 
-func (c entityCollection) getData() []interface{} {
+func (c EntityCollection) getData() []interface{} {
 	return c.Data
 }
 
 type AclRoleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.AclRole `json:"data"`
 }
 
 type AclUserRoleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.AclUserRole `json:"data"`
 }
 
 type AppActionButtonTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.AppActionButtonTranslation `json:"data"`
 }
 
 type AppActionButtonCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.AppActionButton `json:"data"`
 }
 
 type AppCmsBlockTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.AppCmsBlockTranslation `json:"data"`
 }
 
 type AppCmsBlockCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.AppCmsBlock `json:"data"`
 }
 
 type AppPaymentMethodCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.AppPaymentMethod `json:"data"`
 }
 
 type AppTemplateCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.AppTemplate `json:"data"`
 }
 
 type AppTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.AppTranslation `json:"data"`
 }
 
 type AppCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.App `json:"data"`
 }
 
 type CategoryTagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CategoryTag `json:"data"`
 }
 
 type CategoryTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CategoryTranslation `json:"data"`
 }
 
 type CategoryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Category `json:"data"`
 }
 
 type CmsBlockCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CmsBlock `json:"data"`
 }
 
 type CmsPageTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CmsPageTranslation `json:"data"`
 }
 
 type CmsPageCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CmsPage `json:"data"`
 }
 
 type CmsSectionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CmsSection `json:"data"`
 }
 
 type CmsSlotTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CmsSlotTranslation `json:"data"`
 }
 
 type CmsSlotCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CmsSlot `json:"data"`
 }
 
 type CountryStateTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CountryStateTranslation `json:"data"`
 }
 
 type CountryStateCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CountryState `json:"data"`
 }
 
 type CountryTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CountryTranslation `json:"data"`
 }
 
 type CountryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Country `json:"data"`
 }
 
 type CurrencyCountryRoundingCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CurrencyCountryRounding `json:"data"`
 }
 
 type CurrencyTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CurrencyTranslation `json:"data"`
 }
 
 type CurrencyCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Currency `json:"data"`
 }
 
 type CustomFieldSetRelationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomFieldSetRelation `json:"data"`
 }
 
 type CustomFieldSetCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomFieldSet `json:"data"`
 }
 
 type CustomPriceCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomPrice `json:"data"`
 }
 
 type CustomFieldCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomField `json:"data"`
 }
 
 type CustomerAddressCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomerAddress `json:"data"`
 }
 
 type CustomerGroupRegistrationSalesChannelsCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomerGroupRegistrationSalesChannels `json:"data"`
 }
 
 type CustomerGroupTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomerGroupTranslation `json:"data"`
 }
 
 type CustomerGroupCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomerGroup `json:"data"`
 }
 
 type CustomerRecoveryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomerRecovery `json:"data"`
 }
 
 type CustomerTagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomerTag `json:"data"`
 }
 
 type CustomerWishlistProductCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomerWishlistProduct `json:"data"`
 }
 
 type CustomerWishlistCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.CustomerWishlist `json:"data"`
 }
 
 type CustomerCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Customer `json:"data"`
 }
 
 type DeadMessageCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.DeadMessage `json:"data"`
 }
 
 type DeliveryTimeTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.DeliveryTimeTranslation `json:"data"`
 }
 
 type DeliveryTimeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.DeliveryTime `json:"data"`
 }
 
 type DocumentBaseConfigSalesChannelCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.DocumentBaseConfigSalesChannel `json:"data"`
 }
 
 type DocumentBaseConfigCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.DocumentBaseConfig `json:"data"`
 }
 
 type DocumentTypeTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.DocumentTypeTranslation `json:"data"`
 }
 
 type DocumentTypeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.DocumentType `json:"data"`
 }
 
 type DocumentCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Document `json:"data"`
 }
 
 type EventActionRuleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.EventActionRule `json:"data"`
 }
 
 type EventActionSalesChannelCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.EventActionSalesChannel `json:"data"`
 }
 
 type EventActionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.EventAction `json:"data"`
 }
 
 type FlowSequenceCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.FlowSequence `json:"data"`
 }
 
 type FlowCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Flow `json:"data"`
 }
 
 type ImportExportFileCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ImportExportFile `json:"data"`
 }
 
 type ImportExportLogCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ImportExportLog `json:"data"`
 }
 
 type ImportExportProfileTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ImportExportProfileTranslation `json:"data"`
 }
 
 type ImportExportProfileCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ImportExportProfile `json:"data"`
 }
 
 type IntegrationRoleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.IntegrationRole `json:"data"`
 }
 
 type IntegrationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Integration `json:"data"`
 }
 
 type LandingPageSalesChannelCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.LandingPageSalesChannel `json:"data"`
 }
 
 type LandingPageTagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.LandingPageTag `json:"data"`
 }
 
 type LandingPageTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.LandingPageTranslation `json:"data"`
 }
 
 type LandingPageCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.LandingPage `json:"data"`
 }
 
 type LanguageCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Language `json:"data"`
 }
 
 type LocaleTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.LocaleTranslation `json:"data"`
 }
 
 type LocaleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Locale `json:"data"`
 }
 
 type LogEntryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.LogEntry `json:"data"`
 }
 
 type MailHeaderFooterTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MailHeaderFooterTranslation `json:"data"`
 }
 
 type MailHeaderFooterCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MailHeaderFooter `json:"data"`
 }
 
 type MailTemplateMediaCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MailTemplateMedia `json:"data"`
 }
 
 type MailTemplateTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MailTemplateTranslation `json:"data"`
 }
 
 type MailTemplateTypeTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MailTemplateTypeTranslation `json:"data"`
 }
 
 type MailTemplateTypeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MailTemplateType `json:"data"`
 }
 
 type MailTemplateCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MailTemplate `json:"data"`
 }
 
 type MainCategoryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MainCategory `json:"data"`
 }
 
 type MediaDefaultFolderCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MediaDefaultFolder `json:"data"`
 }
 
 type MediaFolderConfigurationMediaThumbnailSizeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MediaFolderConfigurationMediaThumbnailSize `json:"data"`
 }
 
 type MediaFolderConfigurationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MediaFolderConfiguration `json:"data"`
 }
 
 type MediaFolderCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MediaFolder `json:"data"`
 }
 
 type MediaTagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MediaTag `json:"data"`
 }
 
 type MediaThumbnailSizeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MediaThumbnailSize `json:"data"`
 }
 
 type MediaThumbnailCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MediaThumbnail `json:"data"`
 }
 
 type MediaTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MediaTranslation `json:"data"`
 }
 
 type MediaCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Media `json:"data"`
 }
 
 type MessageQueueStatsCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.MessageQueueStats `json:"data"`
 }
 
 type NewsletterRecipientTagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.NewsletterRecipientTag `json:"data"`
 }
 
 type NewsletterRecipientCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.NewsletterRecipient `json:"data"`
 }
 
 type NotificationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Notification `json:"data"`
 }
 
 type NumberRangeSalesChannelCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.NumberRangeSalesChannel `json:"data"`
 }
 
 type NumberRangeStateCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.NumberRangeState `json:"data"`
 }
 
 type NumberRangeTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.NumberRangeTranslation `json:"data"`
 }
 
 type NumberRangeTypeTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.NumberRangeTypeTranslation `json:"data"`
 }
 
 type NumberRangeTypeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.NumberRangeType `json:"data"`
 }
 
 type NumberRangeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.NumberRange `json:"data"`
 }
 
 type OrderAddressCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.OrderAddress `json:"data"`
 }
 
 type OrderCustomerCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.OrderCustomer `json:"data"`
 }
 
 type OrderDeliveryPositionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.OrderDeliveryPosition `json:"data"`
 }
 
 type OrderDeliveryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.OrderDelivery `json:"data"`
 }
 
 type OrderLineItemCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.OrderLineItem `json:"data"`
 }
 
 type OrderTagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.OrderTag `json:"data"`
 }
 
 type OrderTransactionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.OrderTransaction `json:"data"`
 }
 
 type OrderCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Order `json:"data"`
 }
 
 type PaymentMethodTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PaymentMethodTranslation `json:"data"`
 }
 
 type PaymentMethodCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PaymentMethod `json:"data"`
 }
 
 type PluginTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PluginTranslation `json:"data"`
 }
 
 type PluginCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Plugin `json:"data"`
 }
 
 type ProductCategoryTreeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductCategoryTree `json:"data"`
 }
 
 type ProductCategoryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductCategory `json:"data"`
 }
 
 type ProductConfiguratorSettingCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductConfiguratorSetting `json:"data"`
 }
 
 type ProductCrossSellingAssignedProductsCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductCrossSellingAssignedProducts `json:"data"`
 }
 
 type ProductCrossSellingTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductCrossSellingTranslation `json:"data"`
 }
 
 type ProductCrossSellingCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductCrossSelling `json:"data"`
 }
 
 type ProductCustomFieldSetCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductCustomFieldSet `json:"data"`
 }
 
 type ProductExportCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductExport `json:"data"`
 }
 
 type ProductFeatureSetTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductFeatureSetTranslation `json:"data"`
 }
 
 type ProductFeatureSetCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductFeatureSet `json:"data"`
 }
 
 type ProductKeywordDictionaryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductKeywordDictionary `json:"data"`
 }
 
 type ProductManufacturerTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductManufacturerTranslation `json:"data"`
 }
 
 type ProductManufacturerCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductManufacturer `json:"data"`
 }
 
 type ProductMediaCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductMedia `json:"data"`
 }
 
 type ProductOptionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductOption `json:"data"`
 }
 
 type ProductPriceCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductPrice `json:"data"`
 }
 
 type ProductPropertyCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductProperty `json:"data"`
 }
 
 type ProductReviewCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductReview `json:"data"`
 }
 
 type ProductSearchConfigFieldCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductSearchConfigField `json:"data"`
 }
 
 type ProductSearchConfigCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductSearchConfig `json:"data"`
 }
 
 type ProductSearchKeywordCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductSearchKeyword `json:"data"`
 }
 
 type ProductSortingTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductSortingTranslation `json:"data"`
 }
 
 type ProductSortingCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductSorting `json:"data"`
 }
 
 type ProductStreamFilterCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductStreamFilter `json:"data"`
 }
 
 type ProductStreamMappingCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductStreamMapping `json:"data"`
 }
 
 type ProductStreamTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductStreamTranslation `json:"data"`
 }
 
 type ProductStreamCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductStream `json:"data"`
 }
 
 type ProductTagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductTag `json:"data"`
 }
 
 type ProductTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductTranslation `json:"data"`
 }
 
 type ProductVisibilityCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ProductVisibility `json:"data"`
 }
 
 type ProductCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Product `json:"data"`
 }
 
 type PromotionCartRuleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionCartRule `json:"data"`
 }
 
 type PromotionDiscountPricesCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionDiscountPrices `json:"data"`
 }
 
 type PromotionDiscountRuleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionDiscountRule `json:"data"`
 }
 
 type PromotionDiscountCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionDiscount `json:"data"`
 }
 
 type PromotionIndividualCodeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionIndividualCode `json:"data"`
 }
 
 type PromotionOrderRuleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionOrderRule `json:"data"`
 }
 
 type PromotionPersonaCustomerCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionPersonaCustomer `json:"data"`
 }
 
 type PromotionPersonaRuleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionPersonaRule `json:"data"`
 }
 
 type PromotionSalesChannelCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionSalesChannel `json:"data"`
 }
 
 type PromotionSetgroupRuleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionSetgroupRule `json:"data"`
 }
 
 type PromotionSetgroupCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionSetgroup `json:"data"`
 }
 
 type PromotionTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PromotionTranslation `json:"data"`
 }
 
 type PromotionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Promotion `json:"data"`
 }
 
 type PropertyGroupOptionTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PropertyGroupOptionTranslation `json:"data"`
 }
 
 type PropertyGroupOptionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PropertyGroupOption `json:"data"`
 }
 
 type PropertyGroupTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PropertyGroupTranslation `json:"data"`
 }
 
 type PropertyGroupCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.PropertyGroup `json:"data"`
 }
 
 type RuleConditionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.RuleCondition `json:"data"`
 }
 
 type RuleTagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.RuleTag `json:"data"`
 }
 
 type RuleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Rule `json:"data"`
 }
 
 type SalesChannelAnalyticsCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelAnalytics `json:"data"`
 }
 
 type SalesChannelCountryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelCountry `json:"data"`
 }
 
 type SalesChannelCurrencyCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelCurrency `json:"data"`
 }
 
 type SalesChannelDomainCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelDomain `json:"data"`
 }
 
 type SalesChannelLanguageCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelLanguage `json:"data"`
 }
 
 type SalesChannelPaymentMethodCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelPaymentMethod `json:"data"`
 }
 
 type SalesChannelShippingMethodCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelShippingMethod `json:"data"`
 }
 
 type SalesChannelTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelTranslation `json:"data"`
 }
 
 type SalesChannelTypeTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelTypeTranslation `json:"data"`
 }
 
 type SalesChannelTypeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannelType `json:"data"`
 }
 
 type SalesChannelCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalesChannel `json:"data"`
 }
 
 type SalutationTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SalutationTranslation `json:"data"`
 }
 
 type SalutationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Salutation `json:"data"`
 }
 
 type ScheduledTaskCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ScheduledTask `json:"data"`
 }
 
 type ScriptCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Script `json:"data"`
 }
 
 type SeoUrlTemplateCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SeoUrlTemplate `json:"data"`
 }
 
 type SeoUrlCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SeoUrl `json:"data"`
 }
 
 type ShippingMethodPriceCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ShippingMethodPrice `json:"data"`
 }
 
 type ShippingMethodTagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ShippingMethodTag `json:"data"`
 }
 
 type ShippingMethodTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ShippingMethodTranslation `json:"data"`
 }
 
 type ShippingMethodCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ShippingMethod `json:"data"`
 }
 
 type SnippetSetCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SnippetSet `json:"data"`
 }
 
 type SnippetCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Snippet `json:"data"`
 }
 
 type StateMachineHistoryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.StateMachineHistory `json:"data"`
 }
 
 type StateMachineStateTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.StateMachineStateTranslation `json:"data"`
 }
 
 type StateMachineStateCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.StateMachineState `json:"data"`
 }
 
 type StateMachineTransitionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.StateMachineTransition `json:"data"`
 }
 
 type StateMachineTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.StateMachineTranslation `json:"data"`
 }
 
 type StateMachineCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.StateMachine `json:"data"`
 }
 
 type SystemConfigCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.SystemConfig `json:"data"`
 }
 
 type TagCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Tag `json:"data"`
 }
 
 type TaxRuleTypeTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.TaxRuleTypeTranslation `json:"data"`
 }
 
 type TaxRuleTypeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.TaxRuleType `json:"data"`
 }
 
 type TaxRuleCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.TaxRule `json:"data"`
 }
 
 type TaxCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Tax `json:"data"`
 }
 
 type ThemeChildCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ThemeChild `json:"data"`
 }
 
 type ThemeMediaCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ThemeMedia `json:"data"`
 }
 
 type ThemeSalesChannelCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ThemeSalesChannel `json:"data"`
 }
 
 type ThemeTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.ThemeTranslation `json:"data"`
 }
 
 type ThemeCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Theme `json:"data"`
 }
 
 type UnitTranslationCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.UnitTranslation `json:"data"`
 }
 
 type UnitCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Unit `json:"data"`
 }
 
 type UserAccessKeyCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.UserAccessKey `json:"data"`
 }
 
 type UserConfigCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.UserConfig `json:"data"`
 }
 
 type UserRecoveryCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.UserRecovery `json:"data"`
 }
 
 type UserCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.User `json:"data"`
 }
 
 type VersionCommitDataCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.VersionCommitData `json:"data"`
 }
 
 type VersionCommitCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.VersionCommit `json:"data"`
 }
 
 type VersionCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Version `json:"data"`
 }
 
 type WebhookEventLogCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.WebhookEventLog `json:"data"`
 }
 
 type WebhookCollection struct {
-	entityCollection
+	EntityCollection
 
 	Data []model.Webhook `json:"data"`
 }
