@@ -95,7 +95,7 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 
 // Creates a new request with the given context, method, url and body
 // The body will be encoded as json and the content type will be set to application/json
-func (c *Client) NewRequest(context ApiContext, method, urlStr string, body interface{}) (*http.Request, error) {
+func (c *Client) NewRequest(context ApiContext, method, path string, body interface{}) (*http.Request, error) {
 	var buf io.ReadWriter
 	if body != nil {
 		buf = &bytes.Buffer{}
@@ -106,7 +106,7 @@ func (c *Client) NewRequest(context ApiContext, method, urlStr string, body inte
 		}
 	}
 
-	req, err := c.NewRawRequest(context, method, urlStr, buf)
+	req, err := c.NewRawRequest(context, method, path, buf)
 	if err != nil {
 		return nil, err
 	}
@@ -120,8 +120,8 @@ func (c *Client) NewRequest(context ApiContext, method, urlStr string, body inte
 
 // Creates a new request using a io.Reader as body and without encoding the body as json
 // This has to be done manually by the caller if needed
-func (c *Client) NewRawRequest(context ApiContext, method, urlStr string, body io.Reader) (*http.Request, error) {
-	url, err := url.JoinPath(c.remote, urlStr)
+func (c *Client) NewRawRequest(context ApiContext, method, path string, body io.Reader) (*http.Request, error) {
+	url, err := url.JoinPath(c.remote, path)
 	if err != nil {
 		return nil, err
 	}
