@@ -8,10 +8,10 @@ type ProductCrossSelling struct {
 	CreatedAt        time.Time                             `json:"createdAt,omitempty"`
 	Id               string                                `json:"id,omitempty"`
 	Limit            float64                               `json:"limit,omitempty"`
-	Name             string                                `json:"name,omitempty"`
-	Position         float64                               `json:"position,omitempty"`
+	Name             string                                `json:"name"`     // required
+	Position         float64                               `json:"position"` // required
 	Product          *Product                              `json:"product,omitempty"`
-	ProductId        string                                `json:"productId,omitempty"`
+	ProductId        string                                `json:"productId"` // required
 	ProductStream    *ProductStream                        `json:"productStream,omitempty"`
 	ProductStreamId  string                                `json:"productStreamId,omitempty"`
 	ProductVersionId string                                `json:"productVersionId,omitempty"`
@@ -19,6 +19,6 @@ type ProductCrossSelling struct {
 	SortDirection    string                                `json:"sortDirection,omitempty"`
 	Translated       interface{}                           `json:"translated,omitempty"`
 	Translations     []ProductCrossSellingTranslation      `json:"translations,omitempty"`
-	Type             string                                `json:"type,omitempty"`
+	Type             string                                `json:"type"` // required
 	UpdatedAt        time.Time                             `json:"updatedAt,omitempty"`
 }

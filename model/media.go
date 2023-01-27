@@ -16,7 +16,7 @@ type Media struct {
 	Documents                   []Document                   `json:"documents,omitempty"`
 	FileExtension               string                       `json:"fileExtension,omitempty"`
 	FileName                    string                       `json:"fileName,omitempty"`
-	FileSize                    float64                      `json:"fileSize,omitempty"`
+	FileSize                    float64                      `json:"fileSize"`
 	HasFile                     bool                         `json:"hasFile,omitempty"`
 	Id                          string                       `json:"id,omitempty"`
 	MailTemplateMedia           []MailTemplateMedia          `json:"mailTemplateMedia,omitempty"`

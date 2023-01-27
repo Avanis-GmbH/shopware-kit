@@ -5,7 +5,7 @@ import "time"
 type DocumentBaseConfigSalesChannel struct {
 	CreatedAt            time.Time           `json:"createdAt,omitempty"`
 	DocumentBaseConfig   *DocumentBaseConfig `json:"documentBaseConfig,omitempty"`
-	DocumentBaseConfigId string              `json:"documentBaseConfigId,omitempty"`
+	DocumentBaseConfigId string              `json:"documentBaseConfigId"` // required
 	DocumentType         *DocumentType       `json:"documentType,omitempty"`
 	DocumentTypeId       string              `json:"documentTypeId,omitempty"`
 	Id                   string              `json:"id,omitempty"`

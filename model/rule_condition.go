@@ -9,10 +9,10 @@ type RuleCondition struct {
 	Id           string          `json:"id,omitempty"`
 	Parent       *RuleCondition  `json:"parent,omitempty"`
 	ParentId     string          `json:"parentId,omitempty"`
-	Position     float64         `json:"position,omitempty"`
+	Position     float64         `json:"position"`
 	Rule         *Rule           `json:"rule,omitempty"`
-	RuleId       string          `json:"ruleId,omitempty"`
-	Type         string          `json:"type,omitempty"`
+	RuleId       string          `json:"ruleId"` // required
+	Type         string          `json:"type"`   // required
 	UpdatedAt    time.Time       `json:"updatedAt,omitempty"`
 	Value        interface{}     `json:"value,omitempty"`
 }

@@ -7,12 +7,12 @@ type PropertyGroupOption struct {
 	CreatedAt                   time.Time                        `json:"createdAt,omitempty"`
 	CustomFields                interface{}                      `json:"customFields,omitempty"`
 	Group                       *PropertyGroup                   `json:"group,omitempty"`
-	GroupId                     string                           `json:"groupId,omitempty"`
+	GroupId                     string                           `json:"groupId"` // required
 	Id                          string                           `json:"id,omitempty"`
 	Media                       *Media                           `json:"media,omitempty"`
 	MediaId                     string                           `json:"mediaId,omitempty"`
-	Name                        string                           `json:"name,omitempty"`
-	Position                    float64                          `json:"position,omitempty"`
+	Name                        string                           `json:"name"` // required
+	Position                    float64                          `json:"position"`
 	ProductConfiguratorSettings []ProductConfiguratorSetting     `json:"productConfiguratorSettings,omitempty"`
 	ProductOptions              []Product                        `json:"productOptions,omitempty"`
 	ProductProperties           []Product                        `json:"productProperties,omitempty"`

@@ -3,8 +3,8 @@ package model
 import "time"
 
 type Theme struct {
-	Active         bool               `json:"active,omitempty"`
-	Author         string             `json:"author,omitempty"`
+	Active         bool               `json:"active"` // required
+	Author         string             `json:"author"` // required
 	BaseConfig     interface{}        `json:"baseConfig,omitempty"`
 	ChildThemes    []Theme            `json:"childThemes,omitempty"`
 	ConfigValues   interface{}        `json:"configValues,omitempty"`
@@ -15,7 +15,7 @@ type Theme struct {
 	Id             string             `json:"id,omitempty"`
 	Labels         interface{}        `json:"labels,omitempty"`
 	Media          []Media            `json:"media,omitempty"`
-	Name           string             `json:"name,omitempty"`
+	Name           string             `json:"name"` // required
 	ParentThemeId  string             `json:"parentThemeId,omitempty"`
 	PreviewMedia   *Media             `json:"previewMedia,omitempty"`
 	PreviewMediaId string             `json:"previewMediaId,omitempty"`

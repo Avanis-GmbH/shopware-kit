@@ -8,13 +8,13 @@ type StateMachineState struct {
 	FromStateMachineHistoryEntries []StateMachineHistory          `json:"fromStateMachineHistoryEntries,omitempty"`
 	FromStateMachineTransitions    []StateMachineTransition       `json:"fromStateMachineTransitions,omitempty"`
 	Id                             string                         `json:"id,omitempty"`
-	Name                           string                         `json:"name,omitempty"`
+	Name                           string                         `json:"name"` // required
 	OrderDeliveries                []OrderDelivery                `json:"orderDeliveries,omitempty"`
 	Orders                         []Order                        `json:"orders,omitempty"`
 	OrderTransactions              []OrderTransaction             `json:"orderTransactions,omitempty"`
 	StateMachine                   *StateMachine                  `json:"stateMachine,omitempty"`
-	StateMachineId                 string                         `json:"stateMachineId,omitempty"`
-	TechnicalName                  string                         `json:"technicalName,omitempty"`
+	StateMachineId                 string                         `json:"stateMachineId"` // required
+	TechnicalName                  string                         `json:"technicalName"`  // required
 	ToStateMachineHistoryEntries   []StateMachineHistory          `json:"toStateMachineHistoryEntries,omitempty"`
 	ToStateMachineTransitions      []StateMachineTransition       `json:"toStateMachineTransitions,omitempty"`
 	Translated                     interface{}                    `json:"translated,omitempty"`

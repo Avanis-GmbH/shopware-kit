@@ -3,7 +3,7 @@ package model
 import "time"
 
 type VersionCommit struct {
-	AutoIncrement float64             `json:"autoIncrement,omitempty"`
+	AutoIncrement float64             `json:"autoIncrement"`
 	CreatedAt     time.Time           `json:"createdAt,omitempty"`
 	Data          []VersionCommitData `json:"data,omitempty"`
 	Id            string              `json:"id,omitempty"`

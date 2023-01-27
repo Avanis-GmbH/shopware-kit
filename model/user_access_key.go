@@ -3,14 +3,14 @@ package model
 import "time"
 
 type UserAccessKey struct {
-	AccessKey       string      `json:"accessKey,omitempty"`
+	AccessKey       string      `json:"accessKey"` // required
 	CreatedAt       time.Time   `json:"createdAt,omitempty"`
 	CustomFields    interface{} `json:"customFields,omitempty"`
 	Id              string      `json:"id,omitempty"`
 	LastUsageAt     time.Time   `json:"lastUsageAt,omitempty"`
-	SecretAccessKey interface{} `json:"secretAccessKey,omitempty"`
+	SecretAccessKey interface{} `json:"secretAccessKey"` // required
 	UpdatedAt       time.Time   `json:"updatedAt,omitempty"`
 	User            *User       `json:"user,omitempty"`
-	UserId          string      `json:"userId,omitempty"`
+	UserId          string      `json:"userId"` // required
 	WriteAccess     bool        `json:"writeAccess,omitempty"`
 }

@@ -13,17 +13,18 @@ type Rule struct {
 	Id                              string                `json:"id,omitempty"`
 	Invalid                         bool                  `json:"invalid,omitempty"`
 	ModuleTypes                     interface{}           `json:"moduleTypes,omitempty"`
-	Name                            string                `json:"name,omitempty"`
+	Name                            string                `json:"name"` // required
 	OrderPromotions                 []Promotion           `json:"orderPromotions,omitempty"`
 	Payload                         interface{}           `json:"payload,omitempty"`
 	PaymentMethods                  []PaymentMethod       `json:"paymentMethods,omitempty"`
 	PersonaPromotions               []Promotion           `json:"personaPromotions,omitempty"`
-	Priority                        float64               `json:"priority,omitempty"`
+	Priority                        int64                 `json:"priority"` // required
 	ProductPrices                   []ProductPrice        `json:"productPrices,omitempty"`
 	PromotionDiscounts              []PromotionDiscount   `json:"promotionDiscounts,omitempty"`
 	PromotionSetGroups              []PromotionSetgroup   `json:"promotionSetGroups,omitempty"`
 	ShippingMethodPriceCalculations []ShippingMethodPrice `json:"shippingMethodPriceCalculations,omitempty"`
 	ShippingMethodPrices            []ShippingMethodPrice `json:"shippingMethodPrices,omitempty"`
 	ShippingMethods                 []ShippingMethod      `json:"shippingMethods,omitempty"`
+	Tags                            RuleTag               `json:"tags,omitempty"`
 	UpdatedAt                       time.Time             `json:"updatedAt,omitempty"`
 }

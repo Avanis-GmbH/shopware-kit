@@ -213,6 +213,12 @@ type CustomFieldSetCollection struct {
 	Data []model.CustomFieldSet `json:"data"`
 }
 
+type CustomPriceCollection struct {
+	entityCollection
+
+	Data []model.CustomPrice `json:"data"`
+}
+
 type CustomFieldCollection struct {
 	entityCollection
 
@@ -963,6 +969,12 @@ type RuleConditionCollection struct {
 	Data []model.RuleCondition `json:"data"`
 }
 
+type RuleTagCollection struct {
+	entityCollection
+
+	Data []model.RuleTag `json:"data"`
+}
+
 type RuleCollection struct {
 	entityCollection
 
@@ -1177,6 +1189,12 @@ type TaxCollection struct {
 	entityCollection
 
 	Data []model.Tax `json:"data"`
+}
+
+type ThemeChildCollection struct {
+	entityCollection
+
+	Data []model.ThemeChild `json:"data"`
 }
 
 type ThemeMediaCollection struct {

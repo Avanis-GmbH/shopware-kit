@@ -23,13 +23,13 @@ type Language struct {
 	ImportExportProfileTranslations []ImportExportProfileTranslation `json:"importExportProfileTranslations,omitempty"`
 	LandingPageTranslations         []LandingPageTranslation         `json:"landingPageTranslations,omitempty"`
 	Locale                          *Locale                          `json:"locale,omitempty"`
-	LocaleId                        string                           `json:"localeId,omitempty"`
+	LocaleId                        string                           `json:"localeId"` // required
 	LocaleTranslations              []LocaleTranslation              `json:"localeTranslations,omitempty"`
 	MailHeaderFooterTranslations    []MailHeaderFooterTranslation    `json:"mailHeaderFooterTranslations,omitempty"`
 	MailTemplateTranslations        []MailTemplateTranslation        `json:"mailTemplateTranslations,omitempty"`
 	MailTemplateTypeTranslations    []MailTemplateTypeTranslation    `json:"mailTemplateTypeTranslations,omitempty"`
 	MediaTranslations               []MediaTranslation               `json:"mediaTranslations,omitempty"`
-	Name                            string                           `json:"name,omitempty"`
+	Name                            string                           `json:"name"` // required
 	NewsletterRecipients            []NewsletterRecipient            `json:"newsletterRecipients,omitempty"`
 	NumberRangeTranslations         []NumberRangeTranslation         `json:"numberRangeTranslations,omitempty"`
 	NumberRangeTypeTranslations     []NumberRangeTypeTranslation     `json:"numberRangeTypeTranslations,omitempty"`

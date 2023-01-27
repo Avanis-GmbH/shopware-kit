@@ -5,15 +5,15 @@ import "time"
 type ImportExportProfile struct {
 	Config           interface{}                      `json:"config,omitempty"`
 	CreatedAt        time.Time                        `json:"createdAt,omitempty"`
-	Delimiter        string                           `json:"delimiter,omitempty"`
-	Enclosure        string                           `json:"enclosure,omitempty"`
-	FileType         string                           `json:"fileType,omitempty"`
+	Delimiter        string                           `json:"delimiter"` // required
+	Enclosure        string                           `json:"enclosure"` // required
+	FileType         string                           `json:"fileType"`  // required
 	Id               string                           `json:"id,omitempty"`
 	ImportExportLogs []ImportExportLog                `json:"importExportLogs,omitempty"`
-	Label            string                           `json:"label,omitempty"`
+	Label            string                           `json:"label"` // required
 	Mapping          interface{}                      `json:"mapping,omitempty"`
 	Name             string                           `json:"name,omitempty"`
-	SourceEntity     string                           `json:"sourceEntity,omitempty"`
+	SourceEntity     string                           `json:"sourceEntity"` // required
 	SystemDefault    bool                             `json:"systemDefault,omitempty"`
 	Translated       interface{}                      `json:"translated,omitempty"`
 	Translations     []ImportExportProfileTranslation `json:"translations,omitempty"`

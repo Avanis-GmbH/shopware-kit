@@ -7,10 +7,10 @@ type Webhook struct {
 	App        *App      `json:"app,omitempty"`
 	AppId      string    `json:"appId,omitempty"`
 	CreatedAt  time.Time `json:"createdAt,omitempty"`
-	ErrorCount float64   `json:"errorCount,omitempty"`
-	EventName  string    `json:"eventName,omitempty"`
+	ErrorCount int64     `json:"errorCount"` // required
+	EventName  string    `json:"eventName"`  // required
 	Id         string    `json:"id,omitempty"`
-	Name       string    `json:"name,omitempty"`
+	Name       string    `json:"name"` // required
 	UpdatedAt  time.Time `json:"updatedAt,omitempty"`
-	Url        string    `json:"url,omitempty"`
+	Url        string    `json:"url"` // required
 }

@@ -4,14 +4,14 @@ import "time"
 
 type StateMachineHistory struct {
 	CreatedAt             time.Time          `json:"createdAt,omitempty"`
-	EntityId              interface{}        `json:"entityId,omitempty"`
-	EntityName            string             `json:"entityName,omitempty"`
-	FromStateId           string             `json:"fromStateId,omitempty"`
+	EntityId              interface{}        `json:"entityId"`    // required
+	EntityName            string             `json:"entityName"`  // required
+	FromStateId           string             `json:"fromStateId"` // required
 	FromStateMachineState *StateMachineState `json:"fromStateMachineState,omitempty"`
 	Id                    string             `json:"id,omitempty"`
 	StateMachine          *StateMachine      `json:"stateMachine,omitempty"`
-	StateMachineId        string             `json:"stateMachineId,omitempty"`
-	ToStateId             string             `json:"toStateId,omitempty"`
+	StateMachineId        string             `json:"stateMachineId"` // required
+	ToStateId             string             `json:"toStateId"`      // required
 	ToStateMachineState   *StateMachineState `json:"toStateMachineState,omitempty"`
 	TransitionActionName  string             `json:"transitionActionName,omitempty"`
 	UpdatedAt             time.Time          `json:"updatedAt,omitempty"`

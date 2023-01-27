@@ -80,6 +80,8 @@ func (c *Client) getSegment(v interface{}) string {
 		return "custom-field-set"
 	case model.CustomField, CustomFieldCollection:
 		return "custom-field"
+	case model.CustomPrice, CustomPriceCollection:
+		return "custom-price"
 	case model.CustomerAddress, CustomerAddressCollection:
 		return "customer-address"
 	case model.CustomerGroupRegistrationSalesChannels, CustomerGroupRegistrationSalesChannelsCollection:
@@ -322,6 +324,8 @@ func (c *Client) getSegment(v interface{}) string {
 		return "property-group"
 	case model.RuleCondition, RuleConditionCollection:
 		return "rule-condition"
+	case model.RuleTag, RuleTagCollection:
+		return "rule-tag"
 	case model.Rule, RuleCollection:
 		return "rule"
 	case model.SalesChannelAnalytics, SalesChannelAnalyticsCollection:
@@ -394,6 +398,8 @@ func (c *Client) getSegment(v interface{}) string {
 		return "tax-rule"
 	case model.Tax, TaxCollection:
 		return "tax"
+	case model.ThemeChild, ThemeChildCollection:
+		return "theme-child"
 	case model.ThemeMedia, ThemeMediaCollection:
 		return "theme-media"
 	case model.ThemeSalesChannel, ThemeSalesChannelCollection:

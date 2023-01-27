@@ -6,13 +6,13 @@ type DeliveryTime struct {
 	CreatedAt       time.Time                 `json:"createdAt,omitempty"`
 	CustomFields    interface{}               `json:"customFields,omitempty"`
 	Id              string                    `json:"id,omitempty"`
-	Max             float64                   `json:"max,omitempty"`
-	Min             float64                   `json:"min,omitempty"`
-	Name            string                    `json:"name,omitempty"`
+	Max             int64                     `json:"max"`  // required
+	Min             int64                     `json:"min"`  // required
+	Name            string                    `json:"name"` // required
 	Products        []Product                 `json:"products,omitempty"`
 	ShippingMethods []ShippingMethod          `json:"shippingMethods,omitempty"`
 	Translated      interface{}               `json:"translated,omitempty"`
 	Translations    []DeliveryTimeTranslation `json:"translations,omitempty"`
-	Unit            string                    `json:"unit,omitempty"`
+	Unit            string                    `json:"unit"` // required
 	UpdatedAt       time.Time                 `json:"updatedAt,omitempty"`
 }

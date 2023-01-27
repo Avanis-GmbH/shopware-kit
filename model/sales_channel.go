@@ -3,7 +3,7 @@ package model
 import "time"
 
 type SalesChannel struct {
-	AccessKey                       string                           `json:"accessKey,omitempty"`
+	AccessKey                       string                           `json:"accessKey"` // required
 	Active                          bool                             `json:"active,omitempty"`
 	Analytics                       *SalesChannelAnalytics           `json:"analytics,omitempty"`
 	AnalyticsId                     string                           `json:"analyticsId,omitempty"`
@@ -11,13 +11,13 @@ type SalesChannel struct {
 	Configuration                   interface{}                      `json:"configuration,omitempty"`
 	Countries                       []Country                        `json:"countries,omitempty"`
 	Country                         *Country                         `json:"country,omitempty"`
-	CountryId                       string                           `json:"countryId,omitempty"`
+	CountryId                       string                           `json:"countryId"` // required
 	CreatedAt                       time.Time                        `json:"createdAt,omitempty"`
 	Currencies                      []Currency                       `json:"currencies,omitempty"`
 	Currency                        *Currency                        `json:"currency,omitempty"`
-	CurrencyId                      string                           `json:"currencyId,omitempty"`
+	CurrencyId                      string                           `json:"currencyId"` // required
 	CustomerGroup                   *CustomerGroup                   `json:"customerGroup,omitempty"`
-	CustomerGroupId                 string                           `json:"customerGroupId,omitempty"`
+	CustomerGroupId                 string                           `json:"customerGroupId"` // required
 	CustomerGroupsRegistrations     []CustomerGroup                  `json:"customerGroupsRegistrations,omitempty"`
 	Customers                       []Customer                       `json:"customers,omitempty"`
 	CustomFields                    interface{}                      `json:"customFields,omitempty"`
@@ -30,7 +30,7 @@ type SalesChannel struct {
 	HomeCmsPage                     *CmsPage                         `json:"homeCmsPage,omitempty"`
 	HomeCmsPageId                   string                           `json:"homeCmsPageId,omitempty"`
 	HomeCmsPageVersionId            string                           `json:"homeCmsPageVersionId,omitempty"`
-	HomeEnabled                     bool                             `json:"homeEnabled,omitempty"`
+	HomeEnabled                     bool                             `json:"homeEnabled"` // required
 	HomeKeywords                    string                           `json:"homeKeywords,omitempty"`
 	HomeMetaDescription             string                           `json:"homeMetaDescription,omitempty"`
 	HomeMetaTitle                   string                           `json:"homeMetaTitle,omitempty"`
@@ -49,16 +49,16 @@ type SalesChannel struct {
 	MainCategories                  []MainCategory                   `json:"mainCategories,omitempty"`
 	Maintenance                     bool                             `json:"maintenance,omitempty"`
 	MaintenanceIpWhitelist          interface{}                      `json:"maintenanceIpWhitelist,omitempty"`
-	Name                            string                           `json:"name,omitempty"`
+	Name                            string                           `json:"name"` // required
 	NavigationCategory              *Category                        `json:"navigationCategory,omitempty"`
-	NavigationCategoryDepth         float64                          `json:"navigationCategoryDepth,omitempty"`
-	NavigationCategoryId            string                           `json:"navigationCategoryId,omitempty"`
+	NavigationCategoryDepth         float64                          `json:"navigationCategoryDepth"`
+	NavigationCategoryId            string                           `json:"navigationCategoryId"` // required
 	NavigationCategoryVersionId     string                           `json:"navigationCategoryVersionId,omitempty"`
 	NewsletterRecipients            []NewsletterRecipient            `json:"newsletterRecipients,omitempty"`
 	NumberRangeSalesChannels        []NumberRangeSalesChannel        `json:"numberRangeSalesChannels,omitempty"`
 	Orders                          []Order                          `json:"orders,omitempty"`
 	PaymentMethod                   *PaymentMethod                   `json:"paymentMethod,omitempty"`
-	PaymentMethodId                 string                           `json:"paymentMethodId,omitempty"`
+	PaymentMethodId                 string                           `json:"paymentMethodId"` // required
 	PaymentMethodIds                interface{}                      `json:"paymentMethodIds,omitempty"`
 	PaymentMethods                  []PaymentMethod                  `json:"paymentMethods,omitempty"`
 	ProductExports                  []ProductExport                  `json:"productExports,omitempty"`
@@ -71,7 +71,7 @@ type SalesChannel struct {
 	ServiceCategoryId               string                           `json:"serviceCategoryId,omitempty"`
 	ServiceCategoryVersionId        string                           `json:"serviceCategoryVersionId,omitempty"`
 	ShippingMethod                  *ShippingMethod                  `json:"shippingMethod,omitempty"`
-	ShippingMethodId                string                           `json:"shippingMethodId,omitempty"`
+	ShippingMethodId                string                           `json:"shippingMethodId"` // required
 	ShippingMethods                 []ShippingMethod                 `json:"shippingMethods,omitempty"`
 	ShortName                       string                           `json:"shortName,omitempty"`
 	SystemConfigs                   []SystemConfig                   `json:"systemConfigs,omitempty"`
@@ -80,7 +80,7 @@ type SalesChannel struct {
 	Translated                      interface{}                      `json:"translated,omitempty"`
 	Translations                    []SalesChannelTranslation        `json:"translations,omitempty"`
 	Type                            *SalesChannelType                `json:"type,omitempty"`
-	TypeId                          string                           `json:"typeId,omitempty"`
+	TypeId                          string                           `json:"typeId"` // required
 	UpdatedAt                       time.Time                        `json:"updatedAt,omitempty"`
 	Wishlists                       []CustomerWishlist               `json:"wishlists,omitempty"`
 }

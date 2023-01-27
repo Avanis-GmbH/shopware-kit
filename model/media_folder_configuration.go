@@ -13,6 +13,6 @@ type MediaFolderConfiguration struct {
 	MediaThumbnailSizesRo interface{}          `json:"mediaThumbnailSizesRo,omitempty"`
 	NoAssociation         bool                 `json:"noAssociation,omitempty"`
 	Private               bool                 `json:"private,omitempty"`
-	ThumbnailQuality      float64              `json:"thumbnailQuality,omitempty"`
+	ThumbnailQuality      float64              `json:"thumbnailQuality"`
 	UpdatedAt             time.Time            `json:"updatedAt,omitempty"`
 }

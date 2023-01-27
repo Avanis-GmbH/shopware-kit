@@ -9,7 +9,7 @@ type Tag struct {
 	Id                   string                `json:"id,omitempty"`
 	LandingPages         []LandingPage         `json:"landingPages,omitempty"`
 	Media                []Media               `json:"media,omitempty"`
-	Name                 string                `json:"name,omitempty"`
+	Name                 string                `json:"name"` // required
 	NewsletterRecipients []NewsletterRecipient `json:"newsletterRecipients,omitempty"`
 	Orders               []Order               `json:"orders,omitempty"`
 	Products             []Product             `json:"products,omitempty"`

@@ -7,15 +7,15 @@ type OrderDeliveryPosition struct {
 	CustomFields           interface{}    `json:"customFields,omitempty"`
 	Id                     string         `json:"id,omitempty"`
 	OrderDelivery          *OrderDelivery `json:"orderDelivery,omitempty"`
-	OrderDeliveryId        string         `json:"orderDeliveryId,omitempty"`
+	OrderDeliveryId        string         `json:"orderDeliveryId"` // required
 	OrderDeliveryVersionId string         `json:"orderDeliveryVersionId,omitempty"`
 	OrderLineItem          *OrderLineItem `json:"orderLineItem,omitempty"`
-	OrderLineItemId        string         `json:"orderLineItemId,omitempty"`
+	OrderLineItemId        string         `json:"orderLineItemId"` // required
 	OrderLineItemVersionId string         `json:"orderLineItemVersionId,omitempty"`
-	Price                  interface{}    `json:"price,omitempty"`
-	Quantity               float64        `json:"quantity,omitempty"`
-	TotalPrice             float64        `json:"totalPrice,omitempty"`
-	UnitPrice              float64        `json:"unitPrice,omitempty"`
+	Price                  OrderPrice     `json:"price,omitempty"`
+	Quantity               float64        `json:"quantity"`
+	TotalPrice             float64        `json:"totalPrice"`
+	UnitPrice              float64        `json:"unitPrice"`
 	UpdatedAt              time.Time      `json:"updatedAt,omitempty"`
 	VersionId              string         `json:"versionId,omitempty"`
 }

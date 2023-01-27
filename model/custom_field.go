@@ -9,8 +9,8 @@ type CustomField struct {
 	CustomFieldSet            *CustomFieldSet            `json:"customFieldSet,omitempty"`
 	CustomFieldSetId          string                     `json:"customFieldSetId,omitempty"`
 	Id                        string                     `json:"id,omitempty"`
-	Name                      string                     `json:"name,omitempty"`
+	Name                      string                     `json:"name"` // required
 	ProductSearchConfigFields []ProductSearchConfigField `json:"productSearchConfigFields,omitempty"`
-	Type                      string                     `json:"type,omitempty"`
+	Type                      string                     `json:"type"` // required
 	UpdatedAt                 time.Time                  `json:"updatedAt,omitempty"`
 }

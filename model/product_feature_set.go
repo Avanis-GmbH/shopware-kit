@@ -7,7 +7,7 @@ type ProductFeatureSet struct {
 	Description  string                         `json:"description,omitempty"`
 	Features     interface{}                    `json:"features,omitempty"`
 	Id           string                         `json:"id,omitempty"`
-	Name         string                         `json:"name,omitempty"`
+	Name         string                         `json:"name"` // required
 	Products     []Product                      `json:"products,omitempty"`
 	Translated   interface{}                    `json:"translated,omitempty"`
 	Translations []ProductFeatureSetTranslation `json:"translations,omitempty"`

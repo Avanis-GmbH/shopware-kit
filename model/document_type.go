@@ -9,8 +9,8 @@ type DocumentType struct {
 	DocumentBaseConfigSalesChannels []DocumentBaseConfigSalesChannel `json:"documentBaseConfigSalesChannels,omitempty"`
 	Documents                       []Document                       `json:"documents,omitempty"`
 	Id                              string                           `json:"id,omitempty"`
-	Name                            string                           `json:"name,omitempty"`
-	TechnicalName                   string                           `json:"technicalName,omitempty"`
+	Name                            string                           `json:"name"`          // required
+	TechnicalName                   string                           `json:"technicalName"` // required
 	Translated                      interface{}                      `json:"translated,omitempty"`
 	Translations                    []DocumentTypeTranslation        `json:"translations,omitempty"`
 	UpdatedAt                       time.Time                        `json:"updatedAt,omitempty"`

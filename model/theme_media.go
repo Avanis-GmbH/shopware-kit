@@ -2,7 +2,7 @@ package model
 
 type ThemeMedia struct {
 	Media   *Media `json:"media,omitempty"`
-	MediaId string `json:"mediaId,omitempty"`
+	MediaId string `json:"mediaId"` // required
 	Theme   *Theme `json:"theme,omitempty"`
-	ThemeId string `json:"themeId,omitempty"`
+	ThemeId string `json:"themeId"` // required
 }

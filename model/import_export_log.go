@@ -3,8 +3,8 @@ package model
 import "time"
 
 type ImportExportLog struct {
-	Activity            string               `json:"activity,omitempty"`
-	Config              interface{}          `json:"config,omitempty"`
+	Activity            string               `json:"activity"` // required
+	Config              interface{}          `json:"config"`   // required
 	CreatedAt           time.Time            `json:"createdAt,omitempty"`
 	FailedImportLog     *ImportExportLog     `json:"failedImportLog,omitempty"`
 	File                *ImportExportFile    `json:"file,omitempty"`
@@ -15,9 +15,9 @@ type ImportExportLog struct {
 	Profile             *ImportExportProfile `json:"profile,omitempty"`
 	ProfileId           string               `json:"profileId,omitempty"`
 	ProfileName         string               `json:"profileName,omitempty"`
-	Records             float64              `json:"records,omitempty"`
+	Records             float64              `json:"records"` // required
 	Result              interface{}          `json:"result,omitempty"`
-	State               string               `json:"state,omitempty"`
+	State               string               `json:"state"` // required
 	UpdatedAt           time.Time            `json:"updatedAt,omitempty"`
 	User                *User                `json:"user,omitempty"`
 	UserId              string               `json:"userId,omitempty"`

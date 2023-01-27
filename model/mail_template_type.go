@@ -8,8 +8,8 @@ type MailTemplateType struct {
 	CustomFields      interface{}                   `json:"customFields,omitempty"`
 	Id                string                        `json:"id,omitempty"`
 	MailTemplates     []MailTemplate                `json:"mailTemplates,omitempty"`
-	Name              string                        `json:"name,omitempty"`
-	TechnicalName     string                        `json:"technicalName,omitempty"`
+	Name              string                        `json:"name"`          // required
+	TechnicalName     string                        `json:"technicalName"` // required
 	TemplateData      interface{}                   `json:"templateData,omitempty"`
 	Translated        interface{}                   `json:"translated,omitempty"`
 	Translations      []MailTemplateTypeTranslation `json:"translations,omitempty"`

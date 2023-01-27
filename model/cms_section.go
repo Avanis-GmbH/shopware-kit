@@ -3,24 +3,24 @@ package model
 import "time"
 
 type CmsSection struct {
-	Page                *CmsPage    `json:"page,omitempty"`
-	Type                string      `json:"type,omitempty"`
-	MobileBehavior      string      `json:"mobileBehavior,omitempty"`
-	BackgroundMediaId   string      `json:"backgroundMediaId,omitempty"`
-	CssClass            string      `json:"cssClass,omitempty"`
-	PageId              string      `json:"pageId,omitempty"`
-	BackgroundMedia     *Media      `json:"backgroundMedia,omitempty"`
-	Blocks              []CmsBlock  `json:"blocks,omitempty"`
-	VersionId           string      `json:"versionId,omitempty"`
-	Name                string      `json:"name,omitempty"`
-	CreatedAt           time.Time   `json:"createdAt,omitempty"`
-	CmsPageVersionId    string      `json:"cmsPageVersionId,omitempty"`
-	SizingMode          string      `json:"sizingMode,omitempty"`
 	BackgroundColor     string      `json:"backgroundColor,omitempty"`
+	BackgroundMedia     *Media      `json:"backgroundMedia,omitempty"`
+	BackgroundMediaId   string      `json:"backgroundMediaId,omitempty"`
+	BackgroundMediaMode string      `json:"backgroundMediaMode,omitempty"`
+	Blocks              []CmsBlock  `json:"blocks,omitempty"`
+	CmsPageVersionId    string      `json:"cmsPageVersionId,omitempty"`
+	CreatedAt           time.Time   `json:"createdAt,omitempty"`
+	CssClass            string      `json:"cssClass,omitempty"`
 	CustomFields        interface{} `json:"customFields,omitempty"`
 	Id                  string      `json:"id,omitempty"`
 	Locked              bool        `json:"locked,omitempty"`
-	BackgroundMediaMode string      `json:"backgroundMediaMode,omitempty"`
+	MobileBehavior      string      `json:"mobileBehavior,omitempty"`
+	Name                string      `json:"name,omitempty"`
+	Page                *CmsPage    `json:"page,omitempty"`
+	PageId              string      `json:"pageId"`   // required
+	Position            float64     `json:"position"` // required
+	SizingMode          string      `json:"sizingMode,omitempty"`
+	Type                string      `json:"type"` // required
 	UpdatedAt           time.Time   `json:"updatedAt,omitempty"`
-	Position            float64     `json:"position,omitempty"`
+	VersionId           string      `json:"versionId,omitempty"`
 }

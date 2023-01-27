@@ -5,8 +5,8 @@ import "time"
 type NumberRangeState struct {
 	CreatedAt     time.Time    `json:"createdAt,omitempty"`
 	Id            string       `json:"id,omitempty"`
-	LastValue     float64      `json:"lastValue,omitempty"`
+	LastValue     float64      `json:"lastValue"` // required
 	NumberRange   *NumberRange `json:"numberRange,omitempty"`
-	NumberRangeId string       `json:"numberRangeId,omitempty"`
+	NumberRangeId string       `json:"numberRangeId"` // required
 	UpdatedAt     time.Time    `json:"updatedAt,omitempty"`
 }
