@@ -1,5 +1,5 @@
-# Shopware Universal API Client
+# Shopware Universal Client Kit
 
 🚧 Currently under construction...
 
-🚀 Will be update soon!
+🚀 Will be updated soon!
