@@ -103,7 +103,7 @@ How to execute a search request:
 
 #### Update and Insert
 
-Update and Insert actions a handled by the same method `Upsert`. The shopware API provides the `/api/_action/sync` endpoint, which can be used to update and insert data.
+Update and Insert actions are handled by the same method `Upsert`. The shopware API provides the `/api/_action/sync` endpoint, which can be used to update and insert data.
 
 ```go
 	category := model.Category{
