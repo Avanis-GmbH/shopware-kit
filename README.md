@@ -42,7 +42,7 @@ type Order struct {
 }
 
 ```
-> All attributes are marked with the json tag `omitempty`, this is done to reduce the size of the request body. If an attribute is required or a numeric type is used, the `omitempty` tag is removed.
+> All attributes are marked with the json tag `omitempty`, this is done to reduce the size of the request body.
 
 ### 💥 Collections
 
