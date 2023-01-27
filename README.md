@@ -1,7 +1,7 @@
 # Shopware Universal Client Kit
 
 GoSuck is a universal API client for Shopware 6. It is based on the [Shopware 6 API](https://developer.shopware.com/docs/guides/api-guide/).
-It can be used as a standalone client or directly with the included models, which are derived from the Shopware 6 API Documentation.
+It can be used as a standalone client or directly with the included models, which are derived from the Shopware 6 API documentation.
 
 ## ⚙️ How it works
 
@@ -9,14 +9,14 @@ The package is divided into two parts. The first part is the client, which is re
 
 ### 📡 Communication
 
-The package defines a Central Client, which is responsible for the authorization and communication with the Shopware 6 API. And brings methods to execute a request to the Shopware 6 API.
+The package defines a central client, which is responsible for the authorization and communication with the Shopware 6 API. And brings methods to execute a request to the Shopware 6 API.
 
 ### 📝 Models
 
 The models are used to represent the data from the Shopware 6 API.
-Each model is saved in a separate file and contains the type definition of one Data Entity.
+Each model is saved in a separate file and contains the type definition of one data entity.
 
-For example, the `SystemConfig` model is saved in the `system_config.go` file and contains the type definition of the Data Entity.
+For example, the `Order` model is saved in the `order.go` file and contains the type definition of the data entity.
 
 ```go
 type Order struct {
@@ -67,7 +67,7 @@ func main() {
 }
 ```
 
-> It is possible to use the client without the models, but it is recommended to use the models, because they are directly derived from the Shopware 6 API Documentation.
+> It is possible to use the client without the models, but it is recommended to use the models, because they are directly derived from the Shopware 6 API documentation.
 
 How to execute a basic request:
 
