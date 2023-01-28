@@ -96,11 +96,9 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 // Creates a new request with the given context, method, url and body
 // The body will be encoded as json and the content type will be set to application/json
 func (c *Client) NewRequest(context ApiContext, method, path string, body interface{}) (*http.Request, error) {
-	var buf io.ReadWriter
+	buf := &bytes.Buffer{}
 	if body != nil {
-		buf = &bytes.Buffer{}
-		enc := json.NewEncoder(buf)
-		err := enc.Encode(body)
+		err := json.NewEncoder(buf).Encode(body)
 		if err != nil {
 			return nil, err
 		}
@@ -157,7 +155,16 @@ func (c *Client) checkResponse(r *http.Response) error {
 		return fmt.Errorf("parsing json response failed: %w", err)
 	}
 
-	return fmt.Errorf("request failed: %s", string(data))
+	// Decode the errors response into the ErrorResponse struct
+	aerr := APIError{}
+	aerr.StatusCode = r.StatusCode
+	aerr.Raw = data
+	err = json.Unmarshal(data, &aerr.Response)
+	if err != nil {
+		return fmt.Errorf("parsing json response failed: %w", err)
+	}
+
+	return errors.Wrapf(&aerr, "request failed")
 }
 
 // ApiContext is the context for the api requests
