@@ -22,7 +22,7 @@ type deleteEntity struct {
 // Starts a sync process for the list of provided actions.
 // This can be inserts, upserts, updates and deletes on different entities.
 func (c *Client) Sync(ctx ApiContext, payload map[string]SyncOperation) (*http.Response, error) {
-	req, err := c.NewRequest(ctx, http.MethodPost, "/api/_action/sync", payload)
+	req, err := c.NewRequest(ctx, http.MethodPost, "/api/_action/sync", nil, payload)
 
 	if err != nil {
 		return nil, errors.Wrapf(err, "failed to create request for sync operation")

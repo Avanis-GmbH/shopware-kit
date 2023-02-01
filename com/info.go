@@ -35,7 +35,7 @@ func (r InfoResponse) IsCloudShop() bool {
 
 // Info returns the info of the shopware api
 func (c *Client) Info(ctx ApiContext) (*InfoResponse, *http.Response, error) {
-	r, err := c.NewRequest(ctx, http.MethodGet, "/api/_info/config", nil)
+	r, err := c.NewRequest(ctx, http.MethodGet, "/api/_info/config", nil, nil)
 	if err != nil {
 		return nil, nil, errors.Wrap(err, "failed to create request for info")
 	}

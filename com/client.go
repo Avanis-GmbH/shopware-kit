@@ -80,14 +80,16 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 	if err != nil {
 		return resp, err
 	}
-	defer resp.Body.Close()
 
 	switch v := v.(type) {
 	case nil:
+		return resp, nil
 	case io.Writer:
 		_, err = io.Copy(v, resp.Body)
+		defer resp.Body.Close()
 	default:
 		err = json.NewDecoder(resp.Body).Decode(v)
+		defer resp.Body.Close()
 	}
 
 	return resp, errors.Wrap(err, "failed to decode response body")
@@ -95,7 +97,7 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 
 // Creates a new request with the given context, method, url and body
 // The body will be encoded as json and the content type will be set to application/json
-func (c *Client) NewRequest(context ApiContext, method, path string, body interface{}) (*http.Request, error) {
+func (c *Client) NewRequest(context ApiContext, method, path string, options map[string]string, body interface{}) (*http.Request, error) {
 	buf := &bytes.Buffer{}
 	if body != nil {
 		err := json.NewEncoder(buf).Encode(body)
@@ -104,7 +106,7 @@ func (c *Client) NewRequest(context ApiContext, method, path string, body interf
 		}
 	}
 
-	req, err := c.NewRawRequest(context, method, path, buf)
+	req, err := c.NewRawRequest(context, method, path, options, buf)
 	if err != nil {
 		return nil, err
 	}
@@ -118,13 +120,26 @@ func (c *Client) NewRequest(context ApiContext, method, path string, body interf
 
 // Creates a new request using a io.Reader as body and without encoding the body as json
 // This has to be done manually by the caller if needed
-func (c *Client) NewRawRequest(context ApiContext, method, path string, body io.Reader) (*http.Request, error) {
-	url, err := url.JoinPath(c.remote, path)
+func (c *Client) NewRawRequest(context ApiContext, method, path string, options map[string]string, body io.Reader) (*http.Request, error) {
+	path, err := url.JoinPath(c.remote, path)
 	if err != nil {
 		return nil, err
 	}
 
-	req, err := http.NewRequestWithContext(context.Context, method, url, body)
+	u, err := url.Parse(path)
+	if err != nil {
+		return nil, err
+	}
+
+	if options != nil && len(options) > 0 {
+		q := u.Query()
+		for key, value := range options {
+			q.Add(key, value)
+		}
+		u.RawQuery = q.Encode()
+	}
+
+	req, err := http.NewRequestWithContext(context.Context, method, u.String(), body)
 	if err != nil {
 		return nil, err
 	}

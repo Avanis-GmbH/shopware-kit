@@ -14,7 +14,7 @@ func (c *Client) Search(ctx ApiContext, criteria Criteria, v Collection) error {
 		return errors.Wrapf(err, "failed to join path for %T", v)
 	}
 
-	req, err := c.NewRequest(ctx, "POST", url, criteria)
+	req, err := c.NewRequest(ctx, "POST", url, nil, criteria)
 	if err != nil {
 		return errors.Wrapf(err, "failed to create request for %T", v)
 	}
@@ -65,7 +65,7 @@ func (c *Client) SearchIds(ctx ApiContext, criteria Criteria, v interface{}) (*S
 		return nil, errors.Wrapf(err, "failed to join path for %T", v)
 	}
 
-	req, err := c.NewRequest(ctx, "POST", url, criteria)
+	req, err := c.NewRequest(ctx, "POST", url, nil, criteria)
 	if err != nil {
 		return nil, errors.Wrapf(err, "failed to create request for %T", v)
 	}
