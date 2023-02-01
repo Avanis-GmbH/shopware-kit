@@ -7,7 +7,7 @@ type CmsSlot struct {
 	BlockId           string               `json:"blockId,omitempty"` // required
 	CmsBlockVersionId string               `json:"cmsBlockVersionId,omitempty"`
 	Config            interface{}          `json:"config,omitempty"`
-	CreatedAt         time.Time            `json:"createdAt,omitempty"`
+	CreatedAt         *time.Time           `json:"createdAt,omitempty"`
 	CustomFields      interface{}          `json:"customFields,omitempty"`
 	Data              interface{}          `json:"data,omitempty"`
 	Id                string               `json:"id,omitempty"`
@@ -16,6 +16,6 @@ type CmsSlot struct {
 	Translated        interface{}          `json:"translated,omitempty"`
 	Translations      []CmsSlotTranslation `json:"translations,omitempty"`
 	Type              string               `json:"type,omitempty"` // required
-	UpdatedAt         time.Time            `json:"updatedAt,omitempty"`
+	UpdatedAt         *time.Time           `json:"updatedAt,omitempty"`
 	VersionId         string               `json:"versionId,omitempty"`
 }

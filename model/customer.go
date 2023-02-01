@@ -7,12 +7,12 @@ type Customer struct {
 	Addresses                 []CustomerAddress  `json:"addresses,omitempty"`
 	AffiliateCode             string             `json:"affiliateCode,omitempty"`
 	AutoIncrement             float64            `json:"autoIncrement,omitempty"`
-	Birthday                  time.Time          `json:"birthday,omitempty"`
+	Birthday                  *time.Time         `json:"birthday,omitempty"`
 	BoundSalesChannel         *SalesChannel      `json:"boundSalesChannel,omitempty"`
 	BoundSalesChannelId       string             `json:"boundSalesChannelId,omitempty"`
 	CampaignCode              string             `json:"campaignCode,omitempty"`
 	Company                   string             `json:"company,omitempty"`
-	CreatedAt                 time.Time          `json:"createdAt,omitempty"`
+	CreatedAt                 *time.Time         `json:"createdAt,omitempty"`
 	CustomerNumber            string             `json:"customerNumber,omitempty"`
 	CustomFields              interface{}        `json:"customFields,omitempty"`
 	DefaultBillingAddress     *CustomerAddress   `json:"defaultBillingAddress,omitempty"`
@@ -21,11 +21,11 @@ type Customer struct {
 	DefaultPaymentMethodId    string             `json:"defaultPaymentMethodId,omitempty"` // required
 	DefaultShippingAddress    *CustomerAddress   `json:"defaultShippingAddress,omitempty"`
 	DefaultShippingAddressId  string             `json:"defaultShippingAddressId,omitempty"`
-	DoubleOptInConfirmDate    time.Time          `json:"doubleOptInConfirmDate,omitempty"`
-	DoubleOptInEmailSentDate  time.Time          `json:"doubleOptInEmailSentDate,omitempty"`
+	DoubleOptInConfirmDate    *time.Time         `json:"doubleOptInConfirmDate,omitempty"`
+	DoubleOptInEmailSentDate  *time.Time         `json:"doubleOptInEmailSentDate,omitempty"`
 	DoubleOptInRegistration   bool               `json:"doubleOptInRegistration,omitempty"`
 	Email                     string             `json:"email,omitempty"` // required
-	FirstLogin                time.Time          `json:"firstLogin,omitempty"`
+	FirstLogin                *time.Time         `json:"firstLogin,omitempty"`
 	FirstName                 string             `json:"firstName,omitempty"` // required
 	Group                     *CustomerGroup     `json:"group,omitempty"`
 	GroupId                   string             `json:"groupId,omitempty"` // required
@@ -34,9 +34,9 @@ type Customer struct {
 	Id                        string             `json:"id,omitempty"`
 	Language                  *Language          `json:"language,omitempty"`
 	LanguageId                string             `json:"languageId,omitempty"` // required
-	LastLogin                 time.Time          `json:"lastLogin,omitempty"`
+	LastLogin                 *time.Time         `json:"lastLogin,omitempty"`
 	LastName                  string             `json:"lastName,omitempty"` // required
-	LastOrderDate             time.Time          `json:"lastOrderDate,omitempty"`
+	LastOrderDate             *time.Time         `json:"lastOrderDate,omitempty"`
 	LastPaymentMethod         *PaymentMethod     `json:"lastPaymentMethod,omitempty"`
 	LastPaymentMethodId       string             `json:"lastPaymentMethodId,omitempty"`
 	LegacyEncoder             string             `json:"legacyEncoder,omitempty"`
@@ -60,7 +60,7 @@ type Customer struct {
 	TagIds                    interface{}        `json:"tagIds,omitempty"`
 	Tags                      []Tag              `json:"tags,omitempty"`
 	Title                     string             `json:"title,omitempty"`
-	UpdatedAt                 time.Time          `json:"updatedAt,omitempty"`
+	UpdatedAt                 *time.Time         `json:"updatedAt,omitempty"`
 	VatIds                    interface{}        `json:"vatIds,omitempty"`
 	Wishlists                 []CustomerWishlist `json:"wishlists,omitempty"`
 }

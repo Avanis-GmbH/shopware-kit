@@ -4,7 +4,7 @@ import "time"
 
 type PluginTranslation struct {
 	Changelog        interface{} `json:"changelog,omitempty"`
-	CreatedAt        time.Time   `json:"createdAt,omitempty"`
+	CreatedAt        *time.Time  `json:"createdAt,omitempty"`
 	CustomFields     interface{} `json:"customFields,omitempty"`
 	Description      string      `json:"description,omitempty"`
 	Label            string      `json:"label,omitempty"`
@@ -14,5 +14,5 @@ type PluginTranslation struct {
 	Plugin           *Plugin     `json:"plugin,omitempty"`
 	PluginId         string      `json:"pluginId,omitempty"`
 	SupportLink      string      `json:"supportLink,omitempty"`
-	UpdatedAt        time.Time   `json:"updatedAt,omitempty"`
+	UpdatedAt        *time.Time  `json:"updatedAt,omitempty"`
 }

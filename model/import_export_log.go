@@ -5,7 +5,7 @@ import "time"
 type ImportExportLog struct {
 	Activity            string               `json:"activity,omitempty"` // required
 	Config              interface{}          `json:"config,omitempty"`   // required
-	CreatedAt           time.Time            `json:"createdAt,omitempty"`
+	CreatedAt           *time.Time           `json:"createdAt,omitempty"`
 	FailedImportLog     *ImportExportLog     `json:"failedImportLog,omitempty"`
 	File                *ImportExportFile    `json:"file,omitempty"`
 	FileId              string               `json:"fileId,omitempty"`
@@ -18,7 +18,7 @@ type ImportExportLog struct {
 	Records             float64              `json:"records,omitempty"` // required
 	Result              interface{}          `json:"result,omitempty"`
 	State               string               `json:"state,omitempty"` // required
-	UpdatedAt           time.Time            `json:"updatedAt,omitempty"`
+	UpdatedAt           *time.Time           `json:"updatedAt,omitempty"`
 	User                *User                `json:"user,omitempty"`
 	UserId              string               `json:"userId,omitempty"`
 	Username            string               `json:"username,omitempty"`

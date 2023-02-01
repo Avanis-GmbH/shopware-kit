@@ -4,7 +4,7 @@ import "time"
 
 type PropertyGroupOption struct {
 	ColorHexCode                string                           `json:"colorHexCode,omitempty"`
-	CreatedAt                   time.Time                        `json:"createdAt,omitempty"`
+	CreatedAt                   *time.Time                       `json:"createdAt,omitempty"`
 	CustomFields                interface{}                      `json:"customFields,omitempty"`
 	Group                       *PropertyGroup                   `json:"group,omitempty"`
 	GroupId                     string                           `json:"groupId,omitempty"` // required
@@ -18,5 +18,5 @@ type PropertyGroupOption struct {
 	ProductProperties           []Product                        `json:"productProperties,omitempty"`
 	Translated                  interface{}                      `json:"translated,omitempty"`
 	Translations                []PropertyGroupOptionTranslation `json:"translations,omitempty"`
-	UpdatedAt                   time.Time                        `json:"updatedAt,omitempty"`
+	UpdatedAt                   *time.Time                       `json:"updatedAt,omitempty"`
 }

@@ -11,7 +11,7 @@ type CustomerAddress struct {
 	CountryId              string        `json:"countryId,omitempty"` // required
 	CountryState           *CountryState `json:"countryState,omitempty"`
 	CountryStateId         string        `json:"countryStateId,omitempty"`
-	CreatedAt              time.Time     `json:"createdAt,omitempty"`
+	CreatedAt              *time.Time    `json:"createdAt,omitempty"`
 	Customer               *Customer     `json:"customer,omitempty"`
 	CustomerId             string        `json:"customerId,omitempty"` // required
 	CustomFields           interface{}   `json:"customFields,omitempty"`
@@ -24,6 +24,6 @@ type CustomerAddress struct {
 	SalutationId           string        `json:"salutationId,omitempty"`
 	Street                 string        `json:"street,omitempty"` // required
 	Title                  string        `json:"title,omitempty"`
-	UpdatedAt              time.Time     `json:"updatedAt,omitempty"`
+	UpdatedAt              *time.Time    `json:"updatedAt,omitempty"`
 	Zipcode                string        `json:"zipcode,omitempty"`
 }

@@ -3,7 +3,7 @@ package model
 import "time"
 
 type DocumentBaseConfigSalesChannel struct {
-	CreatedAt            time.Time           `json:"createdAt,omitempty"`
+	CreatedAt            *time.Time          `json:"createdAt,omitempty"`
 	DocumentBaseConfig   *DocumentBaseConfig `json:"documentBaseConfig,omitempty"`
 	DocumentBaseConfigId string              `json:"documentBaseConfigId,omitempty"` // required
 	DocumentType         *DocumentType       `json:"documentType,omitempty"`
@@ -11,5 +11,5 @@ type DocumentBaseConfigSalesChannel struct {
 	Id                   string              `json:"id,omitempty"`
 	SalesChannel         *SalesChannel       `json:"salesChannel,omitempty"`
 	SalesChannelId       string              `json:"salesChannelId,omitempty"`
-	UpdatedAt            time.Time           `json:"updatedAt,omitempty"`
+	UpdatedAt            *time.Time          `json:"updatedAt,omitempty"`
 }

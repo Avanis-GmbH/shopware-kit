@@ -3,7 +3,7 @@ package model
 import "time"
 
 type DocumentType struct {
-	CreatedAt                       time.Time                        `json:"createdAt,omitempty"`
+	CreatedAt                       *time.Time                       `json:"createdAt,omitempty"`
 	CustomFields                    interface{}                      `json:"customFields,omitempty"`
 	DocumentBaseConfigs             []DocumentBaseConfig             `json:"documentBaseConfigs,omitempty"`
 	DocumentBaseConfigSalesChannels []DocumentBaseConfigSalesChannel `json:"documentBaseConfigSalesChannels,omitempty"`
@@ -13,5 +13,5 @@ type DocumentType struct {
 	TechnicalName                   string                           `json:"technicalName,omitempty"` // required
 	Translated                      interface{}                      `json:"translated,omitempty"`
 	Translations                    []DocumentTypeTranslation        `json:"translations,omitempty"`
-	UpdatedAt                       time.Time                        `json:"updatedAt,omitempty"`
+	UpdatedAt                       *time.Time                       `json:"updatedAt,omitempty"`
 }

@@ -3,7 +3,7 @@ package model
 import "time"
 
 type SalesChannelTranslation struct {
-	CreatedAt           time.Time     `json:"createdAt,omitempty"`
+	CreatedAt           *time.Time    `json:"createdAt,omitempty"`
 	CustomFields        interface{}   `json:"customFields,omitempty"`
 	HomeEnabled         bool          `json:"homeEnabled,omitempty"`
 	HomeKeywords        string        `json:"homeKeywords,omitempty"`
@@ -16,5 +16,5 @@ type SalesChannelTranslation struct {
 	Name                string        `json:"name,omitempty"`
 	SalesChannel        *SalesChannel `json:"salesChannel,omitempty"`
 	SalesChannelId      string        `json:"salesChannelId,omitempty"`
-	UpdatedAt           time.Time     `json:"updatedAt,omitempty"`
+	UpdatedAt           *time.Time    `json:"updatedAt,omitempty"`
 }

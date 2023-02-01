@@ -12,7 +12,7 @@ type Order struct {
 	BillingAddressId        string             `json:"billingAddressId,omitempty"` // required
 	BillingAddressVersionId string             `json:"billingAddressVersionId,omitempty"`
 	CampaignCode            string             `json:"campaignCode,omitempty"`
-	CreatedAt               time.Time          `json:"createdAt,omitempty"`
+	CreatedAt               *time.Time         `json:"createdAt,omitempty"`
 	CreatedBy               *User              `json:"createdBy,omitempty"`
 	CreatedById             string             `json:"createdById,omitempty"`
 	Currency                *Currency          `json:"currency,omitempty"`
@@ -29,8 +29,8 @@ type Order struct {
 	LanguageId              string             `json:"languageId,omitempty"` // required
 	LineItems               []OrderLineItem    `json:"lineItems,omitempty"`
 	OrderCustomer           *OrderCustomer     `json:"orderCustomer,omitempty"`
-	OrderDate               time.Time          `json:"orderDate,omitempty"`
-	OrderDateTime           time.Time          `json:"orderDateTime,omitempty"` // required
+	OrderDate               *time.Time         `json:"orderDate,omitempty"`
+	OrderDateTime           *time.Time         `json:"orderDateTime,omitempty"` // required
 	OrderNumber             string             `json:"orderNumber,omitempty"`
 	PositionPrice           float64            `json:"positionPrice,omitempty"`
 	Price                   OrderPrice         `json:"price,omitempty"`
@@ -45,7 +45,7 @@ type Order struct {
 	TaxStatus               string             `json:"taxStatus,omitempty"`
 	TotalRounding           interface{}        `json:"totalRounding,omitempty"`
 	Transactions            []OrderTransaction `json:"transactions,omitempty"`
-	UpdatedAt               time.Time          `json:"updatedAt,omitempty"`
+	UpdatedAt               *time.Time         `json:"updatedAt,omitempty"`
 	UpdatedBy               *User              `json:"updatedBy,omitempty"`
 	UpdatedById             string             `json:"updatedById,omitempty"`
 	VersionId               string             `json:"versionId,omitempty"`

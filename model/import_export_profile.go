@@ -4,7 +4,7 @@ import "time"
 
 type ImportExportProfile struct {
 	Config           interface{}                      `json:"config,omitempty"`
-	CreatedAt        time.Time                        `json:"createdAt,omitempty"`
+	CreatedAt        *time.Time                       `json:"createdAt,omitempty"`
 	Delimiter        string                           `json:"delimiter,omitempty"` // required
 	Enclosure        string                           `json:"enclosure,omitempty"` // required
 	FileType         string                           `json:"fileType,omitempty"`  // required
@@ -19,5 +19,5 @@ type ImportExportProfile struct {
 	Translations     []ImportExportProfileTranslation `json:"translations,omitempty"`
 	Type             string                           `json:"type,omitempty"`
 	UpdateBy         interface{}                      `json:"updateBy,omitempty"`
-	UpdatedAt        time.Time                        `json:"updatedAt,omitempty"`
+	UpdatedAt        *time.Time                       `json:"updatedAt,omitempty"`
 }

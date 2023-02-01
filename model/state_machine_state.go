@@ -3,7 +3,7 @@ package model
 import "time"
 
 type StateMachineState struct {
-	CreatedAt                      time.Time                      `json:"createdAt,omitempty"`
+	CreatedAt                      *time.Time                     `json:"createdAt,omitempty"`
 	CustomFields                   interface{}                    `json:"customFields,omitempty"`
 	FromStateMachineHistoryEntries []StateMachineHistory          `json:"fromStateMachineHistoryEntries,omitempty"`
 	FromStateMachineTransitions    []StateMachineTransition       `json:"fromStateMachineTransitions,omitempty"`
@@ -19,5 +19,5 @@ type StateMachineState struct {
 	ToStateMachineTransitions      []StateMachineTransition       `json:"toStateMachineTransitions,omitempty"`
 	Translated                     interface{}                    `json:"translated,omitempty"`
 	Translations                   []StateMachineStateTranslation `json:"translations,omitempty"`
-	UpdatedAt                      time.Time                      `json:"updatedAt,omitempty"`
+	UpdatedAt                      *time.Time                     `json:"updatedAt,omitempty"`
 }

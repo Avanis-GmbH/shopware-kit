@@ -4,7 +4,7 @@ import "time"
 
 type SalesChannelType struct {
 	CoverUrl        string                        `json:"coverUrl,omitempty"`
-	CreatedAt       time.Time                     `json:"createdAt,omitempty"`
+	CreatedAt       *time.Time                    `json:"createdAt,omitempty"`
 	CustomFields    interface{}                   `json:"customFields,omitempty"`
 	Description     string                        `json:"description,omitempty"`
 	DescriptionLong string                        `json:"descriptionLong,omitempty"`
@@ -16,5 +16,5 @@ type SalesChannelType struct {
 	ScreenshotUrls  interface{}                   `json:"screenshotUrls,omitempty"`
 	Translated      interface{}                   `json:"translated,omitempty"`
 	Translations    []SalesChannelTypeTranslation `json:"translations,omitempty"`
-	UpdatedAt       time.Time                     `json:"updatedAt,omitempty"`
+	UpdatedAt       *time.Time                    `json:"updatedAt,omitempty"`
 }

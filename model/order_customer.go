@@ -4,7 +4,7 @@ import "time"
 
 type OrderCustomer struct {
 	Company        string      `json:"company,omitempty"`
-	CreatedAt      time.Time   `json:"createdAt,omitempty"`
+	CreatedAt      *time.Time  `json:"createdAt,omitempty"`
 	Customer       *Customer   `json:"customer,omitempty"`
 	CustomerId     string      `json:"customerId,omitempty"`
 	CustomerNumber string      `json:"customerNumber,omitempty"`
@@ -20,7 +20,7 @@ type OrderCustomer struct {
 	Salutation     *Salutation `json:"salutation,omitempty"`
 	SalutationId   string      `json:"salutationId,omitempty"` // required
 	Title          string      `json:"title,omitempty"`
-	UpdatedAt      time.Time   `json:"updatedAt,omitempty"`
+	UpdatedAt      *time.Time  `json:"updatedAt,omitempty"`
 	VatIds         interface{} `json:"vatIds,omitempty"`
 	VersionId      string      `json:"versionId,omitempty"`
 }

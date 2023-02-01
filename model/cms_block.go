@@ -8,7 +8,7 @@ type CmsBlock struct {
 	BackgroundMediaId   string      `json:"backgroundMediaId,omitempty"`
 	BackgroundMediaMode string      `json:"backgroundMediaMode,omitempty"`
 	CmsSectionVersionId string      `json:"cmsSectionVersionId,omitempty"`
-	CreatedAt           time.Time   `json:"createdAt,omitempty"`
+	CreatedAt           *time.Time  `json:"createdAt,omitempty"`
 	CssClass            string      `json:"cssClass,omitempty"`
 	CustomFields        interface{} `json:"customFields,omitempty"`
 	Id                  string      `json:"id,omitempty"`
@@ -24,6 +24,6 @@ type CmsBlock struct {
 	SectionPosition     string      `json:"sectionPosition,omitempty"`
 	Slots               []CmsSlot   `json:"slots,omitempty"`
 	Type                string      `json:"type,omitempty"` // required
-	UpdatedAt           time.Time   `json:"updatedAt,omitempty"`
+	UpdatedAt           *time.Time  `json:"updatedAt,omitempty"`
 	VersionId           string      `json:"versionId,omitempty"`
 }

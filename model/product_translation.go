@@ -3,7 +3,7 @@ package model
 import "time"
 
 type ProductTranslation struct {
-	CreatedAt            time.Time   `json:"createdAt,omitempty"`
+	CreatedAt            *time.Time  `json:"createdAt,omitempty"`
 	CustomFields         interface{} `json:"customFields,omitempty"`
 	CustomSearchKeywords interface{} `json:"customSearchKeywords,omitempty"`
 	Description          string      `json:"description,omitempty"`
@@ -19,5 +19,5 @@ type ProductTranslation struct {
 	ProductId            string      `json:"productId,omitempty"`
 	ProductVersionId     string      `json:"productVersionId,omitempty"`
 	SlotConfig           interface{} `json:"slotConfig,omitempty"`
-	UpdatedAt            time.Time   `json:"updatedAt,omitempty"`
+	UpdatedAt            *time.Time  `json:"updatedAt,omitempty"`
 }

@@ -3,7 +3,7 @@ package model
 import "time"
 
 type PaymentMethodTranslation struct {
-	CreatedAt           time.Time      `json:"createdAt,omitempty"`
+	CreatedAt           *time.Time     `json:"createdAt,omitempty"`
 	CustomFields        interface{}    `json:"customFields,omitempty"`
 	Description         string         `json:"description,omitempty"`
 	DistinguishableName string         `json:"distinguishableName,omitempty"`
@@ -12,5 +12,5 @@ type PaymentMethodTranslation struct {
 	Name                string         `json:"name,omitempty"`
 	PaymentMethod       *PaymentMethod `json:"paymentMethod,omitempty"`
 	PaymentMethodId     string         `json:"paymentMethodId,omitempty"`
-	UpdatedAt           time.Time      `json:"updatedAt,omitempty"`
+	UpdatedAt           *time.Time     `json:"updatedAt,omitempty"`
 }

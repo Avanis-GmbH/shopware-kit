@@ -3,7 +3,7 @@ package model
 import "time"
 
 type SalesChannelTypeTranslation struct {
-	CreatedAt          time.Time         `json:"createdAt,omitempty"`
+	CreatedAt          *time.Time        `json:"createdAt,omitempty"`
 	CustomFields       interface{}       `json:"customFields,omitempty"`
 	Description        string            `json:"description,omitempty"`
 	DescriptionLong    string            `json:"descriptionLong,omitempty"`
@@ -13,5 +13,5 @@ type SalesChannelTypeTranslation struct {
 	Name               string            `json:"name,omitempty"`
 	SalesChannelType   *SalesChannelType `json:"salesChannelType,omitempty"`
 	SalesChannelTypeId string            `json:"salesChannelTypeId,omitempty"`
-	UpdatedAt          time.Time         `json:"updatedAt,omitempty"`
+	UpdatedAt          *time.Time        `json:"updatedAt,omitempty"`
 }

@@ -4,7 +4,7 @@ import "time"
 
 type Document struct {
 	Config               interface{}   `json:"config,omitempty"` // required
-	CreatedAt            time.Time     `json:"createdAt,omitempty"`
+	CreatedAt            *time.Time    `json:"createdAt,omitempty"`
 	CustomFields         interface{}   `json:"customFields,omitempty"`
 	DeepLinkCode         string        `json:"deepLinkCode,omitempty"` // required
 	DependentDocuments   []Document    `json:"dependentDocuments,omitempty"`
@@ -21,5 +21,5 @@ type Document struct {
 	ReferencedDocumentId string        `json:"referencedDocumentId,omitempty"`
 	Sent                 bool          `json:"sent,omitempty"`
 	Static               bool          `json:"static,omitempty"`
-	UpdatedAt            time.Time     `json:"updatedAt,omitempty"`
+	UpdatedAt            *time.Time    `json:"updatedAt,omitempty"`
 }

@@ -6,7 +6,7 @@ type FlowSequence struct {
 	ActionName   string         `json:"actionName,omitempty"`
 	Children     []FlowSequence `json:"children,omitempty"`
 	Config       interface{}    `json:"config,omitempty"`
-	CreatedAt    time.Time      `json:"createdAt,omitempty"`
+	CreatedAt    *time.Time     `json:"createdAt,omitempty"`
 	CustomFields interface{}    `json:"customFields,omitempty"`
 	DisplayGroup float64        `json:"displayGroup,omitempty"`
 	Flow         *Flow          `json:"flow,omitempty"`
@@ -18,5 +18,5 @@ type FlowSequence struct {
 	Rule         *Rule          `json:"rule,omitempty"`
 	RuleId       string         `json:"ruleId,omitempty"`
 	TrueCase     bool           `json:"trueCase,omitempty"`
-	UpdatedAt    time.Time      `json:"updatedAt,omitempty"`
+	UpdatedAt    *time.Time     `json:"updatedAt,omitempty"`
 }

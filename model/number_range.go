@@ -3,7 +3,7 @@ package model
 import "time"
 
 type NumberRange struct {
-	CreatedAt                time.Time                 `json:"createdAt,omitempty"`
+	CreatedAt                *time.Time                `json:"createdAt,omitempty"`
 	CustomFields             interface{}               `json:"customFields,omitempty"`
 	Description              string                    `json:"description,omitempty"`
 	Global                   bool                      `json:"global,omitempty"`
@@ -17,5 +17,5 @@ type NumberRange struct {
 	Translations             []NumberRangeTranslation  `json:"translations,omitempty"`
 	Type                     *NumberRangeType          `json:"type,omitempty"` // required
 	TypeId                   string                    `json:"typeId,omitempty"`
-	UpdatedAt                time.Time                 `json:"updatedAt,omitempty"`
+	UpdatedAt                *time.Time                `json:"updatedAt,omitempty"`
 }

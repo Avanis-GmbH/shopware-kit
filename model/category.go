@@ -13,7 +13,7 @@ type Category struct {
 	CmsPage                 *CmsPage              `json:"cmsPage,omitempty"`
 	CmsPageId               string                `json:"cmsPageId,omitempty"`
 	CmsPageVersionId        string                `json:"cmsPageVersionId,omitempty"`
-	CreatedAt               time.Time             `json:"createdAt,omitempty"`
+	CreatedAt               *time.Time            `json:"createdAt,omitempty"`
 	CustomFields            interface{}           `json:"customFields,omitempty"`
 	Description             string                `json:"description,omitempty"`
 	DisplayNestedProducts   bool                  `json:"displayNestedProducts,omitempty"` // required
@@ -48,7 +48,7 @@ type Category struct {
 	Translated              interface{}           `json:"translated,omitempty"`
 	Translations            []CategoryTranslation `json:"translations,omitempty"`
 	Type                    string                `json:"type,omitempty"` // required
-	UpdatedAt               time.Time             `json:"updatedAt,omitempty"`
+	UpdatedAt               *time.Time            `json:"updatedAt,omitempty"`
 	VersionId               string                `json:"versionId,omitempty"`
 	Visible                 bool                  `json:"visible,omitempty"`
 }

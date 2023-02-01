@@ -23,7 +23,7 @@ type Product struct {
 	ConfiguratorSettings          []ProductConfiguratorSetting          `json:"configuratorSettings,omitempty"`
 	Cover                         *ProductMedia                         `json:"cover,omitempty"`
 	CoverId                       string                                `json:"coverId,omitempty"`
-	CreatedAt                     time.Time                             `json:"createdAt,omitempty"`
+	CreatedAt                     *time.Time                            `json:"createdAt,omitempty"`
 	CrossSellingAssignedProducts  []ProductCrossSellingAssignedProducts `json:"crossSellingAssignedProducts,omitempty"`
 	CrossSellings                 []ProductCrossSelling                 `json:"crossSellings,omitempty"`
 	CustomFields                  interface{}                           `json:"customFields,omitempty"`
@@ -75,7 +75,7 @@ type Product struct {
 	PurchaseUnit                  float64                               `json:"purchaseUnit,omitempty"`
 	RatingAverage                 float64                               `json:"ratingAverage,omitempty"`
 	ReferenceUnit                 float64                               `json:"referenceUnit,omitempty"`
-	ReleaseDate                   time.Time                             `json:"releaseDate,omitempty"`
+	ReleaseDate                   *time.Time                            `json:"releaseDate,omitempty"`
 	RestockTime                   float64                               `json:"restockTime,omitempty"`
 	Sales                         float64                               `json:"sales,omitempty"`
 	SearchKeywords                []ProductSearchKeyword                `json:"searchKeywords,omitempty"`
@@ -93,7 +93,7 @@ type Product struct {
 	Translations                  []ProductTranslation                  `json:"translations,omitempty"`
 	Unit                          *Unit                                 `json:"unit,omitempty"`
 	UnitId                        string                                `json:"unitId,omitempty"`
-	UpdatedAt                     time.Time                             `json:"updatedAt,omitempty"`
+	UpdatedAt                     *time.Time                            `json:"updatedAt,omitempty"`
 	VariantRestrictions           interface{}                           `json:"variantRestrictions,omitempty"`
 	Variation                     interface{}                           `json:"variation,omitempty"`
 	VersionId                     string                                `json:"versionId,omitempty"`

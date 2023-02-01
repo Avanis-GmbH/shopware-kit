@@ -5,7 +5,7 @@ import "time"
 type ProductStream struct {
 	ApiFilter            interface{}                `json:"apiFilter,omitempty"`
 	Categories           []Category                 `json:"categories,omitempty"`
-	CreatedAt            time.Time                  `json:"createdAt,omitempty"`
+	CreatedAt            *time.Time                 `json:"createdAt,omitempty"`
 	CustomFields         interface{}                `json:"customFields,omitempty"`
 	Description          string                     `json:"description,omitempty"`
 	Filters              []ProductStreamFilter      `json:"filters,omitempty"`
@@ -16,5 +16,5 @@ type ProductStream struct {
 	ProductExports       []ProductExport            `json:"productExports,omitempty"`
 	Translated           interface{}                `json:"translated,omitempty"`
 	Translations         []ProductStreamTranslation `json:"translations,omitempty"`
-	UpdatedAt            time.Time                  `json:"updatedAt,omitempty"`
+	UpdatedAt            *time.Time                 `json:"updatedAt,omitempty"`
 }

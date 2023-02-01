@@ -4,7 +4,7 @@ import "time"
 
 type Notification struct {
 	AdminOnly              bool         `json:"adminOnly,omitempty"`
-	CreatedAt              time.Time    `json:"createdAt,omitempty"`
+	CreatedAt              *time.Time   `json:"createdAt,omitempty"`
 	CreatedByIntegration   *Integration `json:"createdByIntegration,omitempty"`
 	CreatedByIntegrationId string       `json:"createdByIntegrationId,omitempty"`
 	CreatedByUser          *User        `json:"createdByUser,omitempty"`
@@ -13,5 +13,5 @@ type Notification struct {
 	Message                string       `json:"message,omitempty"` // required
 	RequiredPrivileges     interface{}  `json:"requiredPrivileges,omitempty"`
 	Status                 string       `json:"status,omitempty"` // required
-	UpdatedAt              time.Time    `json:"updatedAt,omitempty"`
+	UpdatedAt              *time.Time   `json:"updatedAt,omitempty"`
 }

@@ -5,7 +5,7 @@ import "time"
 type ProductCrossSelling struct {
 	Active           bool                                  `json:"active,omitempty"`
 	AssignedProducts []ProductCrossSellingAssignedProducts `json:"assignedProducts,omitempty"`
-	CreatedAt        time.Time                             `json:"createdAt,omitempty"`
+	CreatedAt        *time.Time                            `json:"createdAt,omitempty"`
 	Id               string                                `json:"id,omitempty"`
 	Limit            float64                               `json:"limit,omitempty"`
 	Name             string                                `json:"name,omitempty"`     // required
@@ -20,5 +20,5 @@ type ProductCrossSelling struct {
 	Translated       interface{}                           `json:"translated,omitempty"`
 	Translations     []ProductCrossSellingTranslation      `json:"translations,omitempty"`
 	Type             string                                `json:"type,omitempty"` // required
-	UpdatedAt        time.Time                             `json:"updatedAt,omitempty"`
+	UpdatedAt        *time.Time                            `json:"updatedAt,omitempty"`
 }

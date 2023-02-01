@@ -9,7 +9,7 @@ type PaymentMethod struct {
 	Asynchronous                   bool                       `json:"asynchronous,omitempty"`
 	AvailabilityRule               *Rule                      `json:"availabilityRule,omitempty"`
 	AvailabilityRuleId             string                     `json:"availabilityRuleId,omitempty"`
-	CreatedAt                      time.Time                  `json:"createdAt,omitempty"`
+	CreatedAt                      *time.Time                 `json:"createdAt,omitempty"`
 	Customers                      []Customer                 `json:"customers,omitempty"`
 	CustomFields                   interface{}                `json:"customFields,omitempty"`
 	Description                    string                     `json:"description,omitempty"`
@@ -30,5 +30,5 @@ type PaymentMethod struct {
 	Synchronous                    bool                       `json:"synchronous,omitempty"`
 	Translated                     interface{}                `json:"translated,omitempty"`
 	Translations                   []PaymentMethodTranslation `json:"translations,omitempty"`
-	UpdatedAt                      time.Time                  `json:"updatedAt,omitempty"`
+	UpdatedAt                      *time.Time                 `json:"updatedAt,omitempty"`
 }

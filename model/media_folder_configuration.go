@@ -3,7 +3,7 @@ package model
 import "time"
 
 type MediaFolderConfiguration struct {
-	CreatedAt             time.Time            `json:"createdAt,omitempty"`
+	CreatedAt             *time.Time           `json:"createdAt,omitempty"`
 	CreateThumbnails      bool                 `json:"createThumbnails,omitempty"`
 	CustomFields          interface{}          `json:"customFields,omitempty"`
 	Id                    string               `json:"id,omitempty"`
@@ -14,5 +14,5 @@ type MediaFolderConfiguration struct {
 	NoAssociation         bool                 `json:"noAssociation,omitempty"`
 	Private               bool                 `json:"private,omitempty"`
 	ThumbnailQuality      float64              `json:"thumbnailQuality,omitempty"`
-	UpdatedAt             time.Time            `json:"updatedAt,omitempty"`
+	UpdatedAt             *time.Time           `json:"updatedAt,omitempty"`
 }

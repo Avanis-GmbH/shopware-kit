@@ -4,8 +4,8 @@ import "time"
 
 type ProductStreamTranslation struct {
 	Name            string         `json:"name,omitempty"`
-	CreatedAt       time.Time      `json:"createdAt,omitempty"`
-	UpdatedAt       time.Time      `json:"updatedAt,omitempty"`
+	CreatedAt       *time.Time     `json:"createdAt,omitempty"`
+	UpdatedAt       *time.Time     `json:"updatedAt,omitempty"`
 	ProductStreamId string         `json:"productStreamId,omitempty"`
 	LanguageId      string         `json:"languageId,omitempty"`
 	Description     string         `json:"description,omitempty"`

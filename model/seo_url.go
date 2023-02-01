@@ -3,7 +3,7 @@ package model
 import "time"
 
 type SeoUrl struct {
-	CreatedAt      time.Time     `json:"createdAt,omitempty"`
+	CreatedAt      *time.Time    `json:"createdAt,omitempty"`
 	CustomFields   interface{}   `json:"customFields,omitempty"`
 	ForeignKey     string        `json:"foreignKey,omitempty"` // required
 	Id             string        `json:"id,omitempty"`
@@ -17,6 +17,6 @@ type SeoUrl struct {
 	SalesChannel   *SalesChannel `json:"salesChannel,omitempty"`
 	SalesChannelId string        `json:"salesChannelId,omitempty"`
 	SeoPathInfo    string        `json:"seoPathInfo,omitempty"` // required
-	UpdatedAt      time.Time     `json:"updatedAt,omitempty"`
+	UpdatedAt      *time.Time    `json:"updatedAt,omitempty"`
 	Url            string        `json:"url,omitempty"`
 }

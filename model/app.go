@@ -14,7 +14,7 @@ type App struct {
 	Configurable            bool               `json:"configurable,omitempty"` // required
 	Cookies                 interface{}        `json:"cookies,omitempty"`
 	Copyright               string             `json:"copyright,omitempty"`
-	CreatedAt               time.Time          `json:"createdAt,omitempty"`
+	CreatedAt               *time.Time         `json:"createdAt,omitempty"`
 	CustomFields            interface{}        `json:"customFields,omitempty"`
 	CustomFieldSets         []CustomFieldSet   `json:"customFieldSets,omitempty"`
 	Description             string             `json:"description,omitempty"`
@@ -36,7 +36,7 @@ type App struct {
 	Templates               []AppTemplate      `json:"templates,omitempty"`
 	Translated              interface{}        `json:"translated,omitempty"`
 	Translations            []AppTranslation   `json:"translations,omitempty"`
-	UpdatedAt               time.Time          `json:"updatedAt,omitempty"`
+	UpdatedAt               *time.Time         `json:"updatedAt,omitempty"`
 	Version                 string             `json:"version,omitempty"` // required
 	Webhooks                []Webhook          `json:"webhooks,omitempty"`
 }

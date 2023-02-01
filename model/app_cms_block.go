@@ -6,7 +6,7 @@ type AppCmsBlock struct {
 	App          *App                     `json:"app,omitempty"`
 	AppId        string                   `json:"appId,omitempty"` // required
 	Block        interface{}              `json:"block,omitempty"` // required
-	CreatedAt    time.Time                `json:"createdAt,omitempty"`
+	CreatedAt    *time.Time               `json:"createdAt,omitempty"`
 	Id           string                   `json:"id,omitempty"`
 	Label        string                   `json:"label,omitempty"`
 	Name         string                   `json:"name,omitempty"`     // required
@@ -14,5 +14,5 @@ type AppCmsBlock struct {
 	Template     string                   `json:"template,omitempty"` // required
 	Translated   interface{}              `json:"translated,omitempty"`
 	Translations []AppCmsBlockTranslation `json:"translations,omitempty"`
-	UpdatedAt    time.Time                `json:"updatedAt,omitempty"`
+	UpdatedAt    *time.Time               `json:"updatedAt,omitempty"`
 }

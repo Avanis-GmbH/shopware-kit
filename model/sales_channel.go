@@ -12,7 +12,7 @@ type SalesChannel struct {
 	Countries                       []Country                        `json:"countries,omitempty"`
 	Country                         *Country                         `json:"country,omitempty"`
 	CountryId                       string                           `json:"countryId,omitempty"` // required
-	CreatedAt                       time.Time                        `json:"createdAt,omitempty"`
+	CreatedAt                       *time.Time                       `json:"createdAt,omitempty"`
 	Currencies                      []Currency                       `json:"currencies,omitempty"`
 	Currency                        *Currency                        `json:"currency,omitempty"`
 	CurrencyId                      string                           `json:"currencyId,omitempty"` // required
@@ -81,6 +81,6 @@ type SalesChannel struct {
 	Translations                    []SalesChannelTranslation        `json:"translations,omitempty"`
 	Type                            *SalesChannelType                `json:"type,omitempty"`
 	TypeId                          string                           `json:"typeId,omitempty"` // required
-	UpdatedAt                       time.Time                        `json:"updatedAt,omitempty"`
+	UpdatedAt                       *time.Time                       `json:"updatedAt,omitempty"`
 	Wishlists                       []CustomerWishlist               `json:"wishlists,omitempty"`
 }

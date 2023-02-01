@@ -4,7 +4,7 @@ import "time"
 
 type Tag struct {
 	Categories           []Category            `json:"categories,omitempty"`
-	CreatedAt            time.Time             `json:"createdAt,omitempty"`
+	CreatedAt            *time.Time            `json:"createdAt,omitempty"`
 	Customers            []Customer            `json:"customers,omitempty"`
 	Id                   string                `json:"id,omitempty"`
 	LandingPages         []LandingPage         `json:"landingPages,omitempty"`
@@ -14,5 +14,5 @@ type Tag struct {
 	Orders               []Order               `json:"orders,omitempty"`
 	Products             []Product             `json:"products,omitempty"`
 	ShippingMethods      []ShippingMethod      `json:"shippingMethods,omitempty"`
-	UpdatedAt            time.Time             `json:"updatedAt,omitempty"`
+	UpdatedAt            *time.Time            `json:"updatedAt,omitempty"`
 }

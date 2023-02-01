@@ -4,8 +4,8 @@ import "time"
 
 type NewsletterRecipient struct {
 	City           string        `json:"city,omitempty"`
-	ConfirmedAt    time.Time     `json:"confirmedAt,omitempty"`
-	CreatedAt      time.Time     `json:"createdAt,omitempty"`
+	ConfirmedAt    *time.Time    `json:"confirmedAt,omitempty"`
+	CreatedAt      *time.Time    `json:"createdAt,omitempty"`
 	CustomFields   interface{}   `json:"customFields,omitempty"`
 	Email          string        `json:"email,omitempty"` // required
 	FirstName      string        `json:"firstName,omitempty"`
@@ -22,6 +22,6 @@ type NewsletterRecipient struct {
 	Street         string        `json:"street,omitempty"`
 	Tags           []Tag         `json:"tags,omitempty"`
 	Title          string        `json:"title,omitempty"`
-	UpdatedAt      time.Time     `json:"updatedAt,omitempty"`
+	UpdatedAt      *time.Time    `json:"updatedAt,omitempty"`
 	ZipCode        string        `json:"zipCode,omitempty"`
 }

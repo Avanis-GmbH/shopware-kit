@@ -6,7 +6,7 @@ type Promotion struct {
 	Active                    bool                      `json:"active,omitempty"` // required
 	CartRules                 []Rule                    `json:"cartRules,omitempty"`
 	Code                      string                    `json:"code,omitempty"`
-	CreatedAt                 time.Time                 `json:"createdAt,omitempty"`
+	CreatedAt                 *time.Time                `json:"createdAt,omitempty"`
 	CustomerRestriction       bool                      `json:"customerRestriction,omitempty"`
 	CustomFields              interface{}               `json:"customFields,omitempty"`
 	Discounts                 []PromotionDiscount       `json:"discounts,omitempty"`
@@ -29,10 +29,10 @@ type Promotion struct {
 	Setgroups                 []PromotionSetgroup       `json:"setgroups,omitempty"`
 	Translated                interface{}               `json:"translated,omitempty"`
 	Translations              []PromotionTranslation    `json:"translations,omitempty"`
-	UpdatedAt                 time.Time                 `json:"updatedAt,omitempty"`
+	UpdatedAt                 *time.Time                `json:"updatedAt,omitempty"`
 	UseCodes                  bool                      `json:"useCodes,omitempty"`           // required
 	UseIndividualCodes        bool                      `json:"useIndividualCodes,omitempty"` // required
 	UseSetGroups              bool                      `json:"useSetGroups,omitempty"`       // required
-	ValidFrom                 time.Time                 `json:"validFrom,omitempty"`
-	ValidUntil                time.Time                 `json:"validUntil,omitempty"`
+	ValidFrom                 *time.Time                `json:"validFrom,omitempty"`
+	ValidUntil                *time.Time                `json:"validUntil,omitempty"`
 }

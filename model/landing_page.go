@@ -7,7 +7,7 @@ type LandingPage struct {
 	CmsPage          *CmsPage                 `json:"cmsPage,omitempty"`
 	CmsPageId        string                   `json:"cmsPageId,omitempty"`
 	CmsPageVersionId string                   `json:"cmsPageVersionId,omitempty"`
-	CreatedAt        time.Time                `json:"createdAt,omitempty"`
+	CreatedAt        *time.Time               `json:"createdAt,omitempty"`
 	CustomFields     interface{}              `json:"customFields,omitempty"`
 	Id               string                   `json:"id,omitempty"`
 	Keywords         string                   `json:"keywords,omitempty"`
@@ -20,7 +20,7 @@ type LandingPage struct {
 	Tags             []Tag                    `json:"tags,omitempty"`
 	Translated       interface{}              `json:"translated,omitempty"`
 	Translations     []LandingPageTranslation `json:"translations,omitempty"`
-	UpdatedAt        time.Time                `json:"updatedAt,omitempty"`
+	UpdatedAt        *time.Time               `json:"updatedAt,omitempty"`
 	Url              string                   `json:"url,omitempty"` // required
 	VersionId        string                   `json:"versionId,omitempty"`
 }

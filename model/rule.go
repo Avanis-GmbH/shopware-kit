@@ -5,7 +5,7 @@ import "time"
 type Rule struct {
 	CartPromotions                  []Promotion           `json:"cartPromotions,omitempty"`
 	Conditions                      []RuleCondition       `json:"conditions,omitempty"`
-	CreatedAt                       time.Time             `json:"createdAt,omitempty"`
+	CreatedAt                       *time.Time            `json:"createdAt,omitempty"`
 	CustomFields                    interface{}           `json:"customFields,omitempty"`
 	Description                     string                `json:"description,omitempty"`
 	EventActions                    []EventAction         `json:"eventActions,omitempty"`
@@ -26,5 +26,5 @@ type Rule struct {
 	ShippingMethodPrices            []ShippingMethodPrice `json:"shippingMethodPrices,omitempty"`
 	ShippingMethods                 []ShippingMethod      `json:"shippingMethods,omitempty"`
 	Tags                            RuleTag               `json:"tags,omitempty"`
-	UpdatedAt                       time.Time             `json:"updatedAt,omitempty"`
+	UpdatedAt                       *time.Time            `json:"updatedAt,omitempty"`
 }

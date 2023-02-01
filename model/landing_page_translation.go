@@ -3,7 +3,7 @@ package model
 import "time"
 
 type LandingPageTranslation struct {
-	CreatedAt            time.Time    `json:"createdAt,omitempty"`
+	CreatedAt            *time.Time   `json:"createdAt,omitempty"`
 	CustomFields         interface{}  `json:"customFields,omitempty"`
 	Keywords             string       `json:"keywords,omitempty"`
 	LandingPage          *LandingPage `json:"landingPage,omitempty"`
@@ -15,6 +15,6 @@ type LandingPageTranslation struct {
 	MetaTitle            string       `json:"metaTitle,omitempty"`
 	Name                 string       `json:"name,omitempty"`
 	SlotConfig           interface{}  `json:"slotConfig,omitempty"`
-	UpdatedAt            time.Time    `json:"updatedAt,omitempty"`
+	UpdatedAt            *time.Time   `json:"updatedAt,omitempty"`
 	Url                  string       `json:"url,omitempty"`
 }

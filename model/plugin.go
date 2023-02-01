@@ -10,13 +10,13 @@ type Plugin struct {
 	Changelog         interface{}         `json:"changelog,omitempty"`
 	ComposerName      string              `json:"composerName,omitempty"`
 	Copyright         string              `json:"copyright,omitempty"`
-	CreatedAt         time.Time           `json:"createdAt,omitempty"`
+	CreatedAt         *time.Time          `json:"createdAt,omitempty"`
 	CustomFields      interface{}         `json:"customFields,omitempty"`
 	Description       string              `json:"description,omitempty"`
 	Icon              string              `json:"icon,omitempty"`
 	IconRaw           interface{}         `json:"iconRaw,omitempty"`
 	Id                string              `json:"id,omitempty"`
-	InstalledAt       time.Time           `json:"installedAt,omitempty"`
+	InstalledAt       *time.Time          `json:"installedAt,omitempty"`
 	Label             string              `json:"label,omitempty"` // required
 	License           string              `json:"license,omitempty"`
 	ManagedByComposer bool                `json:"managedByComposer,omitempty"`
@@ -27,8 +27,8 @@ type Plugin struct {
 	SupportLink       string              `json:"supportLink,omitempty"`
 	Translated        interface{}         `json:"translated,omitempty"`
 	Translations      []PluginTranslation `json:"translations,omitempty"`
-	UpdatedAt         time.Time           `json:"updatedAt,omitempty"`
-	UpgradedAt        time.Time           `json:"upgradedAt,omitempty"`
+	UpdatedAt         *time.Time          `json:"updatedAt,omitempty"`
+	UpgradedAt        *time.Time          `json:"upgradedAt,omitempty"`
 	UpgradeVersion    string              `json:"upgradeVersion,omitempty"`
 	Version           string              `json:"version,omitempty"` // required
 }

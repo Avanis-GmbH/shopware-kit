@@ -7,7 +7,7 @@ type CategoryTranslation struct {
 	Category          *Category   `json:"category,omitempty"`
 	CategoryId        string      `json:"categoryId,omitempty"`
 	CategoryVersionId string      `json:"categoryVersionId,omitempty"`
-	CreatedAt         time.Time   `json:"createdAt,omitempty"`
+	CreatedAt         *time.Time  `json:"createdAt,omitempty"`
 	CustomFields      interface{} `json:"customFields,omitempty"`
 	Description       string      `json:"description,omitempty"`
 	ExternalLink      string      `json:"externalLink,omitempty"`
@@ -21,5 +21,5 @@ type CategoryTranslation struct {
 	MetaTitle         string      `json:"metaTitle,omitempty"`
 	Name              string      `json:"name,omitempty"`
 	SlotConfig        interface{} `json:"slotConfig,omitempty"`
-	UpdatedAt         time.Time   `json:"updatedAt,omitempty"`
+	UpdatedAt         *time.Time  `json:"updatedAt,omitempty"`
 }

@@ -3,7 +3,7 @@ package model
 import "time"
 
 type UnitTranslation struct {
-	CreatedAt    time.Time   `json:"createdAt,omitempty"`
+	CreatedAt    *time.Time  `json:"createdAt,omitempty"`
 	CustomFields interface{} `json:"customFields,omitempty"`
 	Language     *Language   `json:"language,omitempty"`
 	LanguageId   string      `json:"languageId,omitempty"`
@@ -11,5 +11,5 @@ type UnitTranslation struct {
 	ShortCode    string      `json:"shortCode,omitempty"`
 	Unit         *Unit       `json:"unit,omitempty"`
 	UnitId       string      `json:"unitId,omitempty"`
-	UpdatedAt    time.Time   `json:"updatedAt,omitempty"`
+	UpdatedAt    *time.Time  `json:"updatedAt,omitempty"`
 }

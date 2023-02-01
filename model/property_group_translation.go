@@ -3,7 +3,7 @@ package model
 import "time"
 
 type PropertyGroupTranslation struct {
-	CreatedAt       time.Time      `json:"createdAt,omitempty"`
+	CreatedAt       *time.Time     `json:"createdAt,omitempty"`
 	CustomFields    interface{}    `json:"customFields,omitempty"`
 	Description     string         `json:"description,omitempty"`
 	Language        *Language      `json:"language,omitempty"`
@@ -12,5 +12,5 @@ type PropertyGroupTranslation struct {
 	Position        float64        `json:"position,omitempty"`
 	PropertyGroup   *PropertyGroup `json:"propertyGroup,omitempty"`
 	PropertyGroupId string         `json:"propertyGroupId,omitempty"`
-	UpdatedAt       time.Time      `json:"updatedAt,omitempty"`
+	UpdatedAt       *time.Time     `json:"updatedAt,omitempty"`
 }

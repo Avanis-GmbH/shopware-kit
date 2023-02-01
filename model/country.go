@@ -8,7 +8,7 @@ type Country struct {
 	CheckVatIdPattern              bool                      `json:"checkVatIdPattern,omitempty"`
 	CompanyTax                     interface{}               `json:"companyTax,omitempty"`
 	CompanyTaxFree                 bool                      `json:"companyTaxFree,omitempty"`
-	CreatedAt                      time.Time                 `json:"createdAt,omitempty"`
+	CreatedAt                      *time.Time                `json:"createdAt,omitempty"`
 	CurrencyCountryRoundings       []CurrencyCountryRounding `json:"currencyCountryRoundings,omitempty"`
 	CustomerAddresses              []CustomerAddress         `json:"customerAddresses,omitempty"`
 	CustomerTax                    *CTax                     `json:"customerTax,omitempty"`
@@ -29,7 +29,7 @@ type Country struct {
 	TaxRules                       []TaxRule                 `json:"taxRules,omitempty"`
 	Translated                     interface{}               `json:"translated,omitempty"`
 	Translations                   []CountryTranslation      `json:"translations,omitempty"`
-	UpdatedAt                      time.Time                 `json:"updatedAt,omitempty"`
+	UpdatedAt                      *time.Time                `json:"updatedAt,omitempty"`
 	VatIdPattern                   string                    `json:"vatIdPattern,omitempty"`
 	VatIdRequired                  bool                      `json:"vatIdRequired,omitempty"`
 }

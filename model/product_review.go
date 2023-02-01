@@ -5,7 +5,7 @@ import "time"
 type ProductReview struct {
 	Comment          string        `json:"comment,omitempty"`
 	Content          string        `json:"content,omitempty"` // required
-	CreatedAt        time.Time     `json:"createdAt,omitempty"`
+	CreatedAt        *time.Time    `json:"createdAt,omitempty"`
 	Customer         *Customer     `json:"customer,omitempty"`
 	CustomerId       string        `json:"customerId,omitempty"`
 	CustomFields     interface{}   `json:"customFields,omitempty"`
@@ -22,5 +22,5 @@ type ProductReview struct {
 	SalesChannelId   string        `json:"salesChannelId,omitempty"` // required
 	Status           bool          `json:"status,omitempty"`
 	Title            string        `json:"title,omitempty"` // required
-	UpdatedAt        time.Time     `json:"updatedAt,omitempty"`
+	UpdatedAt        *time.Time    `json:"updatedAt,omitempty"`
 }

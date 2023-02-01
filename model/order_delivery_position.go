@@ -3,7 +3,7 @@ package model
 import "time"
 
 type OrderDeliveryPosition struct {
-	CreatedAt              time.Time      `json:"createdAt,omitempty"`
+	CreatedAt              *time.Time     `json:"createdAt,omitempty"`
 	CustomFields           interface{}    `json:"customFields,omitempty"`
 	Id                     string         `json:"id,omitempty"`
 	OrderDelivery          *OrderDelivery `json:"orderDelivery,omitempty"`
@@ -16,6 +16,6 @@ type OrderDeliveryPosition struct {
 	Quantity               float64        `json:"quantity,omitempty"`
 	TotalPrice             float64        `json:"totalPrice,omitempty"`
 	UnitPrice              float64        `json:"unitPrice,omitempty"`
-	UpdatedAt              time.Time      `json:"updatedAt,omitempty"`
+	UpdatedAt              *time.Time     `json:"updatedAt,omitempty"`
 	VersionId              string         `json:"versionId,omitempty"`
 }

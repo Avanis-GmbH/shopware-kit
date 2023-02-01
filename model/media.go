@@ -10,7 +10,7 @@ type Media struct {
 	CmsBlocks                   []CmsBlock                   `json:"cmsBlocks,omitempty"`
 	CmsPages                    []CmsPage                    `json:"cmsPages,omitempty"`
 	CmsSections                 []CmsSection                 `json:"cmsSections,omitempty"`
-	CreatedAt                   time.Time                    `json:"createdAt,omitempty"`
+	CreatedAt                   *time.Time                   `json:"createdAt,omitempty"`
 	CustomFields                interface{}                  `json:"customFields,omitempty"`
 	DocumentBaseConfigs         []DocumentBaseConfig         `json:"documentBaseConfigs,omitempty"`
 	Documents                   []Document                   `json:"documents,omitempty"`
@@ -42,8 +42,8 @@ type Media struct {
 	Title                       string                       `json:"title,omitempty"`
 	Translated                  interface{}                  `json:"translated,omitempty"`
 	Translations                []MediaTranslation           `json:"translations,omitempty"`
-	UpdatedAt                   time.Time                    `json:"updatedAt,omitempty"`
-	UploadedAt                  time.Time                    `json:"uploadedAt,omitempty"`
+	UpdatedAt                   *time.Time                   `json:"updatedAt,omitempty"`
+	UploadedAt                  *time.Time                   `json:"uploadedAt,omitempty"`
 	Url                         string                       `json:"url,omitempty"`
 	User                        *User                        `json:"user,omitempty"`
 	UserId                      string                       `json:"userId,omitempty"`

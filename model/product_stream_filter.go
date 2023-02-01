@@ -3,7 +3,7 @@ package model
 import "time"
 
 type ProductStreamFilter struct {
-	CreatedAt       time.Time             `json:"createdAt,omitempty"`
+	CreatedAt       *time.Time            `json:"createdAt,omitempty"`
 	CustomFields    interface{}           `json:"customFields,omitempty"`
 	Field           string                `json:"field,omitempty"`
 	Id              string                `json:"id,omitempty"`
@@ -16,6 +16,6 @@ type ProductStreamFilter struct {
 	ProductStreamId string                `json:"productStreamId,omitempty"` // required
 	Queries         []ProductStreamFilter `json:"queries,omitempty"`
 	Type            string                `json:"type,omitempty"` // required
-	UpdatedAt       time.Time             `json:"updatedAt,omitempty"`
+	UpdatedAt       *time.Time            `json:"updatedAt,omitempty"`
 	Value           string                `json:"value,omitempty"`
 }

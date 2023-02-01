@@ -4,7 +4,7 @@ import "time"
 
 type Currency struct {
 	CountryRoundings               []CurrencyCountryRounding `json:"countryRoundings,omitempty"`
-	CreatedAt                      time.Time                 `json:"createdAt,omitempty"`
+	CreatedAt                      *time.Time                `json:"createdAt,omitempty"`
 	CustomFields                   interface{}               `json:"customFields,omitempty"`
 	Factor                         float64                   `json:"factor,omitempty"` // required
 	Id                             string                    `json:"id,omitempty"`
@@ -25,7 +25,7 @@ type Currency struct {
 	TotalRounding                  Rounding                  `json:"totalRounding,omitempty"` // required
 	Translated                     interface{}               `json:"translated,omitempty"`
 	Translations                   []CurrencyTranslation     `json:"translations,omitempty"`
-	UpdatedAt                      time.Time                 `json:"updatedAt,omitempty"`
+	UpdatedAt                      *time.Time                `json:"updatedAt,omitempty"`
 }
 
 type Rounding struct {

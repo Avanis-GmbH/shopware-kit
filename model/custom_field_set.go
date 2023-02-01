@@ -7,7 +7,7 @@ type CustomFieldSet struct {
 	App          *App                     `json:"app,omitempty"`
 	AppId        string                   `json:"appId,omitempty"`
 	Config       interface{}              `json:"config,omitempty"`
-	CreatedAt    time.Time                `json:"createdAt,omitempty"`
+	CreatedAt    *time.Time               `json:"createdAt,omitempty"`
 	CustomFields []CustomField            `json:"customFields,omitempty"`
 	Global       bool                     `json:"global,omitempty"`
 	Id           string                   `json:"id,omitempty"`
@@ -15,5 +15,5 @@ type CustomFieldSet struct {
 	Position     float64                  `json:"position,omitempty"`
 	Products     []Product                `json:"products,omitempty"`
 	Relations    []CustomFieldSetRelation `json:"relations,omitempty"`
-	UpdatedAt    time.Time                `json:"updatedAt,omitempty"`
+	UpdatedAt    *time.Time               `json:"updatedAt,omitempty"`
 }

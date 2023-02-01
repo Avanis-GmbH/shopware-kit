@@ -3,7 +3,7 @@ package model
 import "time"
 
 type Salutation struct {
-	CreatedAt            time.Time               `json:"createdAt,omitempty"`
+	CreatedAt            *time.Time              `json:"createdAt,omitempty"`
 	CustomerAddresses    []CustomerAddress       `json:"customerAddresses,omitempty"`
 	Customers            []Customer              `json:"customers,omitempty"`
 	CustomFields         interface{}             `json:"customFields,omitempty"`
@@ -16,5 +16,5 @@ type Salutation struct {
 	SalutationKey        string                  `json:"salutationKey,omitempty"` // required
 	Translated           interface{}             `json:"translated,omitempty"`
 	Translations         []SalutationTranslation `json:"translations,omitempty"`
-	UpdatedAt            time.Time               `json:"updatedAt,omitempty"`
+	UpdatedAt            *time.Time              `json:"updatedAt,omitempty"`
 }

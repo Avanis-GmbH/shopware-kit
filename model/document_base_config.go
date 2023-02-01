@@ -4,7 +4,7 @@ import "time"
 
 type DocumentBaseConfig struct {
 	Config         interface{}                      `json:"config,omitempty"`
-	CreatedAt      time.Time                        `json:"createdAt,omitempty"`
+	CreatedAt      *time.Time                       `json:"createdAt,omitempty"`
 	CustomFields   interface{}                      `json:"customFields,omitempty"`
 	DocumentNumber string                           `json:"documentNumber,omitempty"`
 	DocumentType   *DocumentType                    `json:"documentType,omitempty"`
@@ -17,5 +17,5 @@ type DocumentBaseConfig struct {
 	LogoId         string                           `json:"logoId,omitempty"`
 	Name           string                           `json:"name,omitempty"` // required
 	SalesChannels  []DocumentBaseConfigSalesChannel `json:"salesChannels,omitempty"`
-	UpdatedAt      time.Time                        `json:"updatedAt,omitempty"`
+	UpdatedAt      *time.Time                       `json:"updatedAt,omitempty"`
 }

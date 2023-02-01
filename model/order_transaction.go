@@ -5,7 +5,7 @@ import "time"
 type OrderTransaction struct {
 	Amount            Amount             `json:"amount,omitempty"`
 	Captures          Capture            `json:"captures,omitempty"`
-	CreatedAt         time.Time          `json:"createdAt,omitempty"`
+	CreatedAt         *time.Time         `json:"createdAt,omitempty"`
 	CustomFields      interface{}        `json:"customFields,omitempty"`
 	Id                string             `json:"id,omitempty"`
 	Order             *Order             `json:"order,omitempty"`
@@ -15,7 +15,7 @@ type OrderTransaction struct {
 	PaymentMethodId   string             `json:"paymentMethodId,omitempty"` // required
 	StateId           string             `json:"stateId,omitempty"`
 	StateMachineState *StateMachineState `json:"stateMachineState,omitempty"`
-	UpdatedAt         time.Time          `json:"updatedAt,omitempty"`
+	UpdatedAt         *time.Time         `json:"updatedAt,omitempty"`
 	VersionId         string             `json:"versionId,omitempty"`
 }
 
@@ -39,8 +39,8 @@ type Capture struct {
 	TotalAmount               float64            `json:"totalAmount,omitempty"` // required
 	Amount                    Amount             `json:"amount,omitempty"`      // required
 	CustomFields              interface{}        `json:"customFields,omitempty"`
-	CreatedAt                 time.Time          `json:"createdAt,omitempty"`
-	UpdatedAt                 time.Time          `json:"updatedAt,omitempty"`
+	CreatedAt                 *time.Time         `json:"createdAt,omitempty"`
+	UpdatedAt                 *time.Time         `json:"updatedAt,omitempty"`
 	StateMachineState         *StateMachineState `json:"stateMachineState,omitempty"`
 	Transaction               interface{}        `json:"transaction,omitempty"`
 	Refunds                   Refund             `json:"refunds,omitempty"`
@@ -55,8 +55,8 @@ type Refund struct {
 	TotalAmount        float64            `json:"totalAmount,omitempty"` // required
 	Amount             Amount             `json:"amount,omitempty"`      // required
 	CustomFields       interface{}        `json:"customFields,omitempty"`
-	CreatedAt          time.Time          `json:"createdAt,omitempty"`
-	UpdatedAt          time.Time          `json:"updatedAt,omitempty"`
+	CreatedAt          *time.Time         `json:"createdAt,omitempty"`
+	UpdatedAt          *time.Time         `json:"updatedAt,omitempty"`
 	StateMachineState  *StateMachineState `json:"stateMachineState,omitempty"`
 	TransactionCapture interface{}        `json:"transactionCapture,omitempty"`
 	Positions          Position           `json:"positions,omitempty"`
@@ -72,8 +72,8 @@ type Position struct {
 	Amount                        Amount        `json:"amount,omitempty"`   // required
 	RefundPrice                   float64       `json:"refundPrice,omitempty"`
 	CustomFields                  interface{}   `json:"customFields,omitempty"`
-	CreatedAt                     time.Time     `json:"createdAt,omitempty"`
-	UpdatedAt                     time.Time     `json:"updatedAt,omitempty"`
+	CreatedAt                     *time.Time    `json:"createdAt,omitempty"`
+	UpdatedAt                     *time.Time    `json:"updatedAt,omitempty"`
 	OrderLineItem                 OrderLineItem `json:"orderLineItem,omitempty"`
 	OrderTransactionCaptureRefund interface{}   `json:"orderTransactionCaptureRefund,omitempty"`
 }

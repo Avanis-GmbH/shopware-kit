@@ -3,7 +3,7 @@ package model
 import "time"
 
 type MailHeaderFooter struct {
-	CreatedAt     time.Time                     `json:"createdAt,omitempty"`
+	CreatedAt     *time.Time                    `json:"createdAt,omitempty"`
 	Description   string                        `json:"description,omitempty"`
 	FooterHtml    string                        `json:"footerHtml,omitempty"`
 	FooterPlain   string                        `json:"footerPlain,omitempty"`
@@ -15,5 +15,5 @@ type MailHeaderFooter struct {
 	SystemDefault bool                          `json:"systemDefault,omitempty"`
 	Translated    interface{}                   `json:"translated,omitempty"`
 	Translations  []MailHeaderFooterTranslation `json:"translations,omitempty"`
-	UpdatedAt     time.Time                     `json:"updatedAt,omitempty"`
+	UpdatedAt     *time.Time                    `json:"updatedAt,omitempty"`
 }

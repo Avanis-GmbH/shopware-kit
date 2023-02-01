@@ -4,7 +4,7 @@ import "time"
 
 type Flow struct {
 	Active       bool           `json:"active,omitempty"`
-	CreatedAt    time.Time      `json:"createdAt,omitempty"`
+	CreatedAt    *time.Time     `json:"createdAt,omitempty"`
 	CustomFields interface{}    `json:"customFields,omitempty"`
 	Description  string         `json:"description,omitempty"`
 	EventName    string         `json:"eventName,omitempty"` // required
@@ -14,5 +14,5 @@ type Flow struct {
 	Payload      interface{}    `json:"payload,omitempty"`
 	Priority     float64        `json:"priority,omitempty"`
 	Sequences    []FlowSequence `json:"sequences,omitempty"`
-	UpdatedAt    time.Time      `json:"updatedAt,omitempty"`
+	UpdatedAt    *time.Time     `json:"updatedAt,omitempty"`
 }

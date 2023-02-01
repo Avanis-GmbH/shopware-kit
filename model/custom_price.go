@@ -3,7 +3,7 @@ package model
 import "time"
 
 type CustomPrice struct {
-	CreatedAt        time.Time      `json:"createdAt,omitempty"`
+	CreatedAt        *time.Time     `json:"createdAt,omitempty"`
 	Customer         *Customer      `json:"customer,omitempty"`
 	CustomerGroup    *CustomerGroup `json:"customerGroup,omitempty"`
 	CustomerGroupId  string         `json:"customerGroupId,omitempty"`
@@ -13,5 +13,5 @@ type CustomPrice struct {
 	Product          *Product       `json:"product,omitempty"`
 	ProductId        string         `json:"productId,omitempty"` // required
 	ProductVersionId string         `json:"productVersionId,omitempty"`
-	UpdatedAt        time.Time      `json:"updatedAt,omitempty"`
+	UpdatedAt        *time.Time     `json:"updatedAt,omitempty"`
 }

@@ -6,7 +6,7 @@ type OrderLineItem struct {
 	Children               []OrderLineItem         `json:"children,omitempty"`
 	Cover                  *Media                  `json:"cover,omitempty"`
 	CoverId                string                  `json:"coverId,omitempty"`
-	CreatedAt              time.Time               `json:"createdAt,omitempty"`
+	CreatedAt              *time.Time              `json:"createdAt,omitempty"`
 	CustomFields           interface{}             `json:"customFields,omitempty"`
 	Description            string                  `json:"description,omitempty"`
 	Good                   bool                    `json:"good,omitempty"`
@@ -34,6 +34,6 @@ type OrderLineItem struct {
 	TotalPrice             float64                 `json:"totalPrice,omitempty"`
 	Type                   string                  `json:"type,omitempty"`
 	UnitPrice              float64                 `json:"unitPrice,omitempty"`
-	UpdatedAt              time.Time               `json:"updatedAt,omitempty"`
+	UpdatedAt              *time.Time              `json:"updatedAt,omitempty"`
 	VersionId              string                  `json:"versionId,omitempty"`
 }

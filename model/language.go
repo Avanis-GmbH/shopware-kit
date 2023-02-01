@@ -12,7 +12,7 @@ type Language struct {
 	CmsSlotTranslations             []CmsSlotTranslation             `json:"cmsSlotTranslations,omitempty"`
 	CountryStateTranslations        []CountryStateTranslation        `json:"countryStateTranslations,omitempty"`
 	CountryTranslations             []CountryTranslation             `json:"countryTranslations,omitempty"`
-	CreatedAt                       time.Time                        `json:"createdAt,omitempty"`
+	CreatedAt                       *time.Time                       `json:"createdAt,omitempty"`
 	CurrencyTranslations            []CurrencyTranslation            `json:"currencyTranslations,omitempty"`
 	CustomerGroupTranslations       []CustomerGroupTranslation       `json:"customerGroupTranslations,omitempty"`
 	Customers                       []Customer                       `json:"customers,omitempty"`
@@ -66,5 +66,5 @@ type Language struct {
 	TranslationCode                 *Locale                          `json:"translationCode,omitempty"`
 	TranslationCodeId               string                           `json:"translationCodeId,omitempty"`
 	UnitTranslations                []UnitTranslation                `json:"unitTranslations,omitempty"`
-	UpdatedAt                       time.Time                        `json:"updatedAt,omitempty"`
+	UpdatedAt                       *time.Time                       `json:"updatedAt,omitempty"`
 }

@@ -3,7 +3,7 @@ package model
 import "time"
 
 type ProductPrice struct {
-	CreatedAt        time.Time   `json:"createdAt,omitempty"`
+	CreatedAt        *time.Time  `json:"createdAt,omitempty"`
 	CustomFields     interface{} `json:"customFields,omitempty"`
 	Id               string      `json:"id,omitempty"`
 	Price            interface{} `json:"price,omitempty"` // required
@@ -14,7 +14,7 @@ type ProductPrice struct {
 	QuantityStart    int64       `json:"quantityStart,omitempty"` // required
 	Rule             *Rule       `json:"rule,omitempty"`
 	RuleId           string      `json:"ruleId,omitempty"` // required
-	UpdatedAt        time.Time   `json:"updatedAt,omitempty"`
+	UpdatedAt        *time.Time  `json:"updatedAt,omitempty"`
 	VersionId        string      `json:"versionId,omitempty"`
 }
 

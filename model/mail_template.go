@@ -5,7 +5,7 @@ import "time"
 type MailTemplate struct {
 	ContentHtml        string                    `json:"contentHtml,omitempty"`  // required
 	ContentPlain       string                    `json:"contentPlain,omitempty"` // required
-	CreatedAt          time.Time                 `json:"createdAt,omitempty"`
+	CreatedAt          *time.Time                `json:"createdAt,omitempty"`
 	CustomFields       interface{}               `json:"customFields,omitempty"`
 	Description        string                    `json:"description,omitempty"`
 	Id                 string                    `json:"id,omitempty"`
@@ -17,5 +17,5 @@ type MailTemplate struct {
 	SystemDefault      bool                      `json:"systemDefault,omitempty"`
 	Translated         interface{}               `json:"translated,omitempty"`
 	Translations       []MailTemplateTranslation `json:"translations,omitempty"`
-	UpdatedAt          time.Time                 `json:"updatedAt,omitempty"`
+	UpdatedAt          *time.Time                `json:"updatedAt,omitempty"`
 }

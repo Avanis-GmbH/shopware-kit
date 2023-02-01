@@ -3,7 +3,7 @@ package model
 import "time"
 
 type CustomerGroup struct {
-	CreatedAt                           time.Time                  `json:"createdAt,omitempty"`
+	CreatedAt                           *time.Time                 `json:"createdAt,omitempty"`
 	Customers                           []Customer                 `json:"customers,omitempty"`
 	CustomFields                        interface{}                `json:"customFields,omitempty"`
 	DisplayGross                        bool                       `json:"displayGross,omitempty"`
@@ -18,5 +18,5 @@ type CustomerGroup struct {
 	SalesChannels                       []SalesChannel             `json:"salesChannels,omitempty"`
 	Translated                          interface{}                `json:"translated,omitempty"`
 	Translations                        []CustomerGroupTranslation `json:"translations,omitempty"`
-	UpdatedAt                           time.Time                  `json:"updatedAt,omitempty"`
+	UpdatedAt                           *time.Time                 `json:"updatedAt,omitempty"`
 }

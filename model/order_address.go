@@ -11,7 +11,7 @@ type OrderAddress struct {
 	CountryId              string          `json:"countryId,omitempty"` // required
 	CountryState           *CountryState   `json:"countryState,omitempty"`
 	CountryStateId         string          `json:"countryStateId,omitempty"`
-	CreatedAt              time.Time       `json:"createdAt,omitempty"`
+	CreatedAt              *time.Time      `json:"createdAt,omitempty"`
 	CustomFields           interface{}     `json:"customFields,omitempty"`
 	Department             string          `json:"department,omitempty"`
 	FirstName              string          `json:"firstName,omitempty"` // required
@@ -26,7 +26,7 @@ type OrderAddress struct {
 	SalutationId           string          `json:"salutationId,omitempty"` // required
 	Street                 string          `json:"street,omitempty"`       // required
 	Title                  string          `json:"title,omitempty"`
-	UpdatedAt              time.Time       `json:"updatedAt,omitempty"`
+	UpdatedAt              *time.Time      `json:"updatedAt,omitempty"`
 	VatId                  string          `json:"vatId,omitempty"`
 	VersionId              string          `json:"versionId,omitempty"`
 	Zipcode                string          `json:"zipcode,omitempty"`
