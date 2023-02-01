@@ -131,7 +131,7 @@ func (c *Client) NewRawRequest(context ApiContext, method, path string, options 
 		return nil, err
 	}
 
-	if options != nil && len(options) > 0 {
+	if len(options) > 0 {
 		q := u.Query()
 		for key, value := range options {
 			q.Add(key, value)
