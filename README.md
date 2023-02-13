@@ -1,7 +1,7 @@
 # Shopware Universal Client Kit
 
 
-[![GoDoc](https://godoc.org/github.com/golang/gddo?status.svg)](https://pkg.go.dev/github.com/Avanis-GmbH/GoSUCK)
+[![GoDoc](https://godoc.org/github.com/golang/gddo?status.svg)](https://pkg.go.dev/github.com/Avanis-GmbH/shopware-kit)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![golangci-lint](https://github.com/Avanis-GmbH/shopware-kit/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/Avanis-GmbH/shopware-kit/actions/workflows/golangci-lint.yml)
 [![CodeQL](https://github.com/Avanis-GmbH/shopware-kit/actions/workflows/codeql.yml/badge.svg)](https://github.com/Avanis-GmbH/shopware-kit/actions/workflows/codeql.yml)

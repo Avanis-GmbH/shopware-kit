@@ -1,4 +1,4 @@
-module github.com/Avanis-GmbH/GoSUCK
+module github.com/Avanis-GmbH/shopware-kit
 
 go 1.19
 
