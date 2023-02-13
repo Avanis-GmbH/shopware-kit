@@ -1,6 +1,6 @@
 package com
 
-import "github.com/Avanis-GmbH/GoSUCK/model"
+import "github.com/Avanis-GmbH/shopware-kit/model"
 
 // Collection is the interface for all collections returned by the shopware api
 // Implemented by EntityCollection which in turn is embedded by all other collections.
