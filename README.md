@@ -3,11 +3,11 @@
 
 [![GoDoc](https://godoc.org/github.com/golang/gddo?status.svg)](https://pkg.go.dev/github.com/Avanis-GmbH/GoSUCK)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![golangci-lint](https://github.com/Avanis-GmbH/GoSUCK/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/Avanis-GmbH/GoSUCK/actions/workflows/golangci-lint.yml)
-[![CodeQL](https://github.com/Avanis-GmbH/GoSUCK/actions/workflows/codeql.yml/badge.svg)](https://github.com/Avanis-GmbH/GoSUCK/actions/workflows/codeql.yml)
-[![Goreport](https://goreportcard.com/badge/github.com/Avanis-GmbH/GoSUCK)](https://goreportcard.com/report/github.com/Plaenkler/gost)
+[![golangci-lint](https://github.com/Avanis-GmbH/shopware-kit/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/Avanis-GmbH/shopware-kit/actions/workflows/golangci-lint.yml)
+[![CodeQL](https://github.com/Avanis-GmbH/shopware-kit/actions/workflows/codeql.yml/badge.svg)](https://github.com/Avanis-GmbH/shopware-kit/actions/workflows/codeql.yml)
+[![Goreport](https://goreportcard.com/badge/github.com/Avanis-GmbH/shopware-kit)](https://goreportcard.com/badge/github.com/Avanis-GmbH/shopware-kit)
 
-GoSuck is a universal API client for Shopware 6. It is based on the [Shopware 6 API](https://developer.shopware.com/docs/guides/api-guide/).
+The shopware-kit is a universal API client and model definition for the [Shopware 6 API](https://developer.shopware.com/docs/guides/api-guide/).
 It can be used as a standalone client or directly with the included models, which are derived from the Shopware 6 API documentation.
 
 ## ⚙️ How it works
