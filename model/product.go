@@ -22,7 +22,7 @@ type Product struct {
 	ConfiguratorGroupConfig       interface{}                           `json:"configuratorGroupConfig,omitempty"` // deprecated
 	ConfiguratorSettings          []ProductConfiguratorSetting          `json:"configuratorSettings,omitempty"`
 	Cover                         *ProductMedia                         `json:"cover,omitempty"`
-	CoverId                       string                                `json:"coverId,omitempty"`
+	CoverId                       *string                               `json:"coverId"`
 	CreatedAt                     *time.Time                            `json:"createdAt,omitempty"`
 	CrossSellingAssignedProducts  []ProductCrossSellingAssignedProducts `json:"crossSellingAssignedProducts,omitempty"`
 	CrossSellings                 []ProductCrossSelling                 `json:"crossSellings,omitempty"`
@@ -32,26 +32,26 @@ type Product struct {
 	CustomSearchKeywords          interface{}                           `json:"customSearchKeywords,omitempty"`
 	DeliveryTime                  *DeliveryTime                         `json:"deliveryTime,omitempty"`
 	DeliveryTimeId                string                                `json:"deliveryTimeId,omitempty"`
-	Description                   string                                `json:"description,omitempty"`
+	Description                   string                                `json:"description"`
 	DisplayGroup                  string                                `json:"displayGroup,omitempty"`
 	Ean                           string                                `json:"ean,omitempty"`
 	FeatureSet                    *ProductFeatureSet                    `json:"featureSet,omitempty"`
 	FeatureSetId                  string                                `json:"featureSetId,omitempty"`
-	Height                        float64                               `json:"height,omitempty"`
+	Height                        float64                               `json:"height"`
 	Id                            string                                `json:"id,omitempty"`
 	IsCloseout                    bool                                  `json:"isCloseout,omitempty"`
-	Keywords                      string                                `json:"keywords,omitempty"`
+	Keywords                      string                                `json:"keywords"`
 	Length                        float64                               `json:"length,omitempty"`
 	MainCategories                []MainCategory                        `json:"mainCategories,omitempty"`
 	MainVariantId                 string                                `json:"mainVariantId,omitempty"` // deprecated
 	Manufacturer                  *ProductManufacturer                  `json:"manufacturer,omitempty"`
-	ManufacturerId                string                                `json:"manufacturerId,omitempty"`
+	ManufacturerId                *string                               `json:"manufacturerId"`
 	ManufacturerNumber            string                                `json:"manufacturerNumber,omitempty"`
 	MarkAsTopseller               bool                                  `json:"markAsTopseller,omitempty"`
 	MaxPurchase                   float64                               `json:"maxPurchase,omitempty"`
 	Media                         []ProductMedia                        `json:"media,omitempty"`
-	MetaDescription               string                                `json:"metaDescription,omitempty"`
-	MetaTitle                     string                                `json:"metaTitle,omitempty"`
+	MetaDescription               string                                `json:"metaDescription"`
+	MetaTitle                     string                                `json:"metaTitle"`
 	MinPurchase                   float64                               `json:"minPurchase,omitempty"`
 	Name                          string                                `json:"name,omitempty"` // required
 	OptionIds                     interface{}                           `json:"optionIds,omitempty"`

@@ -27,7 +27,7 @@ type Category struct {
 	LinkType                string                `json:"linkType,omitempty"`
 	MainCategories          []MainCategory        `json:"mainCategories,omitempty"`
 	Media                   *Media                `json:"media,omitempty"`
-	MediaId                 string                `json:"mediaId,omitempty"`
+	MediaId                 *string               `json:"mediaId"`
 	MetaDescription         string                `json:"metaDescription"`
 	MetaTitle               string                `json:"metaTitle"`
 	Name                    string                `json:"name,omitempty"` // required
