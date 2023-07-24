@@ -11,7 +11,7 @@ type Product struct {
 	CanonicalProductId            string                                `json:"canonicalProductId,omitempty"`
 	Categories                    []Category                            `json:"categories,omitempty"`
 	CategoriesRo                  []Category                            `json:"categoriesRo,omitempty"`
-	CategoryIds                   interface{}                           `json:"categoryIds,omitempty"`
+	CategoryIds                   []string                              `json:"categoryIds,omitempty"`
 	CategoryTree                  interface{}                           `json:"categoryTree,omitempty"`
 	CheapestPrice                 interface{}                           `json:"cheapestPrice,omitempty"`
 	ChildCount                    float64                               `json:"childCount,omitempty"`
@@ -69,7 +69,7 @@ type Product struct {
 	ProductNumber                 string                                `json:"productNumber,omitempty"` // required
 	ProductReviews                []ProductReview                       `json:"productReviews,omitempty"`
 	Properties                    []PropertyGroupOption                 `json:"properties,omitempty"`
-	PropertyIds                   interface{}                           `json:"propertyIds,omitempty"`
+	PropertyIds                   []string                              `json:"propertyIds,omitempty"`
 	PurchasePrices                interface{}                           `json:"purchasePrices,omitempty"`
 	PurchaseSteps                 float64                               `json:"purchaseSteps,omitempty"`
 	PurchaseUnit                  float64                               `json:"purchaseUnit,omitempty"`
