@@ -178,7 +178,6 @@ func (c *Client) checkResponse(r *http.Response) error {
 	if err != nil {
 		return fmt.Errorf("parsing json response failed: %w", err)
 	}
-
 	return errors.Wrapf(&aerr, "request failed")
 }
 

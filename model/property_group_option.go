@@ -10,7 +10,7 @@ type PropertyGroupOption struct {
 	GroupId                     string                           `json:"groupId,omitempty"` // required
 	Id                          string                           `json:"id,omitempty"`
 	Media                       *Media                           `json:"media,omitempty"`
-	MediaId                     string                           `json:"mediaId,omitempty"`
+	MediaId                     *string                          `json:"mediaId"`
 	Name                        string                           `json:"name,omitempty"` // required
 	Position                    float64                          `json:"position,omitempty"`
 	ProductConfiguratorSettings []ProductConfiguratorSetting     `json:"productConfiguratorSettings,omitempty"`

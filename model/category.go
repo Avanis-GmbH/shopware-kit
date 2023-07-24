@@ -15,7 +15,7 @@ type Category struct {
 	CmsPageVersionId        string                `json:"cmsPageVersionId,omitempty"`
 	CreatedAt               *time.Time            `json:"createdAt,omitempty"`
 	CustomFields            interface{}           `json:"customFields,omitempty"`
-	Description             string                `json:"description,omitempty"`
+	Description             string                `json:"description"`
 	DisplayNestedProducts   bool                  `json:"displayNestedProducts,omitempty"` // required
 	ExternalLink            string                `json:"externalLink,omitempty"`
 	FooterSalesChannels     []SalesChannel        `json:"footerSalesChannels,omitempty"`
@@ -27,9 +27,9 @@ type Category struct {
 	LinkType                string                `json:"linkType,omitempty"`
 	MainCategories          []MainCategory        `json:"mainCategories,omitempty"`
 	Media                   *Media                `json:"media,omitempty"`
-	MediaId                 string                `json:"mediaId,omitempty"`
-	MetaDescription         string                `json:"metaDescription,omitempty"`
-	MetaTitle               string                `json:"metaTitle,omitempty"`
+	MediaId                 *string               `json:"mediaId"`
+	MetaDescription         string                `json:"metaDescription"`
+	MetaTitle               string                `json:"metaTitle"`
 	Name                    string                `json:"name,omitempty"` // required
 	NavigationSalesChannels []SalesChannel        `json:"navigationSalesChannels,omitempty"`
 	NestedProducts          []Product             `json:"nestedProducts,omitempty"`

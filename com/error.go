@@ -9,35 +9,26 @@ type APIError struct {
 }
 
 type ErrorResponse struct {
-	Success bool `json:"success"`
-	Data    map[string]struct {
-		Result []struct {
-			Entities []interface{} `json:"entities"`
-			Errors   []struct {
-				Status string `json:"status"`
-				Code   string `json:"code"`
-				Title  string `json:"title"`
-				Detail string `json:"detail"`
-				Source struct {
-					Pointer string `json:"pointer"`
-				} `json:"source"`
-				Meta struct {
-					Parameters interface{} `json:"parameters"`
-				} `json:"meta"`
-			} `json:"errors"`
-		} `json:"result"`
-		Extensions []interface{} `json:"extensions"`
-	} `json:"data"`
+	Errors []struct {
+		Status string `json:"status"`
+		Code   string `json:"code"`
+		Title  string `json:"title"`
+		Detail string `json:"detail"`
+		Source struct {
+			Pointer string `json:"pointer"`
+		} `json:"source"`
+		Meta struct {
+			Parameters interface{} `json:"parameters"`
+		} `json:"meta"`
+	} `json:"errors"`
+
+	Extensions []interface{} `json:"extensions"`
 }
 
 func (e APIError) Error() string {
-	str := fmt.Sprintf("%d - errrors: \n", e.StatusCode)
-	for subject, data := range e.Response.Data {
-		for _, result := range data.Result {
-			for _, err := range result.Errors {
-				str += fmt.Sprintf("\t%s: %s -> %s => %s \n", subject, err.Code, err.Detail, err.Source.Pointer)
-			}
-		}
+	str := fmt.Sprintf("%d - errors: \n", e.StatusCode)
+	for _, err := range e.Response.Errors {
+		str += fmt.Sprintf("\t: %s -> %s => %s \n", err.Code, err.Detail, err.Source.Pointer)
 	}
 
 	return str
