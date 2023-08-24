@@ -3,7 +3,7 @@ package model
 import "time"
 
 type Product struct {
-	Active                        bool                                  `json:"active,omitempty"`
+	Active                        bool                                  `json:"active"`
 	AutoIncrement                 float64                               `json:"autoIncrement,omitempty"`
 	Available                     bool                                  `json:"available,omitempty"`
 	AvailableStock                float64                               `json:"availableStock,omitempty"`
@@ -39,7 +39,7 @@ type Product struct {
 	FeatureSetId                  string                                `json:"featureSetId,omitempty"`
 	Height                        float64                               `json:"height"`
 	Id                            string                                `json:"id,omitempty"`
-	IsCloseout                    bool                                  `json:"isCloseout,omitempty"`
+	IsCloseout                    bool                                  `json:"isCloseout"`
 	Keywords                      string                                `json:"keywords"`
 	Length                        float64                               `json:"length,omitempty"`
 	MainCategories                []MainCategory                        `json:"mainCategories,omitempty"`
@@ -53,7 +53,7 @@ type Product struct {
 	MetaDescription               string                                `json:"metaDescription"`
 	MetaTitle                     string                                `json:"metaTitle"`
 	MinPurchase                   float64                               `json:"minPurchase,omitempty"`
-	Name                          string                                `json:"name,omitempty"` // required
+	Name                          string                                `json:"name"` // required
 	OptionIds                     interface{}                           `json:"optionIds,omitempty"`
 	Options                       []PropertyGroupOption                 `json:"options,omitempty"`
 	OrderLineItems                []OrderLineItem                       `json:"orderLineItems,omitempty"`
@@ -62,11 +62,11 @@ type Product struct {
 	Parent                        *Product                              `json:"parent,omitempty"`
 	ParentId                      string                                `json:"parentId,omitempty"`
 	ParentVersionId               string                                `json:"parentVersionId,omitempty"`
-	Price                         interface{}                           `json:"price,omitempty"` // required
+	Price                         interface{}                           `json:"price"` // required
 	Prices                        []ProductPrice                        `json:"prices,omitempty"`
 	ProductManufacturerVersionId  string                                `json:"productManufacturerVersionId,omitempty"`
 	ProductMediaVersionId         string                                `json:"productMediaVersionId,omitempty"`
-	ProductNumber                 string                                `json:"productNumber,omitempty"` // required
+	ProductNumber                 string                                `json:"productNumber"` // required
 	ProductReviews                []ProductReview                       `json:"productReviews,omitempty"`
 	Properties                    []PropertyGroupOption                 `json:"properties,omitempty"`
 	PropertyIds                   []string                              `json:"propertyIds,omitempty"`
@@ -82,13 +82,13 @@ type Product struct {
 	SeoUrls                       []SeoUrl                              `json:"seoUrls,omitempty"`
 	ShippingFree                  bool                                  `json:"shippingFree,omitempty"`
 	SlotConfig                    interface{}                           `json:"slotConfig,omitempty"`
-	Stock                         float64                               `json:"stock,omitempty"` // required
+	Stock                         float64                               `json:"stock"` // required
 	StreamIds                     interface{}                           `json:"streamIds,omitempty"`
 	Streams                       []ProductStream                       `json:"streams,omitempty"`
 	TagIds                        interface{}                           `json:"tagIds,omitempty"`
 	Tags                          []Tag                                 `json:"tags,omitempty"`
 	Tax                           *Tax                                  `json:"tax,omitempty"`
-	TaxId                         string                                `json:"taxId,omitempty"` // required
+	TaxId                         string                                `json:"taxId"` // required
 	Translated                    interface{}                           `json:"translated,omitempty"`
 	Translations                  []ProductTranslation                  `json:"translations,omitempty"`
 	Unit                          *Unit                                 `json:"unit,omitempty"`
