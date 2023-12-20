@@ -100,7 +100,9 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 func (c *Client) NewRequest(context ApiContext, method, path string, options map[string]string, body interface{}) (*http.Request, error) {
 	buf := &bytes.Buffer{}
 	if body != nil {
-		err := json.NewEncoder(buf).Encode(body)
+		encoder := json.NewEncoder(buf)
+		encoder.SetEscapeHTML(false)
+		err := encoder.Encode(body)
 		if err != nil {
 			return nil, err
 		}
