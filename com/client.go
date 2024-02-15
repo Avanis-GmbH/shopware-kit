@@ -86,10 +86,8 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 		return resp, nil
 	case io.Writer:
 		_, err = io.Copy(v, resp.Body)
-		defer resp.Body.Close()
 	default:
 		err = json.NewDecoder(resp.Body).Decode(v)
-		defer resp.Body.Close()
 	}
 
 	return resp, errors.Wrap(err, "failed to decode response body")
@@ -97,7 +95,7 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 
 // Creates a new request with the given context, method, url and body
 // The body will be encoded as json and the content type will be set to application/json
-func (c *Client) NewRequest(context ApiContext, method, path string, options map[string]string, body interface{}) (*http.Request, error) {
+func (c *Client) NewRequest(context APIContext, method, path string, options map[string]string, body interface{}) (*http.Request, error) {
 	buf := &bytes.Buffer{}
 	if body != nil {
 		encoder := json.NewEncoder(buf)
@@ -122,7 +120,7 @@ func (c *Client) NewRequest(context ApiContext, method, path string, options map
 
 // Creates a new request using a io.Reader as body and without encoding the body as json
 // This has to be done manually by the caller if needed
-func (c *Client) NewRawRequest(context ApiContext, method, path string, options map[string]string, body io.Reader) (*http.Request, error) {
+func (c *Client) NewRawRequest(context APIContext, method, path string, options map[string]string, body io.Reader) (*http.Request, error) {
 	path, err := url.JoinPath(c.remote, path)
 	if err != nil {
 		return nil, err
@@ -147,8 +145,8 @@ func (c *Client) NewRawRequest(context ApiContext, method, path string, options 
 	}
 
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("sw-language-id", context.LanguageId)
-	req.Header.Set("sw-version-id", context.VersionId)
+	req.Header.Set("sw-language-id", context.LanguageID)
+	req.Header.Set("sw-version-id", context.VersionID)
 
 	if context.SkipFlows {
 		req.Header.Set("sw-skip-trigger-flow", "1")
@@ -183,20 +181,20 @@ func (c *Client) checkResponse(r *http.Response) error {
 	return errors.Wrapf(&aerr, "request failed")
 }
 
-// ApiContext is the context for the api requests
-type ApiContext struct {
-	Context    context.Context
-	LanguageId string
-	VersionId  string
+// APIContext is the context for the api requests
+type APIContext struct {
+	context.Context
+	LanguageID string
+	VersionID  string
 	SkipFlows  bool
 }
 
-// NewApiContext creates a new ApiContext with the given context and default values
-func NewApiContext(ctx context.Context) ApiContext {
-	return ApiContext{
+// NewAPIContext creates a new ApiContext with the given context and default values
+func NewAPIContext(ctx context.Context) APIContext {
+	return APIContext{
 		Context:    ctx,
-		LanguageId: "2fbb5fe2e29a4d70aa5854ce7ce3e20b",
-		VersionId:  "0fa91ce3e96a4bc2be4bd9ce752c3425",
+		LanguageID: "2fbb5fe2e29a4d70aa5854ce7ce3e20b",
+		VersionID:  "0fa91ce3e96a4bc2be4bd9ce752c3425",
 		SkipFlows:  false,
 	}
 }

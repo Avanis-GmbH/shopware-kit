@@ -5,11 +5,11 @@ import "github.com/Avanis-GmbH/shopware-kit/model"
 // Collection is the interface for all collections returned by the shopware api
 // Implemented by EntityCollection which in turn is embedded by all other collections.
 type Collection interface {
-	setTotal(int64)
+	setTotal(total int64)
 	getTotal() int64
-	setAggregations(interface{})
+	setAggregations(aggregations interface{})
 	getAggregations() interface{}
-	setData([]interface{})
+	setData(data []interface{})
 	getData() []interface{}
 }
 
@@ -45,13 +45,13 @@ func (c EntityCollection) getData() []interface{} {
 	return c.Data
 }
 
-type AclRoleCollection struct {
+type ACLRoleCollection struct {
 	EntityCollection
 
 	Data []model.AclRole `json:"data"`
 }
 
-type AclUserRoleCollection struct {
+type ACLUserRoleCollection struct {
 	EntityCollection
 
 	Data []model.AclUserRole `json:"data"`
@@ -1071,13 +1071,13 @@ type ScriptCollection struct {
 	Data []model.Script `json:"data"`
 }
 
-type SeoUrlTemplateCollection struct {
+type SEOUrlTemplateCollection struct {
 	EntityCollection
 
 	Data []model.SeoUrlTemplate `json:"data"`
 }
 
-type SeoUrlCollection struct {
+type SEOUrlCollection struct {
 	EntityCollection
 
 	Data []model.SeoUrl `json:"data"`

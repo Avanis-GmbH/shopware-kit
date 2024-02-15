@@ -16,12 +16,12 @@ type SyncOperation struct {
 }
 
 type deleteEntity struct {
-	Id string `json:"id"`
+	ID string `json:"id"`
 }
 
 // Starts a sync process for the list of provided actions.
 // This can be inserts, upserts, updates and deletes on different entities.
-func (c *Client) Sync(ctx ApiContext, payload map[string]SyncOperation) (*http.Response, error) {
+func (c *Client) Sync(ctx APIContext, payload map[string]SyncOperation) (*http.Response, error) {
 	req, err := c.NewRequest(ctx, http.MethodPost, "/api/_action/sync", nil, payload)
 
 	if err != nil {
@@ -34,7 +34,7 @@ func (c *Client) Sync(ctx ApiContext, payload map[string]SyncOperation) (*http.R
 // Inserts or updates the provided entities in bulk mode
 // Provided entities must be a slice
 // Uses underlying Sync method to perform the request
-func (c *Client) Upsert(ctx ApiContext, entities interface{}) (*http.Response, error) {
+func (c *Client) Upsert(ctx APIContext, entities interface{}) (*http.Response, error) {
 	if c.GetSegmentSnakeCase(entities) == "unknown" {
 		return nil, errors.New("unknown entity")
 	}
@@ -52,11 +52,11 @@ func (c *Client) Upsert(ctx ApiContext, entities interface{}) (*http.Response, e
 
 // Deletes the provided entities in bulk mode
 // Uses underlying Sync method to perform the request
-func (c *Client) Delete(ctx ApiContext, entity interface{}, ids []string) (*http.Response, error) {
+func (c *Client) Delete(ctx APIContext, entity interface{}, ids []string) (*http.Response, error) {
 	payload := make([]deleteEntity, 0)
 
 	for _, id := range ids {
-		payload = append(payload, deleteEntity{Id: id})
+		payload = append(payload, deleteEntity{ID: id})
 	}
 
 	return c.Sync(ctx, map[string]SyncOperation{c.GetSegmentSnakeCase(entity): {
