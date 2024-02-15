@@ -48,15 +48,15 @@ func (c PasswordCredentials) GetTokenSource(ctx context.Context, tokenURL string
 
 // IntegrationCredentials are the credentials for the authorization using a API key
 type IntegrationCredentials struct {
-	ClientId     string
+	ClientID     string
 	ClientSecret string
 	Scopes       []string
 }
 
 // NewIntegrationCredentials creates a new IntegrationCredentials struct with the given parameters
-func NewIntegrationCredentials(clientId, clientSecret string, scopes []string) IntegrationCredentials {
+func NewIntegrationCredentials(clientID, clientSecret string, scopes []string) IntegrationCredentials {
 	return IntegrationCredentials{
-		ClientId:     clientId,
+		ClientID:     clientID,
 		ClientSecret: clientSecret,
 		Scopes:       scopes,
 	}
@@ -65,7 +65,7 @@ func NewIntegrationCredentials(clientId, clientSecret string, scopes []string) I
 // GetTokenSource returns the token source for the client credentials grant type
 func (c IntegrationCredentials) GetTokenSource(ctx context.Context, tokenURL string) (oauth2.TokenSource, error) {
 	oauthConf := &clientcredentials.Config{
-		ClientID:     c.ClientId,
+		ClientID:     c.ClientID,
 		ClientSecret: c.ClientSecret,
 		Scopes:       c.Scopes,
 		TokenURL:     tokenURL,

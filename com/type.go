@@ -28,7 +28,6 @@ func (c *Client) GetSegment(v interface{}) string {
 }
 
 func (c *Client) GetSegmentSnakeCase(v interface{}) string {
-
 	// If the type name contains "Collection", remove it.
 	return strcase.ToSnake(c.GetSegment(v))
 }
