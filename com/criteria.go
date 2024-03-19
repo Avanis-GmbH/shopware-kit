@@ -39,14 +39,14 @@ type Criteria struct {
 	Associations   map[string]Criteria `json:"associations,omitempty"`
 	Term           string              `json:"term,omitempty"`
 	TotalCountMode int                 `json:"totalCountMode,omitempty"`
-	Query          []CriteriaQuery     `json:"query,omitempty"`
+	Query          []interface{}       `json:"query,omitempty"`
 }
 
 // CriteriaFilter is the struct that defines a filter to be applied when searching.
 type CriteriaFilter struct {
-	Type     string           `json:"type"`
-	Operator string           `json:"operator,omitempty"`
-	Queries  []CriteriaFilter `json:"queries,omitempty"`
+	Type     string        `json:"type"`
+	Operator string        `json:"operator,omitempty"`
+	Queries  []interface{} `json:"queries,omitempty"`
 }
 
 // CriteriaFilterQuery is an extension of the CriteriaFilter struct that includes the field and value to be filtered.
