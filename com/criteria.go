@@ -16,6 +16,12 @@ const (
 
 	SearchFilterTypeEquals    = "equals"
 	SearchFilterTypeEqualsAny = "equalsAny"
+	SearchFilterTypeContains  = "contains"
+	SearchFilterTypeRange     = "range"
+	SearchFilterTypeNot       = "not"
+	SearchFilterTypeMulti     = "multi"
+	SearchFilterTypePrefix    = "prefix"
+	SearchFilterTypeSuffix    = "suffix"
 
 	SearchSortDirectionAscending  = "ASC"
 	SearchSortDirectionDescending = "DESC"
@@ -33,13 +39,27 @@ type Criteria struct {
 	Associations   map[string]Criteria `json:"associations,omitempty"`
 	Term           string              `json:"term,omitempty"`
 	TotalCountMode int                 `json:"totalCountMode,omitempty"`
+	Query          []CriteriaQuery     `json:"query,omitempty"`
 }
 
 // CriteriaFilter is the struct that defines a filter to be applied when searching.
 type CriteriaFilter struct {
-	Type  string      `json:"type"`
+	Type     string           `json:"type"`
+	Operator string           `json:"operator,omitempty"`
+	Queries  []CriteriaFilter `json:"queries,omitempty"`
+}
+
+// CriteriaFilterQuery is an extension of the CriteriaFilter struct that includes the field and value to be filtered.
+type CriteriaFilterQuery struct {
+	CriteriaFilter
 	Field string      `json:"field"`
 	Value interface{} `json:"value"`
+}
+
+// CriteriaQuery is a struct that defines queries and a score to be applied when searching.
+type CriteriaQuery struct {
+	Score uint64              `json:"score"`
+	Query CriteriaFilterQuery `json:"query"`
 }
 
 // CriteriaSort is the struct that defines a sort to be applied when searching.
