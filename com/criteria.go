@@ -33,13 +33,13 @@ type Criteria struct {
 	Page           int64               `json:"page,omitempty"`
 	Limit          int64               `json:"limit,omitempty"`
 	IDs            []string            `json:"ids,omitempty"`
-	Filter         []CriteriaFilter    `json:"filter,omitempty"`
-	PostFilter     []CriteriaFilter    `json:"postFilter,omitempty"`
+	Filter         []interface{}       `json:"filter,omitempty"`
+	PostFilter     []interface{}       `json:"postFilter,omitempty"`
 	Sort           []CriteriaSort      `json:"sort,omitempty"`
 	Associations   map[string]Criteria `json:"associations,omitempty"`
 	Term           string              `json:"term,omitempty"`
 	TotalCountMode int                 `json:"totalCountMode,omitempty"`
-	Query          []interface{}       `json:"query,omitempty"`
+	Query          []CriteriaQuery     `json:"query,omitempty"`
 }
 
 // CriteriaFilter is the struct that defines a filter to be applied when searching.
