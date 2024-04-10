@@ -13,7 +13,7 @@ type CmsSection struct {
 	CssClass            string      `json:"cssClass,omitempty"`
 	CustomFields        interface{} `json:"customFields,omitempty"`
 	Id                  string      `json:"id,omitempty"`
-	Locked              bool        `json:"locked,omitempty"`
+	Locked              bool        `json:"locked"`
 	MobileBehavior      string      `json:"mobileBehavior,omitempty"`
 	Name                string      `json:"name,omitempty"`
 	Page                *CmsPage    `json:"page,omitempty"`

@@ -23,7 +23,7 @@ type Price struct {
 	CurrencyID string  `json:"currencyId,omitempty"`
 	Gross      float32 `json:"gross"` // required
 	Net        float32 `json:"net"`   // required
-	Linked     bool    `json:"linked,omitempty"`
+	Linked     bool    `json:"linked"`
 }
 
 type OrderPrice struct {

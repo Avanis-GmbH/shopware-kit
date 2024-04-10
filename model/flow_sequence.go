@@ -17,6 +17,6 @@ type FlowSequence struct {
 	Position     float64        `json:"position,omitempty"`
 	Rule         *Rule          `json:"rule,omitempty"`
 	RuleId       string         `json:"ruleId,omitempty"`
-	TrueCase     bool           `json:"trueCase,omitempty"`
+	TrueCase     bool           `json:"trueCase"`
 	UpdatedAt    *time.Time     `json:"updatedAt,omitempty"`
 }

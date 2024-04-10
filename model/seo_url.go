@@ -7,9 +7,9 @@ type SeoUrl struct {
 	CustomFields   interface{}   `json:"customFields,omitempty"`
 	ForeignKey     string        `json:"foreignKey,omitempty"` // required
 	Id             string        `json:"id,omitempty"`
-	IsCanonical    bool          `json:"isCanonical,omitempty"`
-	IsDeleted      bool          `json:"isDeleted,omitempty"`
-	IsModified     bool          `json:"isModified,omitempty"`
+	IsCanonical    bool          `json:"isCanonical"`
+	IsDeleted      bool          `json:"isDeleted"`
+	IsModified     bool          `json:"isModified"`
 	Language       *Language     `json:"language,omitempty"`
 	LanguageId     string        `json:"languageId,omitempty"` // required
 	PathInfo       string        `json:"pathInfo,omitempty"`   // required

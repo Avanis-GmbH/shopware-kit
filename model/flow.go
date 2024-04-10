@@ -3,13 +3,13 @@ package model
 import "time"
 
 type Flow struct {
-	Active       bool           `json:"active,omitempty"`
+	Active       bool           `json:"active"`
 	CreatedAt    *time.Time     `json:"createdAt,omitempty"`
 	CustomFields interface{}    `json:"customFields,omitempty"`
 	Description  string         `json:"description,omitempty"`
 	EventName    string         `json:"eventName,omitempty"` // required
 	Id           string         `json:"id,omitempty"`
-	Invalid      bool           `json:"invalid,omitempty"`
+	Invalid      bool           `json:"invalid"`
 	Name         string         `json:"name,omitempty"` // required
 	Payload      interface{}    `json:"payload,omitempty"`
 	Priority     float64        `json:"priority,omitempty"`

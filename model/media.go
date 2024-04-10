@@ -17,7 +17,7 @@ type Media struct {
 	FileExtension               string                       `json:"fileExtension,omitempty"`
 	FileName                    string                       `json:"fileName,omitempty"`
 	FileSize                    float64                      `json:"fileSize,omitempty"`
-	HasFile                     bool                         `json:"hasFile,omitempty"`
+	HasFile                     bool                         `json:"hasFile"`
 	Id                          string                       `json:"id,omitempty"`
 	MailTemplateMedia           []MailTemplateMedia          `json:"mailTemplateMedia,omitempty"`
 	MediaFolder                 *MediaFolder                 `json:"mediaFolder,omitempty"`
@@ -28,7 +28,7 @@ type Media struct {
 	MimeType                    string                       `json:"mimeType,omitempty"`
 	OrderLineItems              []OrderLineItem              `json:"orderLineItems,omitempty"`
 	PaymentMethods              []PaymentMethod              `json:"paymentMethods,omitempty"`
-	Private                     bool                         `json:"private,omitempty"`
+	Private                     bool                         `json:"private"`
 	ProductConfiguratorSettings []ProductConfiguratorSetting `json:"productConfiguratorSettings,omitempty"`
 	ProductManufacturers        []ProductManufacturer        `json:"productManufacturers,omitempty"`
 	ProductMedia                []ProductMedia               `json:"productMedia,omitempty"`

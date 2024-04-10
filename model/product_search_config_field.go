@@ -8,10 +8,10 @@ type ProductSearchConfigField struct {
 	CustomFieldId  string               `json:"customFieldId,omitempty"`
 	Field          string               `json:"field,omitempty"` // required
 	Id             string               `json:"id,omitempty"`
-	Ranking        int64                `json:"ranking,omitempty"`    // required
-	Searchable     bool                 `json:"searchable,omitempty"` // required
+	Ranking        int64                `json:"ranking,omitempty"` // required
+	Searchable     bool                 `json:"searchable"`        // required
 	SearchConfig   *ProductSearchConfig `json:"searchConfig,omitempty"`
 	SearchConfigId string               `json:"searchConfigId,omitempty"` // required
-	Tokenize       bool                 `json:"tokenize,omitempty"`       // required
+	Tokenize       bool                 `json:"tokenize"`                 // required
 	UpdatedAt      *time.Time           `json:"updatedAt,omitempty"`
 }

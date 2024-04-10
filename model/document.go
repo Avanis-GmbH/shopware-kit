@@ -19,7 +19,7 @@ type Document struct {
 	OrderVersionId       string        `json:"orderVersionId,omitempty"`
 	ReferencedDocument   *Document     `json:"referencedDocument,omitempty"`
 	ReferencedDocumentId string        `json:"referencedDocumentId,omitempty"`
-	Sent                 bool          `json:"sent,omitempty"`
-	Static               bool          `json:"static,omitempty"`
+	Sent                 bool          `json:"sent"`
+	Static               bool          `json:"static"`
 	UpdatedAt            *time.Time    `json:"updatedAt,omitempty"`
 }

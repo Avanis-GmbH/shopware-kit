@@ -14,7 +14,7 @@ type MailTemplate struct {
 	Media              []MailTemplateMedia       `json:"media,omitempty"`
 	SenderName         string                    `json:"senderName,omitempty"`
 	Subject            string                    `json:"subject,omitempty"` // required
-	SystemDefault      bool                      `json:"systemDefault,omitempty"`
+	SystemDefault      bool                      `json:"systemDefault"`
 	Translated         interface{}               `json:"translated,omitempty"`
 	Translations       []MailTemplateTranslation `json:"translations,omitempty"`
 	UpdatedAt          *time.Time                `json:"updatedAt,omitempty"`

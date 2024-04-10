@@ -7,7 +7,7 @@ type SeoUrlTemplate struct {
 	CustomFields   interface{}   `json:"customFields,omitempty"`
 	EntityName     string        `json:"entityName,omitempty"` // required
 	Id             string        `json:"id,omitempty"`
-	IsValid        bool          `json:"isValid,omitempty"`
+	IsValid        bool          `json:"isValid"`
 	RouteName      string        `json:"routeName,omitempty"` // required
 	SalesChannel   *SalesChannel `json:"salesChannel,omitempty"`
 	SalesChannelId string        `json:"salesChannelId,omitempty"`

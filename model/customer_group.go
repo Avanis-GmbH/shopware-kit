@@ -6,12 +6,12 @@ type CustomerGroup struct {
 	CreatedAt                           *time.Time                 `json:"createdAt,omitempty"`
 	Customers                           []Customer                 `json:"customers,omitempty"`
 	CustomFields                        interface{}                `json:"customFields,omitempty"`
-	DisplayGross                        bool                       `json:"displayGross,omitempty"`
+	DisplayGross                        bool                       `json:"displayGross"`
 	Id                                  string                     `json:"id,omitempty"`
 	Name                                string                     `json:"name,omitempty"` // required
-	RegistrationActive                  bool                       `json:"registrationActive,omitempty"`
+	RegistrationActive                  bool                       `json:"registrationActive"`
 	RegistrationIntroduction            string                     `json:"registrationIntroduction,omitempty"`
-	RegistrationOnlyCompanyRegistration bool                       `json:"registrationOnlyCompanyRegistration,omitempty"`
+	RegistrationOnlyCompanyRegistration bool                       `json:"registrationOnlyCompanyRegistration"`
 	RegistrationSalesChannels           []SalesChannel             `json:"registrationSalesChannels,omitempty"`
 	RegistrationSeoMetaDescription      string                     `json:"registrationSeoMetaDescription,omitempty"`
 	RegistrationTitle                   string                     `json:"registrationTitle,omitempty"`

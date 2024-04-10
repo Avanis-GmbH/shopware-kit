@@ -3,7 +3,7 @@ package model
 import "time"
 
 type Theme struct {
-	Active         bool               `json:"active,omitempty"` // required
+	Active         bool               `json:"active"`           // required
 	Author         string             `json:"author,omitempty"` // required
 	BaseConfig     interface{}        `json:"baseConfig,omitempty"`
 	ChildThemes    []Theme            `json:"childThemes,omitempty"`

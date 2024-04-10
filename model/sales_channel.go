@@ -4,7 +4,7 @@ import "time"
 
 type SalesChannel struct {
 	AccessKey                       string                           `json:"accessKey,omitempty"` // required
-	Active                          bool                             `json:"active,omitempty"`
+	Active                          bool                             `json:"active"`
 	Analytics                       *SalesChannelAnalytics           `json:"analytics,omitempty"`
 	AnalyticsId                     string                           `json:"analyticsId,omitempty"`
 	BoundCustomers                  []Customer                       `json:"boundCustomers,omitempty"`
@@ -30,13 +30,13 @@ type SalesChannel struct {
 	HomeCmsPage                     *CmsPage                         `json:"homeCmsPage,omitempty"`
 	HomeCmsPageId                   string                           `json:"homeCmsPageId,omitempty"`
 	HomeCmsPageVersionId            string                           `json:"homeCmsPageVersionId,omitempty"`
-	HomeEnabled                     bool                             `json:"homeEnabled,omitempty"` // required
+	HomeEnabled                     bool                             `json:"homeEnabled"` // required
 	HomeKeywords                    string                           `json:"homeKeywords,omitempty"`
 	HomeMetaDescription             string                           `json:"homeMetaDescription,omitempty"`
 	HomeMetaTitle                   string                           `json:"homeMetaTitle,omitempty"`
 	HomeName                        string                           `json:"homeName,omitempty"`
 	HomeSlotConfig                  interface{}                      `json:"homeSlotConfig,omitempty"`
-	HreflangActive                  bool                             `json:"hreflangActive,omitempty"`
+	HreflangActive                  bool                             `json:"hreflangActive"`
 	HreflangDefaultDomain           *SalesChannelDomain              `json:"hreflangDefaultDomain,omitempty"`
 	HreflangDefaultDomainId         string                           `json:"hreflangDefaultDomainId,omitempty"`
 	Id                              string                           `json:"id,omitempty"`
@@ -47,7 +47,7 @@ type SalesChannel struct {
 	MailHeaderFooter                *MailHeaderFooter                `json:"mailHeaderFooter,omitempty"`
 	MailHeaderFooterId              string                           `json:"mailHeaderFooterId,omitempty"`
 	MainCategories                  []MainCategory                   `json:"mainCategories,omitempty"`
-	Maintenance                     bool                             `json:"maintenance,omitempty"`
+	Maintenance                     bool                             `json:"maintenance"`
 	MaintenanceIpWhitelist          interface{}                      `json:"maintenanceIpWhitelist,omitempty"`
 	Name                            string                           `json:"name,omitempty"` // required
 	NavigationCategory              *Category                        `json:"navigationCategory,omitempty"`

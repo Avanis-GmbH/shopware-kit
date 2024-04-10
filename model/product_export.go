@@ -12,13 +12,13 @@ type ProductExport struct {
 	FileFormat               string              `json:"fileFormat,omitempty"` // required
 	FileName                 string              `json:"fileName,omitempty"`   // required
 	FooterTemplate           string              `json:"footerTemplate,omitempty"`
-	GenerateByCronjob        bool                `json:"generateByCronjob,omitempty"` // required
+	GenerateByCronjob        bool                `json:"generateByCronjob"` // required
 	GeneratedAt              *time.Time          `json:"generatedAt,omitempty"`
 	HeaderTemplate           string              `json:"headerTemplate,omitempty"`
 	Id                       string              `json:"id,omitempty"`
-	IncludeVariants          bool                `json:"includeVariants,omitempty"`
+	IncludeVariants          bool                `json:"includeVariants"`
 	Interval                 float64             `json:"interval,omitempty"` // required
-	PausedSchedule           bool                `json:"pausedSchedule,omitempty"`
+	PausedSchedule           bool                `json:"pausedSchedule"`
 	ProductStream            *ProductStream      `json:"productStream,omitempty"`
 	ProductStreamId          string              `json:"productStreamId,omitempty"` // required
 	SalesChannel             *SalesChannel       `json:"salesChannel,omitempty"`

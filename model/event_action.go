@@ -4,7 +4,7 @@ import "time"
 
 type EventAction struct {
 	ActionName    string         `json:"actionName,omitempty"`
-	Active        bool           `json:"active,omitempty"`
+	Active        bool           `json:"active"`
 	Config        interface{}    `json:"config,omitempty"`
 	CreatedAt     *time.Time     `json:"createdAt,omitempty"`
 	CustomFields  interface{}    `json:"customFields,omitempty"`
