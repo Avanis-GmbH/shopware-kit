@@ -3,7 +3,7 @@ package model
 import "time"
 
 type CountryState struct {
-	Active            bool                      `json:"active,omitempty"`
+	Active            bool                      `json:"active"`
 	Country           *Country                  `json:"country,omitempty"`
 	CountryId         string                    `json:"countryId,omitempty"` // required
 	CreatedAt         *time.Time                `json:"createdAt,omitempty"`

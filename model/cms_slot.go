@@ -11,7 +11,7 @@ type CmsSlot struct {
 	CustomFields      interface{}          `json:"customFields,omitempty"`
 	Data              interface{}          `json:"data,omitempty"`
 	Id                string               `json:"id,omitempty"`
-	Locked            bool                 `json:"locked,omitempty"`
+	Locked            bool                 `json:"locked"`
 	Slot              string               `json:"slot,omitempty"` // required
 	Translated        interface{}          `json:"translated,omitempty"`
 	Translations      []CmsSlotTranslation `json:"translations,omitempty"`

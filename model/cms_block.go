@@ -12,7 +12,7 @@ type CmsBlock struct {
 	CssClass            string      `json:"cssClass,omitempty"`
 	CustomFields        interface{} `json:"customFields,omitempty"`
 	Id                  string      `json:"id,omitempty"`
-	Locked              bool        `json:"locked,omitempty"`
+	Locked              bool        `json:"locked"`
 	MarginBottom        string      `json:"marginBottom,omitempty"`
 	MarginLeft          string      `json:"marginLeft,omitempty"`
 	MarginRight         string      `json:"marginRight,omitempty"`

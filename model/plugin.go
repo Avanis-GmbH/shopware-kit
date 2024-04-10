@@ -3,7 +3,7 @@ package model
 import "time"
 
 type Plugin struct {
-	Active            bool                `json:"active,omitempty"`
+	Active            bool                `json:"active"`
 	Author            string              `json:"author,omitempty"`
 	Autoload          interface{}         `json:"autoload,omitempty"`  // required
 	BaseClass         string              `json:"baseClass,omitempty"` // required
@@ -19,7 +19,7 @@ type Plugin struct {
 	InstalledAt       *time.Time          `json:"installedAt,omitempty"`
 	Label             string              `json:"label,omitempty"` // required
 	License           string              `json:"license,omitempty"`
-	ManagedByComposer bool                `json:"managedByComposer,omitempty"`
+	ManagedByComposer bool                `json:"managedByComposer"`
 	ManufacturerLink  string              `json:"manufacturerLink,omitempty"`
 	Name              string              `json:"name,omitempty"` // required
 	Path              string              `json:"path,omitempty"`

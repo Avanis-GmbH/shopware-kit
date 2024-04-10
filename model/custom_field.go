@@ -3,7 +3,7 @@ package model
 import "time"
 
 type CustomField struct {
-	Active                    bool                       `json:"active,omitempty"`
+	Active                    bool                       `json:"active"`
 	Config                    interface{}                `json:"config,omitempty"`
 	CreatedAt                 *time.Time                 `json:"createdAt,omitempty"`
 	CustomFieldSet            *CustomFieldSet            `json:"customFieldSet,omitempty"`

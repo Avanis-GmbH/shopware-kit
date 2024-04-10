@@ -5,8 +5,8 @@ import "time"
 type User struct {
 	AccessKeys                 []UserAccessKey       `json:"accessKeys,omitempty"`
 	AclRoles                   []AclRole             `json:"aclRoles,omitempty"`
-	Active                     bool                  `json:"active,omitempty"`
-	Admin                      bool                  `json:"admin,omitempty"`
+	Active                     bool                  `json:"active"`
+	Admin                      bool                  `json:"admin"`
 	AvatarId                   string                `json:"avatarId,omitempty"`
 	AvatarMedia                *Media                `json:"avatarMedia,omitempty"`
 	Configs                    []UserConfig          `json:"configs,omitempty"`

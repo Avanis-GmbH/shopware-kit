@@ -6,7 +6,7 @@ type NumberRange struct {
 	CreatedAt                *time.Time                `json:"createdAt,omitempty"`
 	CustomFields             interface{}               `json:"customFields,omitempty"`
 	Description              string                    `json:"description,omitempty"`
-	Global                   bool                      `json:"global,omitempty"`
+	Global                   bool                      `json:"global"`
 	Id                       string                    `json:"id,omitempty"`
 	Name                     string                    `json:"name,omitempty"`
 	NumberRangeSalesChannels []NumberRangeSalesChannel `json:"numberRangeSalesChannels,omitempty"`

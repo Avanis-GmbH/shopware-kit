@@ -17,5 +17,5 @@ type MediaFolder struct {
 	Parent                 *MediaFolder              `json:"parent,omitempty"`
 	ParentId               string                    `json:"parentId,omitempty"`
 	UpdatedAt              *time.Time                `json:"updatedAt,omitempty"`
-	UseParentConfiguration bool                      `json:"useParentConfiguration,omitempty"`
+	UseParentConfiguration bool                      `json:"useParentConfiguration"`
 }

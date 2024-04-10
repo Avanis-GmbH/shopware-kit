@@ -5,7 +5,7 @@ import "time"
 type NumberRangeType struct {
 	CreatedAt                *time.Time                   `json:"createdAt,omitempty"`
 	CustomFields             interface{}                  `json:"customFields,omitempty"`
-	Global                   bool                         `json:"global,omitempty"` // required
+	Global                   bool                         `json:"global"` // required
 	Id                       string                       `json:"id,omitempty"`
 	NumberRanges             []NumberRange                `json:"numberRanges,omitempty"`
 	NumberRangeSalesChannels []NumberRangeSalesChannel    `json:"numberRangeSalesChannels,omitempty"`

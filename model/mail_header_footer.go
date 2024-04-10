@@ -12,7 +12,7 @@ type MailHeaderFooter struct {
 	Id            string                        `json:"id,omitempty"`
 	Name          string                        `json:"name,omitempty"` // required
 	SalesChannels []SalesChannel                `json:"salesChannels,omitempty"`
-	SystemDefault bool                          `json:"systemDefault,omitempty"`
+	SystemDefault bool                          `json:"systemDefault"`
 	Translated    interface{}                   `json:"translated,omitempty"`
 	Translations  []MailHeaderFooterTranslation `json:"translations,omitempty"`
 	UpdatedAt     *time.Time                    `json:"updatedAt,omitempty"`

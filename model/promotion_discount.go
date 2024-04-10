@@ -4,7 +4,7 @@ import "time"
 
 type PromotionDiscount struct {
 	ApplierKey              string                    `json:"applierKey,omitempty"`
-	ConsiderAdvancedRules   bool                      `json:"considerAdvancedRules,omitempty"` // required
+	ConsiderAdvancedRules   bool                      `json:"considerAdvancedRules"` // required
 	CreatedAt               *time.Time                `json:"createdAt,omitempty"`
 	DiscountRules           []Rule                    `json:"discountRules,omitempty"`
 	Id                      string                    `json:"id,omitempty"`

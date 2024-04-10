@@ -9,7 +9,7 @@ type OrderLineItem struct {
 	CreatedAt              *time.Time              `json:"createdAt,omitempty"`
 	CustomFields           interface{}             `json:"customFields,omitempty"`
 	Description            string                  `json:"description,omitempty"`
-	Good                   bool                    `json:"good,omitempty"`
+	Good                   bool                    `json:"good"`
 	Id                     string                  `json:"id,omitempty"`
 	Identifier             string                  `json:"identifier,omitempty"` // required
 	Label                  string                  `json:"label,omitempty"`      // required
@@ -29,8 +29,8 @@ type OrderLineItem struct {
 	ProductVersionId       string                  `json:"productVersionId,omitempty"`
 	Quantity               float64                 `json:"quantity,omitempty"` // required
 	ReferencedId           string                  `json:"referencedId,omitempty"`
-	Removable              bool                    `json:"removable,omitempty"`
-	Stackable              bool                    `json:"stackable,omitempty"`
+	Removable              bool                    `json:"removable"`
+	Stackable              bool                    `json:"stackable"`
 	TotalPrice             float64                 `json:"totalPrice,omitempty"`
 	Type                   string                  `json:"type,omitempty"`
 	UnitPrice              float64                 `json:"unitPrice,omitempty"`

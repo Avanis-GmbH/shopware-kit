@@ -3,7 +3,7 @@ package model
 import "time"
 
 type Webhook struct {
-	Active     bool       `json:"active,omitempty"`
+	Active     bool       `json:"active"`
 	App        *App       `json:"app,omitempty"`
 	AppId      string     `json:"appId,omitempty"`
 	CreatedAt  *time.Time `json:"createdAt,omitempty"`

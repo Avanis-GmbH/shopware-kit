@@ -7,7 +7,7 @@ type SalesChannelDomain struct {
 	Currency                    *Currency       `json:"currency,omitempty"`
 	CurrencyId                  string          `json:"currencyId,omitempty"` // required
 	CustomFields                interface{}     `json:"customFields,omitempty"`
-	HreflangUseOnlyLocale       bool            `json:"hreflangUseOnlyLocale,omitempty"`
+	HreflangUseOnlyLocale       bool            `json:"hreflangUseOnlyLocale"`
 	Id                          string          `json:"id,omitempty"`
 	Language                    *Language       `json:"language,omitempty"`
 	LanguageId                  string          `json:"languageId,omitempty"` // required

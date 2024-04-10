@@ -9,7 +9,7 @@ type Currency struct {
 	Factor                         float64                   `json:"factor,omitempty"` // required
 	Id                             string                    `json:"id,omitempty"`
 	IsoCode                        string                    `json:"isoCode,omitempty"` // required
-	IsSystemDefault                bool                      `json:"isSystemDefault,omitempty"`
+	IsSystemDefault                bool                      `json:"isSystemDefault"`
 	ItemRounding                   Rounding                  `json:"itemRounding,omitempty"` // required
 	Name                           string                    `json:"name,omitempty"`         // required
 	Orders                         []Order                   `json:"orders,omitempty"`
@@ -29,7 +29,7 @@ type Currency struct {
 }
 
 type Rounding struct {
-	Decimals    int64 `json:"decimals,omitempty"`    // required
-	Intervals   int64 `json:"intervals,omitempty"`   // required
-	RoundForNet bool  `json:"roundForNet,omitempty"` // required
+	Decimals    int64 `json:"decimals,omitempty"`  // required
+	Intervals   int64 `json:"intervals,omitempty"` // required
+	RoundForNet bool  `json:"roundForNet"`         // required
 }

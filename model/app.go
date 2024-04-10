@@ -6,12 +6,12 @@ type App struct {
 	AclRole                 *AclRole           `json:"aclRole,omitempty"`
 	AclRoleId               string             `json:"aclRoleId,omitempty"` // required
 	ActionButtons           []AppActionButton  `json:"actionButtons,omitempty"`
-	Active                  bool               `json:"active,omitempty"`       // required
-	AllowDisable            bool               `json:"allowDisable,omitempty"` // required
+	Active                  bool               `json:"activ"`        // required
+	AllowDisable            bool               `json:"allowDisable"` // required
 	AppSecret               string             `json:"appSecret,omitempty"`
 	Author                  string             `json:"author,omitempty"`
 	CmsBlocks               []AppCmsBlock      `json:"cmsBlocks,omitempty"`
-	Configurable            bool               `json:"configurable,omitempty"` // required
+	Configurable            bool               `json:"configurable"` // required
 	Cookies                 interface{}        `json:"cookies,omitempty"`
 	Copyright               string             `json:"copyright,omitempty"`
 	CreatedAt               *time.Time         `json:"createdAt,omitempty"`

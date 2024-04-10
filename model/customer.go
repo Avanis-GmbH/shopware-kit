@@ -3,7 +3,7 @@ package model
 import "time"
 
 type Customer struct {
-	Active                    bool               `json:"active,omitempty"`
+	Active                    bool               `json:"active"`
 	Addresses                 []CustomerAddress  `json:"addresses,omitempty"`
 	AffiliateCode             string             `json:"affiliateCode,omitempty"`
 	AutoIncrement             float64            `json:"autoIncrement,omitempty"`
@@ -23,13 +23,13 @@ type Customer struct {
 	DefaultShippingAddressId  string             `json:"defaultShippingAddressId,omitempty"`
 	DoubleOptInConfirmDate    *time.Time         `json:"doubleOptInConfirmDate,omitempty"`
 	DoubleOptInEmailSentDate  *time.Time         `json:"doubleOptInEmailSentDate,omitempty"`
-	DoubleOptInRegistration   bool               `json:"doubleOptInRegistration,omitempty"`
+	DoubleOptInRegistration   bool               `json:"doubleOptInRegistration"`
 	Email                     string             `json:"email,omitempty"` // required
 	FirstLogin                *time.Time         `json:"firstLogin,omitempty"`
 	FirstName                 string             `json:"firstName,omitempty"` // required
 	Group                     *CustomerGroup     `json:"group,omitempty"`
 	GroupId                   string             `json:"groupId,omitempty"` // required
-	Guest                     bool               `json:"guest,omitempty"`
+	Guest                     bool               `json:"guest"`
 	Hash                      string             `json:"hash,omitempty"`
 	Id                        string             `json:"id,omitempty"`
 	Language                  *Language          `json:"language,omitempty"`
@@ -41,7 +41,7 @@ type Customer struct {
 	LastPaymentMethodId       string             `json:"lastPaymentMethodId,omitempty"`
 	LegacyEncoder             string             `json:"legacyEncoder,omitempty"`
 	LegacyPassword            string             `json:"legacyPassword,omitempty"`
-	Newsletter                bool               `json:"newsletter,omitempty"`
+	Newsletter                bool               `json:"newsletter"`
 	NewsletterSalesChannelIds interface{}        `json:"newsletterSalesChannelIds,omitempty"`
 	OrderCount                float64            `json:"orderCount,omitempty"`
 	OrderCustomers            []OrderCustomer    `json:"orderCustomers,omitempty"`
