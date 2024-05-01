@@ -5,7 +5,7 @@ import "time"
 type Product struct {
 	Active                        bool                                  `json:"active"`
 	AutoIncrement                 float64                               `json:"autoIncrement,omitempty"`
-	Available                     bool                                  `json:"available"`
+	Available                     bool                                  `json:"available,omitempty"` // not changeable
 	AvailableStock                float64                               `json:"availableStock,omitempty"`
 	CanonicalProduct              *Product                              `json:"canonicalProduct,omitempty"`
 	CanonicalProductId            string                                `json:"canonicalProductId,omitempty"`
