@@ -11,7 +11,7 @@ type Rule struct {
 	EventActions                    []EventAction         `json:"eventActions,omitempty"`
 	FlowSequences                   []FlowSequence        `json:"flowSequences,omitempty"`
 	Id                              string                `json:"id,omitempty"`
-	Invalid                         bool                  `json:"invalid"`
+	Invalid                         bool                  `json:"invalid,omitempty"`
 	ModuleTypes                     interface{}           `json:"moduleTypes,omitempty"`
 	Name                            string                `json:"name,omitempty"` // required
 	OrderPromotions                 []Promotion           `json:"orderPromotions,omitempty"`
