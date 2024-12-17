@@ -5,7 +5,7 @@ import "time"
 type Integration struct {
 	AccessKey            string         `json:"accessKey,omitempty"` // required
 	AclRoles             []AclRole      `json:"aclRoles,omitempty"`
-	Admin                bool           `json:"admin"`
+	Admin                *bool          `json:"admin,omitempty"`
 	App                  *App           `json:"app,omitempty"`
 	CreatedAt            *time.Time     `json:"createdAt,omitempty"`
 	CreatedNotifications []Notification `json:"createdNotifications,omitempty"`
@@ -16,5 +16,5 @@ type Integration struct {
 	LastUsageAt          *time.Time     `json:"lastUsageAt,omitempty"`
 	SecretAccessKey      interface{}    `json:"secretAccessKey,omitempty"` // required
 	UpdatedAt            *time.Time     `json:"updatedAt,omitempty"`
-	WriteAccess          bool           `json:"writeAccess"`
+	WriteAccess          *bool          `json:"writeAccess,omitempty"`
 }

@@ -3,7 +3,7 @@ package model
 import "time"
 
 type Notification struct {
-	AdminOnly              bool         `json:"adminOnly"`
+	AdminOnly              *bool        `json:"adminOnly,omitempty"`
 	CreatedAt              *time.Time   `json:"createdAt,omitempty"`
 	CreatedByIntegration   *Integration `json:"createdByIntegration,omitempty"`
 	CreatedByIntegrationId string       `json:"createdByIntegrationId,omitempty"`

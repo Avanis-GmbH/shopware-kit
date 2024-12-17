@@ -10,7 +10,7 @@ type ProductStream struct {
 	Description          string                     `json:"description,omitempty"`
 	Filters              []ProductStreamFilter      `json:"filters,omitempty"`
 	Id                   string                     `json:"id,omitempty"`
-	Invalid              bool                       `json:"invalid"`
+	Invalid              *bool                      `json:"invalid,omitempty"`
 	Name                 string                     `json:"name,omitempty"` // required
 	ProductCrossSellings []ProductCrossSelling      `json:"productCrossSellings,omitempty"`
 	ProductExports       []ProductExport            `json:"productExports,omitempty"`

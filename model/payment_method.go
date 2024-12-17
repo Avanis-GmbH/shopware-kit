@@ -3,10 +3,10 @@ package model
 import "time"
 
 type PaymentMethod struct {
-	Active                         bool                       `json:"active"`
-	AfterOrderEnabled              bool                       `json:"afterOrderEnabled"`
+	Active                         *bool                      `json:"active,omitempty"`
+	AfterOrderEnabled              *bool                      `json:"afterOrderEnabled,omitempty"`
 	AppPaymentMethod               *AppPaymentMethod          `json:"appPaymentMethod,omitempty"`
-	Asynchronous                   bool                       `json:"asynchronous"`
+	Asynchronous                   *bool                      `json:"asynchronous,omitempty"`
 	AvailabilityRule               *Rule                      `json:"availabilityRule,omitempty"`
 	AvailabilityRuleId             string                     `json:"availabilityRuleId,omitempty"`
 	CreatedAt                      *time.Time                 `json:"createdAt,omitempty"`
@@ -24,10 +24,10 @@ type PaymentMethod struct {
 	Plugin                         *Plugin                    `json:"plugin,omitempty"`
 	PluginId                       string                     `json:"pluginId,omitempty"`
 	Position                       float64                    `json:"position,omitempty"`
-	Prepared                       bool                       `json:"prepared"`
+	Prepared                       *bool                      `json:"prepared,omitempty"`
 	SalesChannelDefaultAssignments []SalesChannel             `json:"salesChannelDefaultAssignments,omitempty"`
 	SalesChannels                  []SalesChannel             `json:"salesChannels,omitempty"`
-	Synchronous                    bool                       `json:"synchronous"`
+	Synchronous                    *bool                      `json:"synchronous,omitempty"`
 	Translated                     interface{}                `json:"translated,omitempty"`
 	Translations                   []PaymentMethodTranslation `json:"translations,omitempty"`
 	UpdatedAt                      *time.Time                 `json:"updatedAt,omitempty"`

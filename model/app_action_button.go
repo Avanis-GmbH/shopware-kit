@@ -10,7 +10,7 @@ type AppActionButton struct {
 	Entity       string                       `json:"entity,omitempty"` // required
 	Id           string                       `json:"id,omitempty"`
 	Label        string                       `json:"label,omitempty"` // required
-	OpenNewTab   bool                         `json:"openNewTab"`
+	OpenNewTab   *bool                        `json:"openNewTab,omitempty"`
 	Translated   interface{}                  `json:"translated,omitempty"`
 	Translations []AppActionButtonTranslation `json:"translations,omitempty"`
 	UpdatedAt    *time.Time                   `json:"updatedAt,omitempty"`

@@ -12,5 +12,5 @@ type UserAccessKey struct {
 	UpdatedAt       *time.Time  `json:"updatedAt,omitempty"`
 	User            *User       `json:"user,omitempty"`
 	UserId          string      `json:"userId,omitempty"` // required
-	WriteAccess     bool        `json:"writeAccess"`
+	WriteAccess     *bool       `json:"writeAccess,omitempty"`
 }

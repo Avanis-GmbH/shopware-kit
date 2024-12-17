@@ -20,7 +20,7 @@ type ProductReview struct {
 	ProductVersionId string        `json:"productVersionId,omitempty"`
 	SalesChannel     *SalesChannel `json:"salesChannel,omitempty"`
 	SalesChannelId   string        `json:"salesChannelId,omitempty"` // required
-	Status           bool          `json:"status"`
+	Status           *bool         `json:"status,omitempty"`
 	Title            string        `json:"title,omitempty"` // required
 	UpdatedAt        *time.Time    `json:"updatedAt,omitempty"`
 }

@@ -3,7 +3,7 @@ package model
 import "time"
 
 type ShippingMethod struct {
-	Active                         bool                        `json:"active"`
+	Active                         *bool                       `json:"active,omitempty"`
 	AvailabilityRule               *Rule                       `json:"availabilityRule,omitempty"`
 	AvailabilityRuleId             string                      `json:"availabilityRuleId,omitempty"` // required
 	CreatedAt                      *time.Time                  `json:"createdAt,omitempty"`

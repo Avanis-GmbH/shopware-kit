@@ -3,7 +3,7 @@ package model
 import "time"
 
 type Category struct {
-	Active                  bool                  `json:"active"`
+	Active                  *bool                 `json:"active,omitempty"`
 	AfterCategoryId         string                `json:"afterCategoryId,omitempty"`
 	AfterCategoryVersionId  string                `json:"afterCategoryVersionId,omitempty"`
 	AutoIncrement           float64               `json:"autoIncrement,omitempty"`
@@ -16,14 +16,14 @@ type Category struct {
 	CreatedAt               *time.Time            `json:"createdAt,omitempty"`
 	CustomFields            interface{}           `json:"customFields,omitempty"`
 	Description             string                `json:"description"`
-	DisplayNestedProducts   bool                  `json:"displayNestedProducts"` // required
+	DisplayNestedProducts   *bool                 `json:"displayNestedProducts,omitempty"` // required
 	ExternalLink            string                `json:"externalLink,omitempty"`
 	FooterSalesChannels     []SalesChannel        `json:"footerSalesChannels,omitempty"`
 	Id                      string                `json:"id,omitempty"`
 	InternalLink            string                `json:"internalLink,omitempty"`
 	Keywords                string                `json:"keywords,omitempty"`
 	Level                   float64               `json:"level,omitempty"`
-	LinkNewTab              bool                  `json:"linkNewTab"`
+	LinkNewTab              *bool                 `json:"linkNewTab,omitempty"`
 	LinkType                string                `json:"linkType,omitempty"`
 	MainCategories          []MainCategory        `json:"mainCategories,omitempty"`
 	Media                   *Media                `json:"media,omitempty"`
@@ -50,5 +50,5 @@ type Category struct {
 	Type                    string                `json:"type,omitempty"` // required
 	UpdatedAt               *time.Time            `json:"updatedAt,omitempty"`
 	VersionId               string                `json:"versionId,omitempty"`
-	Visible                 bool                  `json:"visible"`
+	Visible                 *bool                 `json:"visible,omitempty"`
 }

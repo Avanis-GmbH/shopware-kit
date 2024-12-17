@@ -3,7 +3,7 @@ package model
 import "time"
 
 type ProductCrossSelling struct {
-	Active           bool                                  `json:"active"`
+	Active           *bool                                 `json:"active,omitempty"`
 	AssignedProducts []ProductCrossSellingAssignedProducts `json:"assignedProducts,omitempty"`
 	CreatedAt        *time.Time                            `json:"createdAt,omitempty"`
 	Id               string                                `json:"id,omitempty"`
