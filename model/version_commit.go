@@ -8,7 +8,7 @@ type VersionCommit struct {
 	Data          []VersionCommitData `json:"data,omitempty"`
 	Id            string              `json:"id,omitempty"`
 	IntegrationId string              `json:"integrationId,omitempty"`
-	IsMerge       bool                `json:"isMerge"`
+	IsMerge       *bool               `json:"isMerge,omitempty"`
 	Message       string              `json:"message,omitempty"`
 	UpdatedAt     *time.Time          `json:"updatedAt,omitempty"`
 	UserId        string              `json:"userId,omitempty"`

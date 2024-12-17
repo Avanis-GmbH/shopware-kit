@@ -3,9 +3,9 @@ package model
 import "time"
 
 type Product struct {
-	Active                        bool                                  `json:"active"`
+	Active                        *bool                                 `json:"active,omitempty"`
 	AutoIncrement                 float64                               `json:"autoIncrement,omitempty"`
-	Available                     bool                                  `json:"available,omitempty"` // not changeable
+	Available                     *bool                                 `json:"available,omitempty"` // not changeable
 	AvailableStock                float64                               `json:"availableStock,omitempty"`
 	CanonicalProduct              *Product                              `json:"canonicalProduct,omitempty"`
 	CanonicalProductId            string                                `json:"canonicalProductId,omitempty"`
@@ -28,7 +28,7 @@ type Product struct {
 	CrossSellings                 []ProductCrossSelling                 `json:"crossSellings,omitempty"`
 	CustomFields                  interface{}                           `json:"customFields,omitempty"`
 	CustomFieldSets               []CustomFieldSet                      `json:"customFieldSets,omitempty"`
-	CustomFieldSetSelectionActive bool                                  `json:"customFieldSetSelectionActive"`
+	CustomFieldSetSelectionActive *bool                                 `json:"customFieldSetSelectionActive,omitempty"`
 	CustomSearchKeywords          interface{}                           `json:"customSearchKeywords,omitempty"`
 	DeliveryTime                  *DeliveryTime                         `json:"deliveryTime,omitempty"`
 	DeliveryTimeId                string                                `json:"deliveryTimeId,omitempty"`
@@ -39,7 +39,7 @@ type Product struct {
 	FeatureSetId                  string                                `json:"featureSetId,omitempty"`
 	Height                        float64                               `json:"height"`
 	Id                            string                                `json:"id,omitempty"`
-	IsCloseout                    bool                                  `json:"isCloseout"`
+	IsCloseout                    *bool                                 `json:"isCloseout,omitempty"`
 	Keywords                      string                                `json:"keywords"`
 	Length                        float64                               `json:"length,omitempty"`
 	MainCategories                []MainCategory                        `json:"mainCategories,omitempty"`
@@ -47,7 +47,7 @@ type Product struct {
 	Manufacturer                  *ProductManufacturer                  `json:"manufacturer,omitempty"`
 	ManufacturerId                *string                               `json:"manufacturerId"`
 	ManufacturerNumber            string                                `json:"manufacturerNumber,omitempty"`
-	MarkAsTopseller               bool                                  `json:"markAsTopseller"`
+	MarkAsTopseller               *bool                                 `json:"markAsTopseller,omitempty"`
 	MaxPurchase                   float64                               `json:"maxPurchase,omitempty"`
 	Media                         []ProductMedia                        `json:"media,omitempty"`
 	MetaDescription               string                                `json:"metaDescription"`
@@ -80,7 +80,7 @@ type Product struct {
 	Sales                         float64                               `json:"sales,omitempty"`
 	SearchKeywords                []ProductSearchKeyword                `json:"searchKeywords,omitempty"`
 	SeoUrls                       []SeoUrl                              `json:"seoUrls,omitempty"`
-	ShippingFree                  bool                                  `json:"shippingFree"`
+	ShippingFree                  *bool                                 `json:"shippingFree,omitempty"`
 	SlotConfig                    interface{}                           `json:"slotConfig,omitempty"`
 	Stock                         float64                               `json:"stock"` // required
 	StreamIds                     interface{}                           `json:"streamIds,omitempty"`

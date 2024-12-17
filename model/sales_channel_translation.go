@@ -5,7 +5,7 @@ import "time"
 type SalesChannelTranslation struct {
 	CreatedAt           *time.Time    `json:"createdAt,omitempty"`
 	CustomFields        interface{}   `json:"customFields,omitempty"`
-	HomeEnabled         bool          `json:"homeEnabled"`
+	HomeEnabled         *bool         `json:"homeEnabled,omitempty"`
 	HomeKeywords        string        `json:"homeKeywords,omitempty"`
 	HomeMetaDescription string        `json:"homeMetaDescription,omitempty"`
 	HomeMetaTitle       string        `json:"homeMetaTitle,omitempty"`

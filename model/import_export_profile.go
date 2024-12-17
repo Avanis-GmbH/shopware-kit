@@ -14,7 +14,7 @@ type ImportExportProfile struct {
 	Mapping          interface{}                      `json:"mapping,omitempty"`
 	Name             string                           `json:"name,omitempty"`
 	SourceEntity     string                           `json:"sourceEntity,omitempty"` // required
-	SystemDefault    bool                             `json:"systemDefault"`
+	SystemDefault    *bool                            `json:"systemDefault,omitempty"`
 	Translated       interface{}                      `json:"translated,omitempty"`
 	Translations     []ImportExportProfileTranslation `json:"translations,omitempty"`
 	Type             string                           `json:"type,omitempty"`

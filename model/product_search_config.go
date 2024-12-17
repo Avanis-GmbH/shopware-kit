@@ -3,7 +3,7 @@ package model
 import "time"
 
 type ProductSearchConfig struct {
-	AndLogic        bool                       `json:"andLogic"` // required
+	AndLogic        *bool                      `json:"andLogic,omitempty"` // required
 	ConfigFields    []ProductSearchConfigField `json:"configFields,omitempty"`
 	CreatedAt       *time.Time                 `json:"createdAt,omitempty"`
 	ExcludedTerms   interface{}                `json:"excludedTerms,omitempty"`

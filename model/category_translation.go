@@ -15,7 +15,7 @@ type CategoryTranslation struct {
 	Keywords          string      `json:"keywords,omitempty"`
 	Language          *Language   `json:"language,omitempty"`
 	LanguageId        string      `json:"languageId,omitempty"`
-	LinkNewTab        bool        `json:"linkNewTab"`
+	LinkNewTab        *bool       `json:"linkNewTab,omitempty"`
 	LinkType          string      `json:"linkType,omitempty"`
 	MetaDescription   string      `json:"metaDescription,omitempty"`
 	MetaTitle         string      `json:"metaTitle,omitempty"`

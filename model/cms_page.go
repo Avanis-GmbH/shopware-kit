@@ -11,7 +11,7 @@ type CmsPage struct {
 	HomeSalesChannels []SalesChannel       `json:"homeSalesChannels,omitempty"`
 	Id                string               `json:"id,omitempty"`
 	LandingPages      []LandingPage        `json:"landingPages,omitempty"`
-	Locked            bool                 `json:"locked"`
+	Locked            *bool                `json:"locked,omitempty"`
 	Name              string               `json:"name,omitempty"`
 	PreviewMedia      *Media               `json:"previewMedia,omitempty"`
 	PreviewMediaId    string               `json:"previewMediaId,omitempty"`

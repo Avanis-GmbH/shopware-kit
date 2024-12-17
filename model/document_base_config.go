@@ -11,7 +11,7 @@ type DocumentBaseConfig struct {
 	DocumentTypeId string                           `json:"documentTypeId,omitempty"` // required
 	FilenamePrefix string                           `json:"filenamePrefix,omitempty"`
 	FilenameSuffix string                           `json:"filenameSuffix,omitempty"`
-	Global         bool                             `json:"global"` // required
+	Global         *bool                            `json:"global,omitempty"` // required
 	Id             string                           `json:"id,omitempty"`
 	Logo           *Media                           `json:"logo,omitempty"`
 	LogoId         string                           `json:"logoId,omitempty"`

@@ -7,7 +7,7 @@ type PropertyGroup struct {
 	CustomFields               interface{}                `json:"customFields,omitempty"`
 	Description                string                     `json:"description,omitempty"`
 	DisplayType                string                     `json:"displayType,omitempty"` // required
-	Filterable                 bool                       `json:"filterable"`
+	Filterable                 *bool                      `json:"filterable,omitempty"`
 	Id                         string                     `json:"id,omitempty"`
 	Name                       string                     `json:"name,omitempty"` // required
 	Options                    []PropertyGroupOption      `json:"options,omitempty"`
@@ -16,5 +16,5 @@ type PropertyGroup struct {
 	Translated                 interface{}                `json:"translated,omitempty"`
 	Translations               []PropertyGroupTranslation `json:"translations,omitempty"`
 	UpdatedAt                  *time.Time                 `json:"updatedAt,omitempty"`
-	VisibleOnProductDetailPage bool                       `json:"visibleOnProductDetailPage"`
+	VisibleOnProductDetailPage *bool                      `json:"visibleOnProductDetailPage,omitempty"`
 }

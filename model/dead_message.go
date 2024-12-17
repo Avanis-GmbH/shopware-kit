@@ -4,7 +4,7 @@ import "time"
 
 type DeadMessage struct {
 	CreatedAt                 *time.Time     `json:"createdAt,omitempty"`
-	Encrypted                 bool           `json:"encrypted"`
+	Encrypted                 *bool          `json:"encrypted,omitempty"`
 	ErrorCount                float64        `json:"errorCount,omitempty"`
 	Exception                 string         `json:"exception,omitempty"`
 	ExceptionFile             string         `json:"exceptionFile,omitempty"`

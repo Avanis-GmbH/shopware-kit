@@ -16,7 +16,7 @@ type Tax struct {
 }
 
 type CTax struct {
-	Enabled    bool    `json:"enabled"`              // required
+	Enabled    *bool   `json:"enabled,omitempty"`    // required
 	CurrencyId string  `json:"currencyId,omitempty"` // required
 	Amount     float64 `json:"amount,omitempty"`     // required
 }

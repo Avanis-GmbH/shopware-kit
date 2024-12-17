@@ -3,7 +3,7 @@ package model
 import "time"
 
 type LandingPage struct {
-	Active           bool                     `json:"active"`
+	Active           *bool                    `json:"active,omitempty"`
 	CmsPage          *CmsPage                 `json:"cmsPage,omitempty"`
 	CmsPageId        string                   `json:"cmsPageId,omitempty"`
 	CmsPageVersionId string                   `json:"cmsPageVersionId,omitempty"`

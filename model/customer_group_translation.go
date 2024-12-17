@@ -11,7 +11,7 @@ type CustomerGroupTranslation struct {
 	LanguageId                          string         `json:"languageId,omitempty"`
 	Name                                string         `json:"name,omitempty"`
 	RegistrationIntroduction            string         `json:"registrationIntroduction,omitempty"`
-	RegistrationOnlyCompanyRegistration bool           `json:"registrationOnlyCompanyRegistration"`
+	RegistrationOnlyCompanyRegistration *bool          `json:"registrationOnlyCompanyRegistration,omitempty"`
 	RegistrationSeoMetaDescription      string         `json:"registrationSeoMetaDescription,omitempty"`
 	RegistrationTitle                   string         `json:"registrationTitle,omitempty"`
 	UpdatedAt                           *time.Time     `json:"updatedAt,omitempty"`
