@@ -94,6 +94,7 @@ type Product struct {
 	Unit                          *Unit                                 `json:"unit,omitempty"`
 	UnitId                        string                                `json:"unitId,omitempty"`
 	UpdatedAt                     *time.Time                            `json:"updatedAt,omitempty"`
+	VariantListingConfig          interface{}                           `json:"variantListingConfig,omitempty"`
 	VariantRestrictions           interface{}                           `json:"variantRestrictions,omitempty"`
 	Variation                     interface{}                           `json:"variation,omitempty"`
 	VersionId                     string                                `json:"versionId,omitempty"`
@@ -101,4 +102,15 @@ type Product struct {
 	Weight                        float64                               `json:"weight,omitempty"`
 	Width                         float64                               `json:"width,omitempty"`
 	Wishlists                     []CustomerWishlistProduct             `json:"wishlists,omitempty"`
+}
+
+type VariantListingConfig struct {
+	DisplayParent           *bool               `json:"displayParent,omitempty"`
+	ConfiguratorGroupConfig []ConfiguratorGroup `json:"configuratorGroupConfig,omitempty"`
+}
+
+type ConfiguratorGroup struct {
+	Id                    string `json:"id,omitempty"`
+	Representation        string `json:"representation,omitempty"`
+	ExpressionForListings bool   `json:"expressionForListings,omitempty"`
 }
