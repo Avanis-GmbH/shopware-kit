@@ -21,6 +21,7 @@ func (c *Client) GetSegment(v interface{}) string {
 			return "unknown"
 		}
 		v = reflect.ValueOf(v).Index(0).Interface()
+		return c.GetSegment(v)
 	}
 
 	// If the type name contains "Collection", remove it.
