@@ -13,6 +13,8 @@ import (
 	"golang.org/x/oauth2"
 )
 
+var userAgent = "shopware-kit"
+
 // Client is the main client struct for the shopware api communication
 type Client struct {
 	remote          string
@@ -147,6 +149,7 @@ func (c *Client) NewRawRequest(context APIContext, method, path string, options 
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("sw-language-id", context.LanguageID)
 	req.Header.Set("sw-version-id", context.VersionID)
+	req.Header.Set("User-Agent", userAgent)
 
 	if context.SkipFlows {
 		req.Header.Set("sw-skip-trigger-flow", "1")
@@ -197,4 +200,8 @@ func NewAPIContext(ctx context.Context) APIContext {
 		VersionID:  "0fa91ce3e96a4bc2be4bd9ce752c3425",
 		SkipFlows:  false,
 	}
+}
+
+func SetUserAgent(ua string) {
+	userAgent = ua
 }
