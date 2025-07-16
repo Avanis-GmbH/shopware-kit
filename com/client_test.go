@@ -366,7 +366,6 @@ func TestClient_BareDo_ContextCancelled(t *testing.T) {
 		t.Fatalf("Failed to create client: %v", err)
 	}
 
-	// Create a cancelled context
 	ctx, cancel := context.WithCancel(context.Background())
 	cancel()
 
@@ -583,12 +582,10 @@ func TestNewAPIContext_SkipFlows(t *testing.T) {
 	ctx := context.Background()
 	apiCtx := NewAPIContext(ctx)
 
-	// Test that SkipFlows is false by default
 	if apiCtx.SkipFlows {
 		t.Errorf("NewAPIContext() SkipFlows = %v, want false", apiCtx.SkipFlows)
 	}
 
-	// Test that we can set SkipFlows
 	apiCtx.SkipFlows = true
 	if !apiCtx.SkipFlows {
 		t.Errorf("APIContext.SkipFlows = %v, want true", apiCtx.SkipFlows)
@@ -596,7 +593,6 @@ func TestNewAPIContext_SkipFlows(t *testing.T) {
 }
 
 func TestClient_authorize_InvalidURL(t *testing.T) {
-	// Test authorize function with invalid URL that will cause url.JoinPath to fail
 	client := &Client{
 		remote:      "://invalid-url", // Invalid URL scheme
 		ctx:         context.Background(),
@@ -610,7 +606,6 @@ func TestClient_authorize_InvalidURL(t *testing.T) {
 }
 
 func TestClient_authorize_CredentialsError(t *testing.T) {
-	// Create a mock credentials that always returns an error
 	mockCreds := &mockFailingCredentials{}
 
 	client := &Client{
@@ -625,7 +620,6 @@ func TestClient_authorize_CredentialsError(t *testing.T) {
 	}
 }
 
-// Mock credentials that always fails
 type mockFailingCredentials struct{}
 
 func (m *mockFailingCredentials) GetTokenSource(ctx context.Context, tokenURL string) (oauth2.TokenSource, error) {
@@ -650,7 +644,6 @@ func TestClient_NewRequest_JSONEncodeError(t *testing.T) {
 
 	ctx := NewAPIContext(context.Background())
 
-	// Create a body that cannot be JSON encoded (channels cannot be marshaled)
 	invalidBody := make(chan int)
 
 	_, err = client.NewRequest(ctx, "POST", "/api/test", nil, invalidBody)
@@ -660,7 +653,6 @@ func TestClient_NewRequest_JSONEncodeError(t *testing.T) {
 }
 
 func TestClient_NewRawRequest_InvalidURL(t *testing.T) {
-	// Create a client with invalid remote URL
 	client := &Client{
 		remote: "://invalid-url",
 	}
@@ -689,8 +681,7 @@ func TestClient_NewRawRequest_InvalidPath(t *testing.T) {
 	}
 
 	ctx := NewAPIContext(context.Background())
-	
-	// Use an invalid HTTP method that will cause http.NewRequestWithContext to fail
+
 	_, err = client.NewRawRequest(ctx, "INVALID\nMETHOD", "/api/test", nil, nil)
 	if err == nil {
 		t.Error("NewRawRequest() should return error for invalid HTTP method")
@@ -709,7 +700,6 @@ func TestClient_checkResponse_ReadBodyError(t *testing.T) {
 			return
 		}
 		w.WriteHeader(400)
-		// Send partial content and close connection to cause ReadAll error
 		w.Header().Set("Content-Length", "1000") // Claim 1000 bytes
 		w.Write([]byte("short"))                 // But only send 5 bytes
 	}))
@@ -761,7 +751,7 @@ func (m *mockFailingTransport) RoundTrip(req *http.Request) (*http.Response, err
 func TestClient_authorize_WithExistingClient(t *testing.T) {
 	// Test authorize function when client already has an HTTP client set
 	existingClient := &http.Client{}
-	
+
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(map[string]interface{}{
@@ -783,7 +773,7 @@ func TestClient_authorize_WithExistingClient(t *testing.T) {
 	if err != nil {
 		t.Errorf("authorize() error = %v", err)
 	}
-	
+
 	// Verify that the client was replaced with an OAuth2 client
 	if client.client == existingClient {
 		t.Error("authorize() should replace the existing client with OAuth2 client")

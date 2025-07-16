@@ -2,6 +2,7 @@ package com
 
 import (
 	"encoding/json"
+	"strings"
 	"testing"
 )
 
@@ -55,32 +56,32 @@ func TestAPIError_Error(t *testing.T) {
 
 	errorString := apiError.Error()
 
-	// Check that error message contains status code
+	// Check that error message strings.Contains status code
 	if errorString == "" {
 		t.Error("Error() should return non-empty string")
 	}
 
-	// Check that it contains the status code
-	if !contains(errorString, "400") {
+	// Check that it strings.Contains the status code
+	if !strings.Contains(errorString, "400") {
 		t.Error("Error() should contain status code")
 	}
 
-	// Check that it contains error codes
-	if !contains(errorString, "INVALID_REQUEST") {
+	// Check that it strings.Contains error codes
+	if !strings.Contains(errorString, "INVALID_REQUEST") {
 		t.Error("Error() should contain error code INVALID_REQUEST")
 	}
 
-	if !contains(errorString, "VALIDATION_ERROR") {
+	if !strings.Contains(errorString, "VALIDATION_ERROR") {
 		t.Error("Error() should contain error code VALIDATION_ERROR")
 	}
 
-	// Check that it contains error details
-	if !contains(errorString, "The request is invalid") {
+	// Check that it strings.Contains error details
+	if !strings.Contains(errorString, "The request is invalid") {
 		t.Error("Error() should contain error detail")
 	}
 
-	// Check that it contains source pointers
-	if !contains(errorString, "/data/attributes/name") {
+	// Check that it strings.Contains source pointers
+	if !strings.Contains(errorString, "/data/attributes/name") {
 		t.Error("Error() should contain source pointer")
 	}
 }
@@ -108,7 +109,7 @@ func TestAPIError_EmptyErrors(t *testing.T) {
 	errorString := apiError.Error()
 
 	// Should still contain status code even with empty errors
-	if !contains(errorString, "500") {
+	if !strings.Contains(errorString, "500") {
 		t.Error("Error() should contain status code even with empty errors")
 	}
 }
@@ -221,11 +222,11 @@ func TestAPIError_WithRawBytes(t *testing.T) {
 	}
 
 	errorString := apiError.Error()
-	if !contains(errorString, "404") {
+	if !strings.Contains(errorString, "404") {
 		t.Error("Error() should contain status code 404")
 	}
 
-	if !contains(errorString, "NOT_FOUND") {
+	if !strings.Contains(errorString, "NOT_FOUND") {
 		t.Error("Error() should contain error code NOT_FOUND")
 	}
 }
@@ -275,43 +276,21 @@ func TestAPIError_MultipleErrors(t *testing.T) {
 	errorString := apiError.Error()
 
 	// Check that both errors are included
-	if !contains(errorString, "Name is required") {
+	if !strings.Contains(errorString, "Name is required") {
 		t.Error("Error() should contain first validation error")
 	}
 
-	if !contains(errorString, "Price must be positive") {
+	if !strings.Contains(errorString, "Price must be positive") {
 		t.Error("Error() should contain second validation error")
 	}
 
-	if !contains(errorString, "/data/attributes/name") {
+	if !strings.Contains(errorString, "/data/attributes/name") {
 		t.Error("Error() should contain first source pointer")
 	}
 
-	if !contains(errorString, "/data/attributes/price") {
+	if !strings.Contains(errorString, "/data/attributes/price") {
 		t.Error("Error() should contain second source pointer")
 	}
-}
-
-// Helper function to check if a string contains a substring
-func contains(s, substr string) bool {
-	return len(s) >= len(substr) && (s == substr || len(substr) == 0 || s[0:len(substr)] == substr ||
-		(len(s) > len(substr) && (s[1:len(substr)+1] == substr || contains(s[1:], substr))))
-}
-
-// More efficient contains implementation
-func containsSubstring(s, substr string) bool {
-	if len(substr) == 0 {
-		return true
-	}
-	if len(s) < len(substr) {
-		return false
-	}
-	for i := 0; i <= len(s)-len(substr); i++ {
-		if s[i:i+len(substr)] == substr {
-			return true
-		}
-	}
-	return false
 }
 
 func TestAPIError_Interface(t *testing.T) {
