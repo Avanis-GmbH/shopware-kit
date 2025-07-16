@@ -409,14 +409,12 @@ func TestClient_Clear_InvalidResponse(t *testing.T) {
 		t.Errorf("Clear() error = %v", err)
 	}
 
-	// Should still return the response even if status code is not 204
 	if resp.StatusCode != http.StatusOK {
 		t.Errorf("Clear() status = %v, want %v", resp.StatusCode, http.StatusOK)
 	}
 }
 
 func TestClient_Clear_RequestCreationError(t *testing.T) {
-	// Create a client that will fail on NewRequest due to invalid URL
 	client := &Client{
 		remote: "://invalid-url", // This will cause url.JoinPath to fail
 	}
@@ -429,7 +427,6 @@ func TestClient_Clear_RequestCreationError(t *testing.T) {
 }
 
 func TestClient_Info_RequestCreationError(t *testing.T) {
-	// Create a client that will fail on NewRequest due to invalid URL
 	client := &Client{
 		remote: "://invalid-url", // This will cause url.JoinPath to fail
 	}

@@ -716,7 +716,6 @@ func TestClient_checkResponse_ReadBodyError(t *testing.T) {
 		t.Fatalf("Failed to create request: %v", err)
 	}
 
-	// This should trigger an error in checkResponse's io.ReadAll call
 	_, err = client.BareDo(ctx.Context, req)
 	if err == nil {
 		t.Error("BareDo() should return error when response body reading fails")
@@ -724,7 +723,6 @@ func TestClient_checkResponse_ReadBodyError(t *testing.T) {
 }
 
 func TestClient_BareDo_HTTPClientError(t *testing.T) {
-	// Create a client with a mock HTTP client that always fails
 	client := &Client{
 		remote: "https://example.com",
 		client: &http.Client{
@@ -749,7 +747,6 @@ func (m *mockFailingTransport) RoundTrip(req *http.Request) (*http.Response, err
 }
 
 func TestClient_authorize_WithExistingClient(t *testing.T) {
-	// Test authorize function when client already has an HTTP client set
 	existingClient := &http.Client{}
 
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -774,7 +771,6 @@ func TestClient_authorize_WithExistingClient(t *testing.T) {
 		t.Errorf("authorize() error = %v", err)
 	}
 
-	// Verify that the client was replaced with an OAuth2 client
 	if client.client == existingClient {
 		t.Error("authorize() should replace the existing client with OAuth2 client")
 	}

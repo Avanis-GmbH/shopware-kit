@@ -5,7 +5,6 @@ import (
 	"testing"
 )
 
-// Test types for type testing
 type MockEntity struct {
 	ID   string
 	Name string
@@ -104,7 +103,6 @@ func TestClient_GetSegmentSnakeCase(t *testing.T) {
 func TestGetSegment_ReflectionEdgeCases(t *testing.T) {
 	client := &Client{}
 
-	// Test with complex struct names
 	type ProductManufacturerCollection struct{}
 	type UserRolePermissionCollection struct{}
 
@@ -138,7 +136,6 @@ func TestGetSegment_ReflectionEdgeCases(t *testing.T) {
 func TestGetSegment_WithSliceOfPointers(t *testing.T) {
 	client := &Client{}
 
-	// Test slice of pointers
 	entities := []*MockEntity{{ID: "1"}}
 	result := client.GetSegment(entities)
 	expected := "mock-entity"
@@ -151,11 +148,9 @@ func TestGetSegment_WithSliceOfPointers(t *testing.T) {
 func TestGetSegment_RecursiveSliceHandling(t *testing.T) {
 	client := &Client{}
 
-	// Test that slice handling calls GetSegment recursively
 	entities := []MockEntity{{ID: "1", Name: "test"}}
 	result := client.GetSegment(entities)
 
-	// Should call GetSegment on the first element
 	if result != "mock-entity" {
 		t.Errorf("GetSegment should handle slice recursively, got %v", result)
 	}
@@ -163,22 +158,17 @@ func TestGetSegment_RecursiveSliceHandling(t *testing.T) {
 
 func TestReflection_TypeChecking(t *testing.T) {
 	client := &Client{}
-
-	// Test that we're using reflection correctly
 	entity := MockEntity{}
 
-	// Test that we can detect pointer types
 	if reflect.TypeOf(&entity).Kind() != reflect.Ptr {
 		t.Error("Should detect pointer type correctly")
 	}
 
-	// Test that we can detect slice types
 	slice := []MockEntity{}
 	if reflect.TypeOf(slice).Kind() != reflect.Slice {
 		t.Error("Should detect slice type correctly")
 	}
 
-	// Test GetSegment handles these correctly
 	if client.GetSegment(&entity) != "mock-entity" {
 		t.Error("GetSegment should handle pointer correctly")
 	}

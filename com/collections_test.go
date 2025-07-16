@@ -7,13 +7,11 @@ import (
 func TestEntityCollection_SetAndGetTotal(t *testing.T) {
 	collection := EntityCollection{}
 
-	// Test setting and getting total
 	collection.setTotal(100)
 	if collection.getTotal() != 100 {
 		t.Errorf("getTotal() = %v, want 100", collection.getTotal())
 	}
 
-	// Test direct access
 	if collection.Total != 100 {
 		t.Errorf("Total = %v, want 100", collection.Total)
 	}
@@ -27,7 +25,6 @@ func TestEntityCollection_SetAndGetAggregations(t *testing.T) {
 		"avg":   25.5,
 	}
 
-	// Test setting and getting aggregations
 	collection.setAggregations(aggregations)
 	retrieved := collection.getAggregations()
 
@@ -35,7 +32,6 @@ func TestEntityCollection_SetAndGetAggregations(t *testing.T) {
 		t.Error("getAggregations() returned nil")
 	}
 
-	// Test direct access
 	if collection.Aggregations == nil {
 		t.Error("Aggregations is nil")
 	}
@@ -49,7 +45,6 @@ func TestEntityCollection_SetAndGetData(t *testing.T) {
 		map[string]string{"id": "2", "name": "item2"},
 	}
 
-	// Test setting and getting data
 	collection.setData(data)
 	retrieved := collection.getData()
 
@@ -57,17 +52,14 @@ func TestEntityCollection_SetAndGetData(t *testing.T) {
 		t.Errorf("getData() length = %v, want 2", len(retrieved))
 	}
 
-	// Test direct access
 	if len(collection.Data) != 2 {
 		t.Errorf("Data length = %v, want 2", len(collection.Data))
 	}
 }
 
 func TestEntityCollection_Interface(t *testing.T) {
-	// Test that EntityCollection implements Collection interface
 	var collection Collection = &EntityCollection{}
 
-	// Test all interface methods
 	collection.setTotal(10)
 	if collection.getTotal() != 10 {
 		t.Error("EntityCollection should implement Collection interface")
@@ -87,17 +79,14 @@ func TestEntityCollection_Interface(t *testing.T) {
 }
 
 func TestACLRoleCollection_Interface(t *testing.T) {
-	// Test that ACLRoleCollection implements Collection interface
 	var collection Collection = &ACLRoleCollection{}
 
-	// Test that it embeds EntityCollection correctly
 	collection.setTotal(5)
 	if collection.getTotal() != 5 {
 		t.Error("ACLRoleCollection should implement Collection interface through EntityCollection")
 	}
 }
 
-// Test some other collections to ensure they implement the interface
 func TestSpecificCollections_Interface(t *testing.T) {
 	collections := []Collection{
 		&ACLRoleCollection{},
@@ -120,7 +109,6 @@ func TestSpecificCollections_Interface(t *testing.T) {
 func TestEntityCollection_EmptyData(t *testing.T) {
 	collection := EntityCollection{}
 
-	// Test with empty data
 	emptyData := []interface{}{}
 	collection.setData(emptyData)
 
@@ -136,7 +124,6 @@ func TestEntityCollection_EmptyData(t *testing.T) {
 func TestEntityCollection_NilAggregations(t *testing.T) {
 	collection := EntityCollection{}
 
-	// Test with nil aggregations
 	collection.setAggregations(nil)
 	retrieved := collection.getAggregations()
 

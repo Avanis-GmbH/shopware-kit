@@ -221,7 +221,6 @@ func TestIntegrationCredentials_GetTokenSource_Success(t *testing.T) {
 }
 
 func TestOAuthCredentials_Interface(t *testing.T) {
-	// Test that both credential types implement the OAuthCredentials interface
 	var _ OAuthCredentials = NewPasswordCredentials("user", "pass", []string{"write"})
 	var _ OAuthCredentials = NewIntegrationCredentials("id", "secret", []string{"write"})
 }

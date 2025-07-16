@@ -164,13 +164,10 @@ func TestClient_SearchAll(t *testing.T) {
 		}
 
 		if r.URL.Path == "/api/search/mock-entity" && r.Method == "POST" {
-			// Parse the request to get the page number
 			var criteria Criteria
 			json.NewDecoder(r.Body).Decode(&criteria)
 
-			// Simulate paginated responses - SearchAll increments page before calling
 			if criteria.Page == 2 {
-				// First call (page starts at 1, incremented to 2)
 				response := map[string]interface{}{
 					"total": 3,
 					"data": []interface{}{
@@ -181,7 +178,6 @@ func TestClient_SearchAll(t *testing.T) {
 				json.NewEncoder(w).Encode(response)
 				return
 			} else if criteria.Page == 3 {
-				// Second call
 				response := map[string]interface{}{
 					"total": 3,
 					"data": []interface{}{
@@ -191,7 +187,6 @@ func TestClient_SearchAll(t *testing.T) {
 				json.NewEncoder(w).Encode(response)
 				return
 			} else {
-				// Empty page to stop pagination
 				response := map[string]interface{}{
 					"total": 3,
 					"data":  []interface{}{},
@@ -247,12 +242,10 @@ func TestClient_SearchAll_DefaultLimitAndPage(t *testing.T) {
 			var criteria Criteria
 			json.NewDecoder(r.Body).Decode(&criteria)
 
-			// Verify default limit is set to 50
 			if criteria.Limit != 50 {
 				t.Errorf("SearchAll() default limit = %v, want 50", criteria.Limit)
 			}
 
-			// Return empty result to stop pagination
 			response := MockEntityCollection{
 				EntityCollection: EntityCollection{
 					Total: 0,
@@ -426,7 +419,6 @@ func TestClient_SearchIDs_Error(t *testing.T) {
 }
 
 func TestClient_Search_URLJoinError(t *testing.T) {
-	// Create a client with invalid remote that will cause url.JoinPath to fail
 	client := &Client{
 		remote: "://invalid-url",
 	}
@@ -442,7 +434,6 @@ func TestClient_Search_URLJoinError(t *testing.T) {
 }
 
 func TestClient_Search_NewRequestError(t *testing.T) {
-	// Create a client that will fail on NewRequest due to invalid URL
 	client := &Client{
 		remote: "://invalid-url", // This will make url.JoinPath in NewRawRequest fail
 	}
@@ -458,7 +449,6 @@ func TestClient_Search_NewRequestError(t *testing.T) {
 }
 
 func TestClient_SearchIDs_URLJoinError(t *testing.T) {
-	// Create a client with invalid remote that will cause url.JoinPath to fail
 	client := &Client{
 		remote: "://invalid-url",
 	}
@@ -474,7 +464,6 @@ func TestClient_SearchIDs_URLJoinError(t *testing.T) {
 }
 
 func TestClient_SearchIDs_NewRequestError(t *testing.T) {
-	// Create a client that will fail on NewRequest due to invalid URL
 	client := &Client{
 		remote: "://invalid-url", // This will make NewRawRequest fail
 	}

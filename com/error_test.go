@@ -56,17 +56,14 @@ func TestAPIError_Error(t *testing.T) {
 
 	errorString := apiError.Error()
 
-	// Check that error message strings.Contains status code
 	if errorString == "" {
 		t.Error("Error() should return non-empty string")
 	}
 
-	// Check that it strings.Contains the status code
 	if !strings.Contains(errorString, "400") {
 		t.Error("Error() should contain status code")
 	}
 
-	// Check that it strings.Contains error codes
 	if !strings.Contains(errorString, "INVALID_REQUEST") {
 		t.Error("Error() should contain error code INVALID_REQUEST")
 	}
@@ -75,12 +72,10 @@ func TestAPIError_Error(t *testing.T) {
 		t.Error("Error() should contain error code VALIDATION_ERROR")
 	}
 
-	// Check that it strings.Contains error details
 	if !strings.Contains(errorString, "The request is invalid") {
 		t.Error("Error() should contain error detail")
 	}
 
-	// Check that it strings.Contains source pointers
 	if !strings.Contains(errorString, "/data/attributes/name") {
 		t.Error("Error() should contain source pointer")
 	}
@@ -108,7 +103,6 @@ func TestAPIError_EmptyErrors(t *testing.T) {
 
 	errorString := apiError.Error()
 
-	// Should still contain status code even with empty errors
 	if !strings.Contains(errorString, "500") {
 		t.Error("Error() should contain status code even with empty errors")
 	}
@@ -207,7 +201,6 @@ func TestAPIError_WithRawBytes(t *testing.T) {
 		Raw:        []byte(rawJSON),
 	}
 
-	// Unmarshal the raw bytes into the Response
 	err := json.Unmarshal(apiError.Raw, &apiError.Response)
 	if err != nil {
 		t.Fatalf("Failed to unmarshal raw JSON: %v", err)
@@ -275,7 +268,6 @@ func TestAPIError_MultipleErrors(t *testing.T) {
 
 	errorString := apiError.Error()
 
-	// Check that both errors are included
 	if !strings.Contains(errorString, "Name is required") {
 		t.Error("Error() should contain first validation error")
 	}
@@ -318,13 +310,11 @@ func TestAPIError_Interface(t *testing.T) {
 		},
 	}
 
-	// Test that APIError implements the error interface
 	var err error = apiError
 	if err.Error() == "" {
 		t.Error("APIError should implement error interface")
 	}
 
-	// Test pointer to APIError also implements error interface
 	var errPtr error = &apiError
 	if errPtr.Error() == "" {
 		t.Error("*APIError should implement error interface")

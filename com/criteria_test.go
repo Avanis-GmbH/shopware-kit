@@ -224,7 +224,6 @@ func TestCriteria_WithAssociations(t *testing.T) {
 }
 
 func TestConstants(t *testing.T) {
-	// Test TotalCountMode constants
 	if TotalCountModeDefault != 1 {
 		t.Errorf("TotalCountModeDefault = %v, want 1", TotalCountModeDefault)
 	}
@@ -235,7 +234,6 @@ func TestConstants(t *testing.T) {
 		t.Errorf("TotalCountModeNextPage = %v, want 3", TotalCountModeNextPage)
 	}
 
-	// Test SearchFilterType constants
 	filterTypes := []SearchFilterType{
 		SearchFilterTypeEquals,
 		SearchFilterTypeEqualsAny,
@@ -257,7 +255,6 @@ func TestConstants(t *testing.T) {
 		}
 	}
 
-	// Test SearchSortDirection constants
 	if SearchSortDirectionAscending != "ASC" {
 		t.Errorf("SearchSortDirectionAscending = %v, want ASC", SearchSortDirectionAscending)
 	}
@@ -274,7 +271,6 @@ func TestCriteria_EmptyValues(t *testing.T) {
 		t.Fatalf("Failed to marshal empty criteria: %v", err)
 	}
 
-	// Verify that omitempty works correctly
 	var jsonMap map[string]interface{}
 	err = json.Unmarshal(data, &jsonMap)
 	if err != nil {

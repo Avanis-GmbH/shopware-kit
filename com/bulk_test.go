@@ -49,7 +49,6 @@ func TestClient_Sync(t *testing.T) {
 		}
 
 		if r.URL.Path == "/api/_action/sync" && r.Method == "POST" {
-			// Read and verify the request body
 			var payload map[string]SyncOperation
 			err := json.NewDecoder(r.Body).Decode(&payload)
 			if err != nil {
@@ -123,7 +122,6 @@ func TestClient_Upsert(t *testing.T) {
 
 	ctx := NewAPIContext(context.Background())
 
-	// Test with valid slice
 	entities := []MockEntity{
 		{ID: "1", Name: "Entity 1"},
 		{ID: "2", Name: "Entity 2"},
@@ -157,14 +155,12 @@ func TestClient_Upsert_Errors(t *testing.T) {
 
 	ctx := NewAPIContext(context.Background())
 
-	// Test with non-slice entity
 	entity := MockEntity{ID: "1", Name: "Single Entity"}
 	_, err = client.Upsert(ctx, entity)
 	if err == nil {
 		t.Error("Upsert() should return error for non-slice entity")
 	}
 
-	// Test with empty slice (should work but might be treated as unknown)
 	emptySlice := []MockEntity{}
 	_, err = client.Upsert(ctx, emptySlice)
 	if err == nil {
@@ -185,20 +181,17 @@ func TestClient_Delete(t *testing.T) {
 		}
 
 		if r.URL.Path == "/api/_action/sync" && r.Method == "POST" {
-			// Verify the delete payload structure
 			var payload map[string]SyncOperation
 			err := json.NewDecoder(r.Body).Decode(&payload)
 			if err != nil {
 				t.Errorf("Failed to decode delete payload: %v", err)
 			}
 
-			// Check that it's a delete operation
 			for _, operation := range payload {
 				if operation.Action != "delete" {
 					t.Errorf("Expected delete action, got %v", operation.Action)
 				}
 
-				// Verify payload structure
 				payloadSlice, ok := operation.Payload.([]interface{})
 				if !ok {
 					t.Error("Delete payload should be a slice")
@@ -225,7 +218,6 @@ func TestClient_Delete(t *testing.T) {
 
 	ctx := NewAPIContext(context.Background())
 
-	// Test delete with entity and IDs
 	entity := MockEntity{}
 	ids := []string{"id1", "id2"}
 
@@ -253,7 +245,6 @@ func TestClient_Delete_EmptyIDs(t *testing.T) {
 		}
 
 		if r.URL.Path == "/api/_action/sync" && r.Method == "POST" {
-			// Verify empty payload
 			var payload map[string]SyncOperation
 			err := json.NewDecoder(r.Body).Decode(&payload)
 			if err != nil {
@@ -284,7 +275,6 @@ func TestClient_Delete_EmptyIDs(t *testing.T) {
 
 	ctx := NewAPIContext(context.Background())
 
-	// Test delete with empty IDs
 	entity := MockEntity{}
 	ids := []string{}
 
@@ -319,7 +309,6 @@ func TestDeleteEntity_Structure(t *testing.T) {
 }
 
 func TestUpsert_ReflectionValidation(t *testing.T) {
-	// Test reflection checks
 	entities := []MockEntity{{ID: "1"}}
 
 	if reflect.ValueOf(entities).Kind() != reflect.Slice {
@@ -406,7 +395,6 @@ func TestClient_Upsert_EmptySlice(t *testing.T) {
 
 	ctx := NewAPIContext(context.Background())
 
-	// Test with empty slice
 	var emptyEntities []MockEntity
 	_, err = client.Upsert(ctx, emptyEntities)
 	if err == nil {
@@ -415,7 +403,6 @@ func TestClient_Upsert_EmptySlice(t *testing.T) {
 }
 
 func TestClient_Sync_RequestCreationError(t *testing.T) {
-	// Create a client that will fail on NewRequest due to invalid URL
 	client := &Client{
 		remote: "://invalid-url", // This will cause url.JoinPath to fail
 	}
@@ -459,7 +446,6 @@ func TestClient_Upsert_NotASlice(t *testing.T) {
 
 	ctx := NewAPIContext(context.Background())
 
-	// Test with non-slice entity
 	singleEntity := MockEntity{ID: "1", Name: "Test"}
 	_, err = client.Upsert(ctx, singleEntity)
 	if err == nil {
