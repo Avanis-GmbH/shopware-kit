@@ -6,6 +6,5 @@ toolchain go1.24.5
 
 require (
 	github.com/iancoleman/strcase v0.3.0
-	github.com/pkg/errors v0.9.1
 	golang.org/x/oauth2 v0.29.0
 )

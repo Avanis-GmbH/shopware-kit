@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"io"
 	"net/http"
 	"net/http/httptest"
@@ -11,20 +12,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 )
-
-// mockHTTPClient creates a mock HTTP client with a predefined response
-func mockHTTPClient(statusCode int, body string, headers map[string]string) *http.Client {
-	return &http.Client{
-		Transport: &mockTransport{
-			statusCode: statusCode,
-			body:       body,
-			headers:    headers,
-		},
-	}
-}
 
 type mockTransport struct {
 	statusCode int

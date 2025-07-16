@@ -1,9 +1,8 @@
 package com
 
 import (
+	"fmt"
 	"net/http"
-
-	"github.com/pkg/errors"
 )
 
 // InfoResponse is the response of the info request to the shopware api
@@ -37,13 +36,13 @@ func (r InfoResponse) IsCloudShop() bool {
 func (c *Client) Info(ctx APIContext) (*InfoResponse, *http.Response, error) {
 	r, err := c.NewRequest(ctx, http.MethodGet, "/api/_info/config", nil, nil)
 	if err != nil {
-		return nil, nil, errors.Wrap(err, "failed to create request for info")
+		return nil, nil, fmt.Errorf("failed to create request for info: %w", err)
 	}
 
 	var info *InfoResponse
 	resp, err := c.Do(ctx.Context, r, &info)
 	if err != nil {
-		return nil, nil, errors.Wrap(err, "failed to execute request for info")
+		return nil, nil, fmt.Errorf("failed to execute request for info: %w", err)
 	}
 
 	return info, resp, err
