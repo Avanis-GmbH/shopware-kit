@@ -2,8 +2,8 @@ package com
 
 import (
 	"context"
+	"fmt"
 
-	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
 )
@@ -41,7 +41,7 @@ func (c PasswordCredentials) GetTokenSource(ctx context.Context, tokenURL string
 
 	token, err := oauthConf.PasswordCredentialsToken(ctx, c.Username, c.Password)
 	if err != nil {
-		return nil, errors.Wrapf(err, "failed to get token for %s", c.Username)
+		return nil, fmt.Errorf("failed to get token for %s: %w", c.Username, err)
 	}
 	return oauth2.StaticTokenSource(token), nil
 }

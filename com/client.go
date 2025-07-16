@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 )
 
@@ -59,7 +58,7 @@ func (c *Client) authorize() error {
 // Execute the HTTP request, checks and returns the raw response
 func (c *Client) BareDo(ctx context.Context, req *http.Request) (*http.Response, error) {
 	if ctx == nil {
-		return nil, errors.New("context is nil")
+		return nil, fmt.Errorf("context is nil")
 	}
 
 	resp, err := c.client.Do(req)
@@ -69,7 +68,7 @@ func (c *Client) BareDo(ctx context.Context, req *http.Request) (*http.Response,
 			return nil, ctx.Err()
 		default:
 		}
-		return nil, errors.Wrapf(err, "failed to execute request")
+		return nil, fmt.Errorf("failed to execute request: %w", err)
 	}
 
 	err = c.checkResponse(resp)
@@ -92,7 +91,10 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 		err = json.NewDecoder(resp.Body).Decode(v)
 	}
 
-	return resp, errors.Wrap(err, "failed to decode response body")
+	if err != nil {
+		return resp, fmt.Errorf("failed to decode response body: %w", err)
+	}
+	return resp, nil
 }
 
 // Creates a new request with the given context, method, url and body
@@ -181,7 +183,7 @@ func (c *Client) checkResponse(r *http.Response) error {
 	if err != nil {
 		return fmt.Errorf("parsing json response failed: %w", err)
 	}
-	return errors.Wrapf(&aerr, "request failed")
+	return fmt.Errorf("request failed: %w", &aerr)
 }
 
 // APIContext is the context for the api requests

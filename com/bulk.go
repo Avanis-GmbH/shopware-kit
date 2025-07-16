@@ -1,10 +1,9 @@
 package com
 
 import (
+	"fmt"
 	"net/http"
 	"reflect"
-
-	"github.com/pkg/errors"
 )
 
 // Sync Operations for bulk request
@@ -25,7 +24,7 @@ func (c *Client) Sync(ctx APIContext, payload map[string]SyncOperation) (*http.R
 	req, err := c.NewRequest(ctx, http.MethodPost, "/api/_action/sync", nil, payload)
 
 	if err != nil {
-		return nil, errors.Wrapf(err, "failed to create request for sync operation")
+		return nil, fmt.Errorf("failed to create request for sync operation: %w", err)
 	}
 
 	return c.Do(ctx.Context, req, nil)
@@ -36,11 +35,11 @@ func (c *Client) Sync(ctx APIContext, payload map[string]SyncOperation) (*http.R
 // Uses underlying Sync method to perform the request
 func (c *Client) Upsert(ctx APIContext, entities interface{}) (*http.Response, error) {
 	if c.GetSegmentSnakeCase(entities) == "unknown" {
-		return nil, errors.New("unknown entity")
+		return nil, fmt.Errorf("unknown entity")
 	}
 
 	if reflect.ValueOf(entities).Kind() != reflect.Slice {
-		return nil, errors.New("entity is not a slice")
+		return nil, fmt.Errorf("entity is not a slice")
 	}
 
 	return c.Sync(ctx, map[string]SyncOperation{c.GetSegmentSnakeCase(entities): {
