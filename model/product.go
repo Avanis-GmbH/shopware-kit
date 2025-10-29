@@ -90,7 +90,7 @@ type Product struct {
 	Tax                           *Tax                                  `json:"tax,omitempty"`
 	TaxId                         string                                `json:"taxId"` // required
 	Translated                    interface{}                           `json:"translated,omitempty"`
-	Translations                  []ProductTranslation                  `json:"translations,omitempty"`
+	Translations                  map[string]ProductTranslation         `json:"translations,omitempty"`
 	Unit                          *Unit                                 `json:"unit,omitempty"`
 	UnitId                        string                                `json:"unitId,omitempty"`
 	UpdatedAt                     *time.Time                            `json:"updatedAt,omitempty"`
